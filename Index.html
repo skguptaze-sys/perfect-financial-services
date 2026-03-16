@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0066cc">
+<meta name="description" content="Perfect Financial Services - Santosh Kumar | Life, Health, Motor Insurance | IRDAI POSP | Dhanbad">
+<title>🛡️ Perfect Financial Services | Santosh Kumar | Insurance Dhanbad</title>
+<style>
+:root{--primary:#0066cc;--secondary:#ff6b00;--success:#25d366;--dark:#1a1a2e;--light:#f8f9fa;--gradient:linear-gradient(135deg,#0066cc,#1e3a8a);}
+*{-webkit-tap-highlight-color:transparent;touch-action:manipulation;box-sizing:border-box;margin:0;padding:0;}
+html{font-size:clamp(16px,4.5vw,20px);scroll-behavior:smooth;}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
+h1,h2,h3{font-weight:800;line-height:1.1;}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,102,204,0.1);box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+.header-content{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 0;}
+.logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--dark);}
+.logo-icon{font-size:2rem;}
+.logo-text h3{font-size:1.1rem;margin:0;font-weight:900;color:var(--primary);}
+.logo-text p{margin:0;font-size:0.75rem;color:#666;}
+.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--success);color:white;padding:0.7rem 1.4rem;border-radius:50px;font-weight:700;text-decoration:none;font-size:0.9rem;box-shadow:0 4px 12px rgba(37,211,102,0.4);transition:all 0.3s;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.6);}
+
+/* HERO */
+.hero{background:var(--gradient);color:white;padding:4rem 0 6rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,107,0,0.15),transparent 50%),radial-gradient(circle at 70% 80%,rgba(255,255,255,0.08),transparent 50%);}
+.hero-content{max-width:750px;margin:0 auto;text-align:center;position:relative;}
+.hero-badge{background:rgba(255,255,255,0.18);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);color:white;padding:0.6rem 1.4rem;border-radius:50px;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:700;margin-bottom:1.5rem;}
+.hero h1{font-size:clamp(2.2rem,7vw,4rem);margin-bottom:1rem;background:linear-gradient(135deg,white,#ffb347);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:1.1rem;margin-bottom:0.75rem;opacity:0.95;}
+.live-status{font-size:0.85rem;margin-bottom:2rem;opacity:0.85;min-height:1.2em;}
+.hero-search{display:flex;max-width:480px;margin:0 auto;background:white;border-radius:14px;box-shadow:0 15px 40px rgba(0,0,0,0.2);overflow:hidden;}
+.search-input{flex:1;padding:1.1rem 1.4rem;border:none;font-size:1rem;outline:none;color:var(--dark);}
+.search-btn{background:linear-gradient(135deg,var(--secondary),#ff8c00);color:white;border:none;padding:1.1rem 1.8rem;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+
+/* STATS */
+.stats{background:white;margin:-3rem 1.5rem 3rem;border-radius:20px;padding:1.8rem 1.5rem;box-shadow:0 20px 50px rgba(0,0,0,0.12);display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;position:relative;z-index:10;}
+.stat-item{}
+.stat-number{font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--primary),#1e3a8a);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1.2;}
+.stat-label{font-size:0.72rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-top:0.2rem;}
+.live-dot{display:inline-block;width:7px;height:7px;background:#25d366;border-radius:50%;margin-right:3px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
+
+/* SERVICES */
+.services{padding:4rem 0;}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;}
+.section-title{font-size:1.8rem;color:var(--dark);}
+.section-cta{color:var(--primary);font-weight:700;text-decoration:none;font-size:0.95rem;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
+.service-card{background:white;border-radius:20px;padding:2rem 1.75rem;box-shadow:0 8px 30px rgba(0,0,0,0.07);transition:all 0.3s;cursor:pointer;position:relative;overflow:hidden;border:1px solid #f0f0f0;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.13);}
+.service-icon{font-size:3rem;margin-bottom:1.2rem;display:block;}
+.service-title{font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:0.6rem;}
+.service-desc{font-size:0.9rem;color:#666;line-height:1.7;}
+.service-badge{background:linear-gradient(135deg,#f0f8ff,#e3f2fd);color:var(--primary);padding:0.4rem 0.9rem;border-radius:20px;font-size:0.75rem;font-weight:700;display:inline-block;margin-top:0.9rem;}
+.live-badge{background:var(--success);color:white;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.7rem;font-weight:700;display:none;align-items:center;gap:0.2rem;margin-left:0.4rem;vertical-align:middle;}
+
+/* FEATURES */
+.features{padding:4rem 0;background:#f8fafc;}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.feature-card{display:flex;align-items:flex-start;gap:1.2rem;padding:2rem;background:white;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,0.05);}
+.feature-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;}
+.feature-title{font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:0.5rem;}
+.feature-desc{color:#666;line-height:1.6;font-size:0.9rem;}
+
+/* PARTNERS */
+.partners{padding:3rem 0;background:white;}
+.partners-title{text-align:center;font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:1.5rem;}
+.partners-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
+.partner-logo{background:#f8f9fa;border:1px solid #e8e8e8;border-radius:14px;padding:1.2rem 1.8rem;font-size:0.9rem;font-weight:600;display:flex;align-items:center;justify-content:center;min-width:120px;height:64px;transition:all 0.3s;color:#444;}
+.partner-logo:hover{transform:translateY(-3px);border-color:var(--primary);background:#f0f8ff;color:var(--primary);}
+
+/* QUOTE FORM */
+.quote-section{padding:4rem 0;background:var(--gradient);color:white;}
+.quote-container{max-width:580px;margin:0 auto;text-align:center;}
+.quote-title{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:0.75rem;}
+.quote-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:0.9;}
+.form-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:2.5rem;box-shadow:0 20px 50px rgba(0,0,0,0.2);}
+.form-group{margin-bottom:1.4rem;text-align:left;}
+.form-label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.9rem;}
+.form-input{width:100%;padding:1.1rem 1.2rem;border:2px solid rgba(255,255,255,0.25);border-radius:14px;font-size:1rem;background:rgba(255,255,255,0.92);color:var(--dark);transition:all 0.3s;}
+.form-input:focus{outline:none;border-color:white;box-shadow:0 0 0 3px rgba(255,255,255,0.25);}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");background-position:right 1rem center;background-repeat:no-repeat;background-size:1.4em;padding-right:3rem;}
+.btn-submit{width:100%;background:linear-gradient(135deg,var(--secondary),#ff8c00);color:white;border:none;padding:1.3rem;border-radius:14px;font-size:1.1rem;font-weight:900;cursor:pointer;transition:all 0.3s;box-shadow:0 8px 20px rgba(255,107,0,0.4);}
+.btn-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,107,0,0.55);}
+.btn-submit:disabled{opacity:0.65;cursor:not-allowed;}
+.success-msg{display:none;background:rgba(37,211,102,0.15);border:2px solid rgba(37,211,102,0.5);border-radius:16px;padding:2rem;text-align:center;margin-top:1rem;}
+.success-msg .s-icon{font-size:3rem;margin-bottom:0.5rem;}
+.success-msg h3{font-size:1.4rem;margin-bottom:0.4rem;}
+
+/* FOOTER */
+.footer{background:var(--dark);color:white;padding:3rem 0 1.5rem;}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem;}
+.footer-section h4{font-size:1rem;margin-bottom:0.9rem;color:#fff;font-weight:700;}
+.footer-section a,.footer-section p{color:#aaa;text-decoration:none;display:block;margin-bottom:0.45rem;font-size:0.9rem;transition:color 0.3s;}
+.footer-section a:hover{color:var(--primary);}
+.footer-bottom{text-align:center;padding-top:1.5rem;border-top:1px solid #2a2a3e;font-size:0.82rem;color:#666;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .stats{grid-template-columns:repeat(2,1fr);margin:-2rem 1rem 2.5rem;}
+  .hero{padding:3rem 0 5rem;}
+  .form-card{padding:1.8rem 1.4rem;}
+  .hero-search{flex-direction:column;border-radius:14px;}
+  .search-btn{border-radius:0 0 14px 14px;}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:repeat(2,1fr);gap:0.8rem;padding:1.4rem 1rem;}
+  .stat-number{font-size:1.6rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="#home" class="logo">
+        <span class="logo-icon">🛡️</span>
+        <div class="logo-text">
+          <h3>Perfect Financial Services</h3>
+          <p>Santosh Kumar — IRDAI POSP Licensed</p>
+        </div>
+      </a>
+      <a href="https://wa.me/919122445666" class="cta-btn" target="_blank" rel="noopener">💬 तुरंत बात करें</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">✅ IRDAI Authorized | TurtleMint PRO Partner</div>
+      <h1>बीमा को सरल बनाएं</h1>
+      <p class="hero-sub">लाइफ • हेल्थ • मोटर इंश्योरेंस — धनबाद</p>
+      <p class="live-status" id="liveStatus"><span class="live-dot"></span>Live data लोड हो रहा है...</p>
+      <form class="hero-search" id="heroSearch">
+        <input type="text" class="search-input" placeholder="बीमा खोजें... बाइक, कार, हेल्थ">
+        <button type="submit" class="search-btn">कोटेशन पाएं →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat-item">
+    <span class="stat-number" id="totalClients">...</span>
+    <div class="stat-label">संतुष्ट ग्राहक</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number" id="totalCoverage">...</span>
+    <div class="stat-label">कुल कवरेज</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">99%</span>
+    <div class="stat-label">क्लेम सफल</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">10+</span>
+    <div class="stat-label">वर्ष अनुभव</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">हमारी सेवाएं</h2>
+      <a href="#quote" class="section-cta">कोटेशन पाएं →</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="scrollToQuote()">
+        <span class="service-icon">🚗</span>
+        <h3 class="service-title">मोटर इंश्योरेंस</h3>
+        <p class="service-desc" id="motorStats">बाइक, कार, कमर्शियल वाहन के लिए तुरंत बीमा। कैशलेस रिपेयर नेटवर्क।</p>
+        <span class="service-badge" id="motorBadge">प्लान देखें</span>
+        <span class="live-badge" id="motorLive">🔥 Live</span>
+      </div>
+      <div class="service-card" onclick="scrollToQuote()">
+        <span class="service-icon">❤️</span>
+        <h3 class="service-title">हेल्थ इंश्योरेंस</h3>
+        <p class="service-desc" id="healthStats">व्यक्तिगत, फैमिली फ्लोटर, क्रिटिकल इलनेस कवर।</p>
+        <span class="service-badge" id="healthBadge">कोटेशन पाएं</span>
+        <span class="live-badge" id="healthLive">🔥 Live</span>
+      </div>
+      <div class="service-card" onclick="scrollToQuote()">
+        <span class="service-icon">🧬</span>
+        <h3 class="service-title">लाइफ इंश्योरेंस</h3>
+        <p class="service-desc" id="lifeStats">टर्म, एंडोमेंट, ULIP, LIC पॉलिसी। परिवार की सुरक्षा।</p>
+        <span class="service-badge" id="lifeBadge">प्लान देखें</span>
+        <span class="live-badge" id="lifeLive">🔥 Live</span>
+      </div>
+      <div class="service-card" onclick="scrollToQuote()">
+        <span class="service-icon">🦺</span>
+        <h3 class="service-title">पर्सनल एक्सीडेंट</h3>
+        <p class="service-desc">पूर्ण शरीर सुरक्षा। दुर्घटना में तुरंत वित्तीय सहायता।</p>
+        <span class="service-badge">कोटेशन पाएं</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:linear-gradient(135deg,#4ade80,#22c55e);">✅</div>
+        <div>
+          <h3 class="feature-title">IRDAI अधिकृत POSP</h3>
+          <p class="feature-desc">सभी प्रमुख बीमा कंपनियों से लाइसेंस प्राप्त। आपकी सुरक्षा हमारी जिम्मेदारी।</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">⚡</div>
+        <div>
+          <h3 class="feature-title">तुरंत पॉलिसी</h3>
+          <p class="feature-desc">मिनटों में पूरी तरह डिजिटल पॉलिसी। कोई कागजी काम नहीं।</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">🏆</div>
+        <div>
+          <h3 class="feature-title">TurtleMint PRO</h3>
+          <p class="feature-desc" id="turtleStats">प्रमाणित और विश्वसनीय प्लेटफॉर्म पार्टनर।</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:linear-gradient(135deg,#ec4899,#be185d);">🤝</div>
+        <div>
+          <h3 class="feature-title">क्लेम सपोर्ट</h3>
+          <p class="feature-desc">क्लेम प्रक्रिया में हमारा पूरा सहयोग। 99% सफलता दर।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="container">
+    <h3 class="partners-title">हमारे पार्टनर इंश्योरेंस कंपनियां</h3>
+    <div class="partners-grid">
+      <div class="partner-logo">🏢 LIC</div>
+      <div class="partner-logo">🏢 HDFC Life</div>
+      <div class="partner-logo">🏢 SBI Life</div>
+      <div class="partner-logo">🏢 ICICI Pru</div>
+      <div class="partner-logo">🏢 Bajaj Allianz</div>
+      <div class="partner-logo">🏢 Star Health</div>
+      <div class="partner-logo">🏢 New India</div>
+      <div class="partner-logo">🏢 Tata AIA</div>
+      <div class="partner-logo">🏢 Max Life</div>
+      <div class="partner-logo">🏢 Niva Bupa</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote" class="quote-section">
+  <div class="container">
+    <div class="quote-container">
+      <h2 class="quote-title">मुफ्त कोटेशन पाएं</h2>
+      <p class="quote-subtitle">संतोष कुमार 1 घंटे में कॉल करेंगे 📞</p>
+      <div class="form-card">
+        <form id="quoteForm">
+          <div class="form-group">
+            <label class="form-label">पूरा नाम *</label>
+            <input type="text" id="fName" class="form-input" placeholder="आपका पूरा नाम" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">मोबाइल नंबर *</label>
+            <input type="tel" id="fMobile" class="form-input" placeholder="10 अंक का नंबर" maxlength="10" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ईमेल (optional)</label>
+            <input type="email" id="fEmail" class="form-input" placeholder="youremail@gmail.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">बीमा प्रकार *</label>
+            <select id="fService" class="form-input form-select" required>
+              <option value="">-- बीमा चुनें --</option>
+              <option value="Bike Insurance">🏍️ बाइक इंश्योरेंस</option>
+              <option value="Car Insurance">🚗 कार इंश्योरेंस</option>
+              <option value="Health Insurance">❤️ हेल्थ इंश्योरेंस</option>
+              <option value="Life Insurance">🧬 लाइफ इंश्योरेंस</option>
+              <option value="Personal Accident">🦺 पर्सनल एक्सीडेंट</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">शहर</label>
+            <input type="text" id="fCity" class="form-input" placeholder="धनबाद">
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">🚀 मुफ्त कोटेशन पाएं</button>
+        </form>
+        <div class="success-msg" id="successMsg">
+          <div class="s-icon">✅</div>
+          <h3>Request भेज दी गई!</h3>
+          <p style="opacity:0.9;margin-bottom:1rem;">Santosh Kumar जल्द ही call करेंगे।</p>
+          <a href="https://wa.me/919122445666" target="_blank"
+             style="display:inline-block;background:#25d366;color:white;padding:0.8rem 2rem;border-radius:30px;font-weight:700;text-decoration:none;font-size:1rem;">
+            💬 अभी WhatsApp करें
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>📍 संपर्क करें</h4>
+        <a href="tel:+919122445666">📞 9122445666</a>
+        <a href="https://wa.me/919122445666" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:life.motor.health@gmail.com">✉️ life.motor.health@gmail.com</a>
+      </div>
+      <div class="footer-section">
+        <h4>🛡️ सेवाएं</h4>
+        <a href="#quote">मोटर इंश्योरेंस</a>
+        <a href="#quote">हेल्थ इंश्योरेंस</a>
+        <a href="#quote">लाइफ इंश्योरेंस</a>
+        <a href="#quote">पर्सनल एक्सीडेंट</a>
+      </div>
+      <div class="footer-section">
+        <h4>🕐 काम के घंटे</h4>
+        <p>सोमवार — शनिवार</p>
+        <p>सुबह 9:00 — शाम 7:00</p>
+        <p>📍 धनबाद, झारखंड</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Perfect Financial Services | IRDAI POSP Licensed | Santosh Kumar | सभी अधिकार सुरक्षित
+    </div>
+  </div>
+</footer>
+
+<script>
+// ✅ APPS SCRIPT URL — CONNECTED
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTNdL9-8sfPUdAwDg4QHtq-_lozzUHPP2gclOvnZa5lCnm2rhjz0uhxKZBtJr2Uzie2Q/exec';
+
+// ============================================================
+// LIVE STATS — Google Sheet se fetch
+// ============================================================
+async function fetchStats() {
+  try {
+    const res  = await fetch(SCRIPT_URL, { method: 'GET', mode: 'cors' });
+    const data = await res.json();
+
+    if (data.status !== 'success') return;
+
+    const fmt = n => {
+      if (n >= 10000000) return '₹' + (n/10000000).toFixed(1) + 'Cr+';
+      if (n >= 100000)   return '₹' + (n/100000).toFixed(1) + 'L+';
+      if (n > 0)         return '₹' + n.toLocaleString('en-IN') + '+';
+      return '—';
+    };
+
+    // Stats bar
+    document.getElementById('totalClients').textContent  = data.total > 0 ? data.total + '+' : '500+';
+    document.getElementById('totalCoverage').textContent = data.totalAmount > 0 ? fmt(data.totalAmount) : '₹25Cr+';
+
+    // Motor card
+    if (data.motor > 0) {
+      document.getElementById('motorStats').innerHTML    = `${data.motor}+ ग्राहक | ${fmt(data.motorAmt)} कवरेज`;
+      document.getElementById('motorBadge').textContent  = `${data.motor}+ Policies`;
+      document.getElementById('motorLive').style.display = 'inline-flex';
+    }
+    // Health card
+    if (data.health > 0) {
+      document.getElementById('healthStats').innerHTML    = `${data.health}+ ग्राहक | ${fmt(data.healthAmt)} कवरेज`;
+      document.getElementById('healthBadge').textContent  = `${data.health}+ Policies`;
+      document.getElementById('healthLive').style.display = 'inline-flex';
+    }
+    // Life card
+    if (data.life > 0) {
+      document.getElementById('lifeStats').innerHTML    = `${data.life}+ ग्राहक | ${fmt(data.lifeAmt)} कवरेज`;
+      document.getElementById('lifeBadge').textContent  = `${data.life}+ Policies`;
+      document.getElementById('lifeLive').style.display = 'inline-flex';
+    }
+
+    // Hero live status
+    const time = new Date().toLocaleTimeString('hi-IN', {hour:'2-digit', minute:'2-digit'});
+    document.getElementById('liveStatus').innerHTML =
+      `<span class="live-dot"></span> Live: ${data.total}+ ग्राहक | अपडेट: ${time}`;
+
+    // TurtleMint stat
+    document.getElementById('turtleStats').textContent =
+      `प्रमाणित और विश्वसनीय प्लेटफॉर्म पार्टनर। ${data.total}+ खुश ग्राहक।`;
+
+  } catch(err) {
+    console.warn('Stats fetch error:', err.message);
+    // Fallback values
+    document.getElementById('totalClients').textContent  = '500+';
+    document.getElementById('totalCoverage').textContent = '₹25Cr+';
+    document.getElementById('liveStatus').innerHTML =
+      '<span class="live-dot"></span> 15+ कंपनियों के सबसे अच्छे प्लान';
+  }
+}
+
+// Fetch on load + every 30 sec
+fetchStats();
+setInterval(fetchStats, 30000);
+
+// ============================================================
+// QUOTE FORM — Sheet mein save + WhatsApp
+// ============================================================
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const btn  = document.getElementById('submitBtn');
+  btn.disabled    = true;
+  btn.textContent = '⏳ भेज रहे हैं...';
+
+  const payload = {
+    action: 'saveLead',
+    data: {
+      name:    document.getElementById('fName').value.trim(),
+      mobile:  document.getElementById('fMobile').value.trim(),
+      email:   document.getElementById('fEmail').value.trim(),
+      service: document.getElementById('fService').value,
+      city:    document.getElementById('fCity').value.trim() || 'धनबाद',
+      message: ''
+    }
+  };
+
+  // Save to Sheet
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode:   'no-cors',          // Apps Script requires no-cors for POST
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch(err) {
+    console.warn('Lead save error:', err.message);
+  }
+
+  // WhatsApp message
+  const msg = encodeURIComponent(
+    `नया कोटेशन रिक्वेस्ट!\n\nनाम: ${payload.data.name}\nमोबाइल: ${payload.data.mobile}\nबीमा: ${payload.data.service}\nशहर: ${payload.data.city}\n\n— Perfect Financial Services`
+  );
+  setTimeout(() => window.open(`https://wa.me/919122445666?text=${msg}`, '_blank'), 600);
+
+  // Show success
+  document.getElementById('quoteForm').style.display  = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+
+  // Refresh stats
+  setTimeout(fetchStats, 3000);
+});
+
+// ============================================================
+// HELPERS
+// ============================================================
+function scrollToQuote() {
+  document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+document.getElementById('heroSearch').addEventListener('submit', function(e) {
+  e.preventDefault();
+  scrollToQuote();
+});
+</script>
+</body>
+</html>
