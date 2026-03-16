@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1a7a3c">
-<meta name="description" content="Perfect Insurance Services - Santosh Kumar | Book Policy in 5 Minutes | Life, Health, Motor Insurance | Dhanbad">
-<title>Perfect Insurance Services | Santosh Kumar | Dhanbad</title>
+<meta name="description" content="Perfect Insurance Services - Santosh Kumar | Certified POSP Partner | Turtlemint Insurance Broking Services Pvt. Ltd. | Motor, Health, Life Insurance | Dhanbad">
+<title>Perfect Insurance Services | Santosh Kumar | Certified POSP | Dhanbad</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -36,6 +36,7 @@ a{text-decoration:none;color:inherit;}
 
 /* WHATSAPP */
 .wa-float{position:fixed;bottom:26px;right:26px;z-index:9999;width:62px;height:62px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);animation:waPulse 2.5s infinite;transition:transform 0.3s;}
+@media(max-width:600px){.wa-float{bottom:80px;right:16px;}}
 .wa-float:hover{transform:scale(1.1);}
 .wa-float svg{width:32px;height:32px;fill:white;}
 @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.5);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
@@ -49,11 +50,13 @@ a{text-decoration:none;color:inherit;}
 .logo{display:flex;align-items:center;gap:0.85rem;}
 .logo-icon{
   width:52px;height:52px;border-radius:14px;
-  background:var(--grad);
+  background:white;
+  border:2px solid #e8f7ee;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:var(--shadow);
+  box-shadow:0 4px 14px rgba(26,122,60,0.12);
   position:relative;overflow:hidden;
 }
+.logo-icon img{width:38px;height:38px;object-fit:contain;}
 .logo-icon svg{width:30px;height:30px;fill:white;}
 .logo-text-wrap{}
 .logo-name{font-size:1.1rem;font-weight:900;color:var(--green-dark);line-height:1.2;font-family:'Baloo 2',sans-serif;letter-spacing:-0.3px;}
@@ -104,43 +107,20 @@ a{text-decoration:none;color:inherit;}
 .hstat-num{font-size:1.5rem;font-weight:900;color:var(--green);line-height:1;font-family:'Baloo 2',sans-serif;}
 .hstat-lbl{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.4px;margin-top:0.15rem;font-weight:600;}
 
-/* Hero Right — Car image + Profile */
-.hero-right{position:relative;}
-.car-img-wrap{
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 20px 60px rgba(26,122,60,0.15);
-  border:2px solid var(--border);
-  margin-bottom:1.2rem;
-  height:260px;
-  background:linear-gradient(135deg,#e8f7ee,#d4f0e0);
-  position:relative;
-}
-.car-img{width:100%;height:100%;object-fit:cover;display:block;}
-/* Fallback car SVG if image fails */
-.car-fallback{
-  width:100%;height:100%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:0.5rem;
-}
-.car-svg-wrap{font-size:5rem;line-height:1;}
-.car-fallback-text{font-size:0.85rem;color:var(--muted);font-weight:600;}
+/* INSURANCE VISUAL GRID */
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-bottom:1.2rem;}
+.ins-card{border-radius:16px;overflow:hidden;border:2px solid var(--border);background:white;transition:all 0.3s;cursor:default;}
+.ins-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,122,60,0.13);border-color:var(--green2);}
+.ins-img-wrap{padding:1rem 0.5rem 0.5rem;display:flex;align-items:center;justify-content:center;height:100px;}
+.ins-svg{width:100%;height:80px;display:block;}
+.ins-label{text-align:center;font-size:0.78rem;font-weight:800;color:var(--green-dark);padding:0.5rem 0.5rem 0.7rem;font-family:'Baloo 2',sans-serif;background:white;}
 
-/* Floating badge on car image */
-.car-badge{
-  position:absolute;top:14px;left:14px;
-  background:var(--green);color:white;
-  padding:0.4rem 0.9rem;border-radius:8px;
-  font-size:0.75rem;font-weight:700;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
-.car-badge2{
-  position:absolute;bottom:14px;right:14px;
-  background:white;color:var(--green-dark);
-  padding:0.4rem 0.9rem;border-radius:8px;
-  font-size:0.75rem;font-weight:700;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  display:flex;align-items:center;gap:0.3rem;
-}
+/* Remove old car-img styles that are no longer needed */
+.car-img-wrap{display:none;}
+.car-img{display:none;}
+.car-fallback{display:none;}
+.car-badge{display:none;}
+.car-badge2{display:none;}
 
 /* Profile mini card */
 .profile-mini{
@@ -204,7 +184,7 @@ a{text-decoration:none;color:inherit;}
 .svc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transition:transform 0.35s;transform-origin:left;}
 .svc:hover{border-color:var(--green2);transform:translateY(-6px);box-shadow:var(--shadow);}
 .svc:hover::after{transform:scaleX(1);}
-.svc-ico{font-size:2.8rem;margin-bottom:1rem;display:block;}
+.svc-ico{font-size:2.8rem;margin-bottom:0.6rem;display:block;line-height:1;}
 .svc-title{font-size:1.12rem;font-weight:900;color:var(--green-dark);margin-bottom:0.5rem;font-family:'Baloo 2',sans-serif;}
 .svc-desc{font-size:0.85rem;color:var(--muted);line-height:1.8;margin-bottom:0.7rem;}
 .svc-stat{font-size:0.76rem;font-weight:700;color:var(--green2);margin-bottom:0.7rem;}
@@ -303,7 +283,7 @@ a{text-decoration:none;color:inherit;}
 .footer-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 .flogo{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.9rem;}
-.flogo-icon{width:44px;height:44px;border-radius:12px;background:var(--grad2);display:flex;align-items:center;justify-content:center;}
+.flogo-icon{width:44px;height:44px;border-radius:12px;background:white;display:flex;align-items:center;justify-content:center;}
 .flogo-icon svg{width:24px;height:24px;fill:white;}
 .flogo-name{font-size:0.97rem;font-weight:800;color:white;font-family:'Baloo 2',sans-serif;}
 .flogo-name span{color:var(--green3);}
@@ -319,7 +299,81 @@ a{text-decoration:none;color:inherit;}
 .footer-bottom p{color:rgba(255,255,255,0.25);font-size:0.76rem;}
 .firdai{background:rgba(46,204,113,0.12);color:var(--green3);padding:0.28rem 0.8rem;border-radius:6px;font-size:0.7rem;font-weight:700;border:1px solid rgba(46,204,113,0.2);}
 
-/* RESPONSIVE */
+/* SOCIAL MEDIA ICONS */
+.social-links{display:flex;gap:0.6rem;margin-top:1rem;flex-wrap:wrap;}
+.social-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0;}
+.social-btn:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,0.3);}
+.social-btn svg{width:18px;height:18px;}
+.s-wa{background:#25d366;}
+.s-x{background:#000000;}
+.s-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);}
+.s-fb{background:#1877f2;}
+.s-li{background:#0077b5;}
+.s-yt{background:#ff0000;}
+.faq-sec{padding:5rem 0;background:white;}
+.faq-wrap{max-width:820px;margin:0 auto;padding:0 1.5rem;}
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:0.85rem;}
+.faq-item{border:2px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.3s;}
+.faq-item.open{border-color:var(--green2);}
+.faq-q{width:100%;background:white;border:none;padding:1.1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:0.95rem;font-weight:700;color:var(--text);text-align:left;font-family:'Baloo 2',sans-serif;transition:background 0.3s;gap:1rem;}
+.faq-item.open .faq-q{background:var(--green-light);color:var(--green-dark);}
+.faq-q:hover{background:var(--green-light);}
+.faq-icon{font-size:1.1rem;flex-shrink:0;transition:transform 0.3s;color:var(--green);}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 1.4rem 1.2rem;font-size:0.88rem;color:var(--muted);line-height:1.9;}
+.faq-item.open .faq-a{display:block;animation:fadeUp 0.3s ease;}
+.faq-a strong{color:var(--green-dark);}
+.faq-a .pay-warn{display:flex;align-items:flex-start;gap:0.6rem;background:#fff8e1;border:1px solid #f0c040;border-radius:8px;padding:0.8rem 1rem;margin-top:0.6rem;font-size:0.84rem;color:#7a5c00;}
+.faq-a .pay-warn-icon{font-size:1.1rem;flex-shrink:0;}
+
+/* DOC CHECKLIST */
+.docs-sec{padding:4rem 0;background:var(--cream);}
+.docs-wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem;margin-top:2rem;}
+.doc-card{background:white;border:2px solid var(--border);border-radius:14px;padding:1.5rem;transition:all 0.3s;}
+.doc-card:hover{border-color:var(--green2);transform:translateY(-4px);box-shadow:var(--shadow);}
+.doc-card-head{display:flex;align-items:center;gap:0.7rem;margin-bottom:1rem;}
+.doc-card-ico{font-size:1.8rem;}
+.doc-card-title{font-size:1rem;font-weight:900;color:var(--green-dark);font-family:'Baloo 2',sans-serif;}
+.doc-list{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
+.doc-list li{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.84rem;color:var(--muted);line-height:1.5;}
+.doc-tick{color:var(--green);font-weight:900;flex-shrink:0;margin-top:1px;}
+
+/* RESPONSIVE additions */
+@media(max-width:600px){.docs-grid{grid-template-columns:1fr;}}
+.wcu{padding:5rem 0;background:white;}
+.wcu-wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.wcu-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem;}
+.wcu-left{}
+.wcu-about{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:1.8rem 1.8rem 1.8rem 1.6rem;margin-bottom:1.8rem;}
+.wcu-about p{font-size:0.96rem;color:var(--text);line-height:2;margin-bottom:0.8rem;}
+.wcu-about p:last-child{margin-bottom:0;}
+.wcu-about strong{color:var(--green-dark);}
+.wcu-signature{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;background:var(--cream);border-radius:12px;border:2px solid var(--border);}
+.wcu-sig-photo{width:56px;height:56px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;border:2px solid var(--green3);}
+.wcu-sig-name{font-size:1rem;font-weight:900;color:var(--green-dark);font-family:'Baloo 2',sans-serif;}
+.wcu-sig-sub{font-size:0.74rem;color:var(--muted);}
+.wcu-right{display:flex;flex-direction:column;gap:1rem;}
+.wcu-card{background:var(--cream);border:2px solid var(--border);border-radius:14px;padding:1.3rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;}
+.wcu-card:hover{border-color:var(--green2);transform:translateX(6px);box-shadow:var(--shadow);}
+.wcu-card-ico{font-size:2rem;flex-shrink:0;line-height:1;}
+.wcu-card-title{font-size:0.97rem;font-weight:800;color:var(--green-dark);margin-bottom:0.25rem;font-family:'Baloo 2',sans-serif;}
+.wcu-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.7;}
+@media(max-width:900px){.wcu-grid{grid-template-columns:1fr;gap:2rem;}}
+
+/* CLAIM SUPPORT SECTION */
+.claim-sec{padding:2rem 0;background:var(--green-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.claim-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;text-align:center;}
+.claim-title{font-size:1.1rem;font-weight:900;color:var(--green-dark);margin-bottom:0.5rem;font-family:'Baloo 2',sans-serif;}
+.claim-desc{font-size:0.88rem;color:var(--muted);margin-bottom:1rem;}
+.claim-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--grad);color:white;padding:0.75rem 2rem;border-radius:10px;font-weight:700;font-size:0.92rem;box-shadow:var(--shadow);transition:all 0.3s;}
+.claim-btn:hover{transform:translateY(-2px);}
+
+/* LEGAL DISCLAIMER FOOTER */
+.legal-disc{background:#071a0d;padding:1.5rem 0;}
+.legal-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.legal-title{font-size:0.68rem;font-weight:800;color:rgba(46,204,113,0.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;}
+.legal-text{font-size:0.7rem;color:rgba(255,255,255,0.25);line-height:2;}
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;text-align:center;}
   .hero-desc{margin:0 auto 2rem;border-left:none;border-top:3px solid var(--green3);padding:1rem 0 0;}
@@ -357,24 +411,34 @@ a{text-decoration:none;color:inherit;}
 
 <!-- HEADER -->
 <header class="header" id="home">
-  <div class="header-strip">📞 9122445666 &nbsp;|&nbsp; ✉️ life.motor.health@gmail.com &nbsp;|&nbsp; 📍 Dhanbad, Jharkhand &nbsp;|&nbsp; ⏰ Mon–Sat 9AM–7PM</div>
+  <div class="header-strip">📞 +91 9122445666 &nbsp;|&nbsp; ✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e1d0f001a011d0640051b030f1c2e1a1b1c1a020b0307001a400d0103">[email&#160;protected]</a> &nbsp;|&nbsp; 📍 Dhanbad, Jharkhand &nbsp;|&nbsp; 🏢 Authorized POSP — Turtlemint Insurance Broking Services Pvt. Ltd.</div>
   <div class="header-main">
     <div class="logo">
       <div class="logo-icon">
-        <!-- Shield + Tick Logo SVG -->
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 2 L28 7 L28 17 C28 23 22 28 16 30 C10 28 4 23 4 17 L4 7 Z" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
-          <polyline points="10,16 14,20 22,12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Perfect Insurance Services — Original Shield + P Logo -->
+        <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shieldG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0d5c2a"/>
+              <stop offset="100%" stop-color="#22a052"/>
+            </linearGradient>
+          </defs>
+          <path d="M22 3 L38 9 L38 24 C38 33 31 38 22 41 C13 38 6 33 6 24 L6 9 Z" fill="url(#shieldG)"/>
+          <path d="M22 6 L35 11 L35 24 C35 31 29 36 22 39 C15 36 9 31 9 24 L9 11 Z" fill="white" opacity="0.08"/>
+          <text x="22" y="28" text-anchor="middle" font-size="17" font-weight="900" fill="white" font-family="'Baloo 2',Georgia,sans-serif">P</text>
+          <circle cx="32" cy="34" r="7" fill="#2ecc71"/>
+          <polyline points="29,34 31,36.5 35.5,31" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
       <div class="logo-text-wrap">
         <div class="logo-name">Perfect <span>Insurance</span> Services</div>
-        <div class="logo-tagline">IRDAI Licensed | Santosh Kumar | Dhanbad</div>
+        <div class="logo-tagline">Santosh Kumar | Authorized POSP of Turtlemint</div>
       </div>
     </div>
     <div class="nav-links">
       <a href="#services" class="nav-link">Services</a>
-      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#faq" class="nav-link">FAQ</a>
       <a href="#calculator" class="nav-link">Calculator</a>
       <a href="#reviews" class="nav-link">Reviews</a>
       <a href="#quote" class="nav-cta">🚀 Get Free Quote</a>
@@ -387,12 +451,12 @@ a{text-decoration:none;color:inherit;}
   <div class="hero-inner">
     <!-- LEFT -->
     <div>
-      <div class="hero-badge"><span class="badge-dot"></span> ✅ IRDAI Authorized | Dhanbad, Jharkhand</div>
+      <div class="hero-badge"><span class="badge-dot"></span> ✅ Certified POSP | Turtlemint Insurance Broking Services Pvt. Ltd. | Dhanbad</div>
       <h1 class="hero-h1">
-        <span class="h1-dark">Book Policy in </span>
-        <span class="h1-green">5 Minutes.</span><br>
-        <span class="h1-dark">From the </span>
-        <span class="h1-green">Comfort of Home.</span>
+        <span class="h1-dark">Get Your </span>
+        <span class="h1-green">Digital Insurance</span><br>
+        <span class="h1-dark">Policy — </span>
+        <span class="h1-green">Fast &amp; Paperless*.</span>
       </h1>
 
       <!-- 3 Feature Pills -->
@@ -404,40 +468,269 @@ a{text-decoration:none;color:inherit;}
       </div>
 
       <p class="hero-desc">
-        No need to visit office. No paperwork.<br>
-        Book, renew, or claim your insurance —<br>
-        <strong>everything done in 5 minutes from your phone.</strong><br>
-        Santosh Kumar — your trusted insurance advisor in Dhanbad.
+        Compare plans from <strong>42+ Top Insurance Brands</strong> and<br>
+        secure your family from the comfort of your home.<br>
+        <strong>Paperless issuance, competitive quotes &amp; dedicated documentation support.*</strong><br>
+        Santosh Kumar — Certified POSP Partner, Dhanbad.
       </p>
 
       <div class="hero-btns">
         <a href="#quote" class="btn-green">🚀 Book Policy Now — Free</a>
-        <a href="#calculator" class="btn-outline">💰 Calculate Premium</a>
+        <a href="#calculator" class="btn-outline">💰 Compare Quotes</a>
       </div>
 
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-num" id="h-clients">500+</div><div class="hstat-lbl">Happy Clients</div></div>
         <div class="hstat"><div class="hstat-num">10+</div><div class="hstat-lbl">Years Exp</div></div>
-        <div class="hstat"><div class="hstat-num">99%</div><div class="hstat-lbl">Claims Won</div></div>
-        <div class="hstat"><div class="hstat-num">5 Min</div><div class="hstat-lbl">Policy Time</div></div>
+        <div class="hstat"><div class="hstat-num">99%</div><div class="hstat-lbl">Claims Settled</div></div>
+        <div class="hstat"><div class="hstat-num">Digital</div><div class="hstat-lbl">Policy Issuance*</div></div>
       </div>
     </div>
 
     <!-- RIGHT — Car Image + Profile -->
     <div class="hero-right">
-      <!-- Car Image -->
-      <div class="car-img-wrap">
-        <img class="car-img"
-          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80"
-          alt="Car Insurance"
-          onerror="this.style.display='none';document.getElementById('car-fallback').style.display='flex';">
-        <div class="car-fallback" id="car-fallback" style="display:none;">
-          <div class="car-svg-wrap">🚗</div>
-          <div class="car-fallback-text">Motor Insurance</div>
+      <!-- Insurance Visual Grid — Turtlemint 3D style -->
+      <div class="ins-grid">
+
+        <!-- BIKE INSURANCE — Turtlemint style: blue scooter 3D -->
+        <div class="ins-card">
+          <div class="ins-img-wrap" style="background:linear-gradient(145deg,#eef6ff,#dbeafe);">
+            <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" class="ins-svg">
+              <defs>
+                <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
+                <linearGradient id="b2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#93c5fd"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+                <linearGradient id="b3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1e3a5f"/><stop offset="100%" stop-color="#1e40af"/></linearGradient>
+                <radialGradient id="bs" cx="40%" cy="35%" r="55%"><stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.8"/><stop offset="100%" stop-color="#2563eb" stop-opacity="0"/></radialGradient>
+              </defs>
+              <!-- Shadow -->
+              <ellipse cx="60" cy="83" rx="42" ry="5" fill="#3b82f6" opacity="0.2"/>
+              <!-- Body/frame main -->
+              <path d="M22 55 Q18 42 28 36 L52 30 Q62 28 70 32 L88 38 Q96 42 94 54 L86 60 Q70 66 50 64 Z" fill="url(#b1)"/>
+              <path d="M22 55 Q18 42 28 36 L52 30 Q62 28 70 32 L88 38 Q96 42 94 54 L86 60 Q70 66 50 64 Z" fill="url(#bs)"/>
+              <!-- Seat -->
+              <path d="M46 30 Q62 26 76 30 L74 36 Q60 32 48 36 Z" fill="url(#b3)"/>
+              <path d="M46 30 Q62 26 76 30 L74 33 Q60 29 48 33 Z" fill="#93c5fd" opacity="0.4"/>
+              <!-- Front panel/windshield -->
+              <path d="M82 36 Q90 36 94 44 L90 48 Q86 40 80 40 Z" fill="#bfdbfe" opacity="0.7"/>
+              <!-- Footboard -->
+              <rect x="34" y="58" width="38" height="6" rx="3" fill="#1d4ed8"/>
+              <!-- Headlight -->
+              <ellipse cx="92" cy="46" rx="6" ry="5" fill="#fef9c3"/>
+              <ellipse cx="92" cy="46" rx="4" ry="3.5" fill="#fef08a"/>
+              <ellipse cx="92" cy="46" rx="2.5" ry="2" fill="white" opacity="0.8"/>
+              <!-- Rear wheel -->
+              <circle cx="26" cy="66" r="16" fill="url(#b3)"/>
+              <circle cx="26" cy="66" r="11" fill="#1e3a8a"/>
+              <circle cx="26" cy="66" r="6" fill="#3b82f6"/>
+              <circle cx="26" cy="66" r="3" fill="#93c5fd"/>
+              <line x1="26" y1="55" x2="26" y2="77" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <line x1="15" y1="66" x2="37" y2="66" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <line x1="18" y1="58" x2="34" y2="74" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <line x1="34" y1="58" x2="18" y2="74" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <!-- Front wheel -->
+              <circle cx="90" cy="66" r="16" fill="url(#b3)"/>
+              <circle cx="90" cy="66" r="11" fill="#1e3a8a"/>
+              <circle cx="90" cy="66" r="6" fill="#3b82f6"/>
+              <circle cx="90" cy="66" r="3" fill="#93c5fd"/>
+              <line x1="90" y1="55" x2="90" y2="77" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <line x1="79" y1="66" x2="101" y2="66" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <line x1="82" y1="58" x2="98" y2="74" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <line x1="98" y1="58" x2="82" y2="74" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+              <!-- Handlebar -->
+              <path d="M86 38 L92 34 M86 38 L90 42" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <!-- Mirror -->
+              <circle cx="94" cy="33" r="3" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+              <!-- Body shine highlight -->
+              <path d="M32 40 Q50 34 68 36" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="ins-label">🛵 Bike Insurance</div>
         </div>
-        <div class="car-badge">🚗 Motor Insurance</div>
-        <div class="car-badge2">⚡ Policy in 5 Min</div>
+
+        <!-- CAR INSURANCE — Turtlemint style: golden/tan 3D car -->
+        <div class="ins-card">
+          <div class="ins-img-wrap" style="background:linear-gradient(145deg,#fffbeb,#fef3c7);">
+            <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" class="ins-svg">
+              <defs>
+                <linearGradient id="c1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+                <linearGradient id="c2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fcd34d"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+                <linearGradient id="c3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#bae6fd" stop-opacity="0.95"/><stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.8"/></linearGradient>
+                <linearGradient id="cw" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e293b"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+                <radialGradient id="cs" cx="38%" cy="32%" r="55%"><stop offset="0%" stop-color="#fef3c7" stop-opacity="0.8"/><stop offset="100%" stop-color="#d97706" stop-opacity="0"/></radialGradient>
+              </defs>
+              <ellipse cx="62" cy="80" rx="46" ry="6" fill="#d97706" opacity="0.18"/>
+              <!-- Body -->
+              <rect x="8" y="44" width="104" height="26" rx="9" fill="url(#c1)"/>
+              <rect x="8" y="44" width="104" height="26" rx="9" fill="url(#cs)"/>
+              <!-- Roof -->
+              <path d="M26 44 L38 22 L84 22 L98 44Z" fill="url(#c2)"/>
+              <path d="M26 44 L38 22 L84 22 L98 44Z" fill="url(#cs)" opacity="0.5"/>
+              <!-- Windshield -->
+              <path d="M40 24 L36 42 L82 42 L82 24Z" fill="url(#c3)" rx="3"/>
+              <!-- Windshield reflection -->
+              <line x1="44" y1="26" x2="42" y2="40" stroke="white" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+              <!-- Rear window -->
+              <path d="M84 24 L86 42 L97 42 L94 24Z" fill="url(#c3)" opacity="0.7"/>
+              <!-- Body shine -->
+              <path d="M10 50 Q62 46 112 50" fill="none" stroke="white" stroke-width="1.5" opacity="0.25"/>
+              <!-- Door line -->
+              <line x1="64" y1="44" x2="64" y2="68" stroke="#92400e" stroke-width="1" opacity="0.35"/>
+              <!-- Door handles -->
+              <rect x="68" y="54" width="9" height="2.5" rx="1.5" fill="#fef3c7"/>
+              <rect x="42" y="54" width="9" height="2.5" rx="1.5" fill="#fef3c7"/>
+              <!-- Front wheel -->
+              <circle cx="30" cy="70" r="13" fill="url(#cw)"/>
+              <circle cx="30" cy="70" r="8.5" fill="#334155"/>
+              <circle cx="30" cy="70" r="4.5" fill="#64748b"/>
+              <circle cx="30" cy="70" r="2" fill="#94a3b8"/>
+              <line x1="30" y1="62" x2="30" y2="78" stroke="#94a3b8" stroke-width="1"/>
+              <line x1="22" y1="70" x2="38" y2="70" stroke="#94a3b8" stroke-width="1"/>
+              <!-- Rear wheel -->
+              <circle cx="92" cy="70" r="13" fill="url(#cw)"/>
+              <circle cx="92" cy="70" r="8.5" fill="#334155"/>
+              <circle cx="92" cy="70" r="4.5" fill="#64748b"/>
+              <circle cx="92" cy="70" r="2" fill="#94a3b8"/>
+              <line x1="92" y1="62" x2="92" y2="78" stroke="#94a3b8" stroke-width="1"/>
+              <line x1="84" y1="70" x2="100" y2="70" stroke="#94a3b8" stroke-width="1"/>
+              <!-- Headlight -->
+              <rect x="104" y="48" width="10" height="6" rx="3" fill="#fef9c3"/>
+              <rect x="105" y="49" width="8" height="4" rx="2" fill="#fef08a"/>
+              <!-- Tail light -->
+              <rect x="8" y="48" width="8" height="6" rx="3" fill="#fca5a5"/>
+              <!-- No number plate -->
+            </svg>
+          </div>
+          <div class="ins-label">🚗 Car Insurance</div>
+        </div>
+
+        <!-- HEALTH INSURANCE — Turtlemint style: red heart + ECG -->
+        <div class="ins-card">
+          <div class="ins-img-wrap" style="background:linear-gradient(145deg,#fff1f2,#fce7e7);">
+            <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" class="ins-svg">
+              <defs>
+                <linearGradient id="h1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#dc2626"/></linearGradient>
+                <linearGradient id="h2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fca5a5"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+                <radialGradient id="hs" cx="32%" cy="28%" r="55%"><stop offset="0%" stop-color="#fecaca" stop-opacity="0.9"/><stop offset="100%" stop-color="#dc2626" stop-opacity="0"/></radialGradient>
+              </defs>
+              <ellipse cx="60" cy="83" rx="38" ry="5" fill="#ef4444" opacity="0.15"/>
+              <!-- Heart outer -->
+              <path d="M60 72 C38 56 14 44 14 28 C14 17 22 10 31 10 C39 10 48 15 60 26 C72 15 81 10 89 10 C98 10 106 17 106 28 C106 44 82 56 60 72Z" fill="url(#h1)"/>
+              <!-- Heart 3D layer -->
+              <path d="M60 66 C42 52 20 41 20 28 C20 19 27 14 34 14 C42 14 50 20 60 30 C70 20 78 14 86 14 C93 14 100 19 100 28 C100 41 78 52 60 66Z" fill="url(#h2)" opacity="0.5"/>
+              <!-- Shine -->
+              <path d="M60 66 C42 52 20 41 20 28 C20 19 27 14 34 14 C42 14 50 20 60 30 C70 20 78 14 86 14 C93 14 100 19 100 28 C100 41 78 52 60 66Z" fill="url(#hs)"/>
+              <!-- Shine highlight -->
+              <path d="M28 20 Q36 15 44 18" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+              <!-- ECG / pulse line -->
+              <polyline points="22,44 30,44 36,32 41,56 47,40 53,40 60,40 66,40 72,30 77,48 82,44 90,44 98,44" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="ins-label">❤️ Health Insurance</div>
+        </div>
+
+        <!-- LIFE & TERM INSURANCE — Turtlemint style: orange umbrella 3D -->
+        <div class="ins-card">
+          <div class="ins-img-wrap" style="background:linear-gradient(145deg,#fff7ed,#ffedd5);">
+            <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" class="ins-svg">
+              <defs>
+                <linearGradient id="u1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+                <linearGradient id="u2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fed7aa"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+                <radialGradient id="us" cx="32%" cy="28%" r="58%"><stop offset="0%" stop-color="#ffedd5" stop-opacity="0.85"/><stop offset="100%" stop-color="#ea580c" stop-opacity="0"/></radialGradient>
+              </defs>
+              <ellipse cx="56" cy="83" rx="34" ry="4.5" fill="#f97316" opacity="0.18"/>
+              <!-- Dome top -->
+              <path d="M10 52 Q10 8 56 8 Q102 8 102 52Z" fill="url(#u1)"/>
+              <path d="M10 52 Q10 8 56 8 Q102 8 102 52Z" fill="url(#us)"/>
+              <!-- Ribs -->
+              <path d="M56 8 Q44 28 30 52" fill="none" stroke="#c2410c" stroke-width="1.2" opacity="0.4"/>
+              <path d="M56 8 Q56 28 56 52" fill="none" stroke="#c2410c" stroke-width="1.2" opacity="0.4"/>
+              <path d="M56 8 Q68 28 82 52" fill="none" stroke="#c2410c" stroke-width="1.2" opacity="0.4"/>
+              <path d="M56 8 Q32 22 14 52" fill="none" stroke="#c2410c" stroke-width="0.8" opacity="0.2"/>
+              <path d="M56 8 Q80 22 98 52" fill="none" stroke="#c2410c" stroke-width="0.8" opacity="0.2"/>
+              <!-- Underside -->
+              <path d="M10 52 Q22 44 32 52 Q44 44 56 52 Q68 44 80 52 Q90 44 102 52Z" fill="url(#u2)" opacity="0.88"/>
+              <!-- Scallop edge -->
+              <path d="M10 52 Q16 59 22 52 Q28 59 34 52 Q40 59 46 52 Q50 59 56 52 Q62 59 66 52 Q72 59 78 52 Q84 59 90 52 Q96 59 102 52" stroke="#f97316" stroke-width="2.5" fill="none"/>
+              <path d="M10 54 Q16 62 22 54 Q28 62 34 54 Q40 62 46 54 Q50 62 56 54 Q62 62 66 54 Q72 62 78 54 Q84 62 90 54 Q96 62 102 54L102 52 Q96 59 90 52 Q84 59 78 52 Q72 59 66 52 Q62 59 56 52 Q50 59 46 52 Q40 59 34 52 Q28 59 22 52 Q16 59 10 52Z" fill="#ea580c" opacity="0.4"/>
+              <!-- Handle -->
+              <line x1="56" y1="52" x2="56" y2="74" stroke="#7c3aed" stroke-width="5" stroke-linecap="round"/>
+              <path d="M56 74 Q56 82 48 82 Q40 82 40 76" fill="none" stroke="#7c3aed" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="56" cy="52" r="3" fill="#8b5cf6"/>
+              <!-- Rain drops -->
+              <ellipse cx="14" cy="34" rx="2" ry="3.2" fill="#93c5fd" opacity="0.7" transform="rotate(-15 14 34)"/>
+              <ellipse cx="104" cy="30" rx="2" ry="3.2" fill="#93c5fd" opacity="0.7" transform="rotate(15 104 30)"/>
+              <ellipse cx="7" cy="64" rx="1.5" ry="2.5" fill="#93c5fd" opacity="0.5" transform="rotate(-10 7 64)"/>
+              <ellipse cx="110" cy="62" rx="1.5" ry="2.5" fill="#93c5fd" opacity="0.5" transform="rotate(10 110 62)"/>
+            </svg>
+          </div>
+          <div class="ins-label">☂️ Life & Term Insurance</div>
+        </div>
+
       </div>
+              <defs>
+                <linearGradient id="carBody" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#fb923c"/>
+                  <stop offset="100%" stop-color="#ea580c"/>
+                </linearGradient>
+                <linearGradient id="carRoof" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#fdba74"/>
+                  <stop offset="100%" stop-color="#f97316"/>
+                </linearGradient>
+                <linearGradient id="carGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.7"/>
+                </linearGradient>
+                <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+              </defs>
+              <!-- Shadow -->
+              <ellipse cx="65" cy="80" rx="48" ry="6" fill="#f97316" opacity="0.2"/>
+              <!-- Car body -->
+              <rect x="10" y="42" width="110" height="30" rx="10" fill="url(#carBody)"/>
+              <!-- Car roof/cabin -->
+              <path d="M28 42 L42 20 L90 20 L104 42Z" fill="url(#carRoof)"/>
+              <!-- Body shine -->
+              <path d="M12 48 Q65 44 118 48" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+              <!-- Windshield -->
+              <path d="M44 22 L40 40 L88 40 L88 22Z" rx="3" fill="url(#carGlass)"/>
+              <!-- Rear window -->
+              <path d="M90 22 L92 40 L104 40 L100 22Z" fill="url(#carGlass)"/>
+              <!-- Windshield reflection -->
+              <line x1="48" y1="24" x2="46" y2="38" stroke="white" stroke-width="1.5" opacity="0.5"/>
+              <!-- Door lines -->
+              <line x1="68" y1="42" x2="68" y2="70" stroke="#c2410c" stroke-width="1.2" opacity="0.5"/>
+              <!-- Door handle -->
+              <rect x="72" y="54" width="8" height="2.5" rx="1.5" fill="#fed7aa"/>
+              <rect x="44" y="54" width="8" height="2.5" rx="1.5" fill="#fed7aa"/>
+              <!-- Front wheel -->
+              <circle cx="33" cy="72" r="12" fill="url(#wheelGrad)"/>
+              <circle cx="33" cy="72" r="7" fill="#475569"/>
+              <circle cx="33" cy="72" r="3.5" fill="#94a3b8"/>
+              <line x1="33" y1="65" x2="33" y2="79" stroke="#94a3b8" stroke-width="1.2"/>
+              <line x1="26" y1="72" x2="40" y2="72" stroke="#94a3b8" stroke-width="1.2"/>
+              <!-- Rear wheel -->
+              <circle cx="97" cy="72" r="12" fill="url(#wheelGrad)"/>
+              <circle cx="97" cy="72" r="7" fill="#475569"/>
+              <circle cx="97" cy="72" r="3.5" fill="#94a3b8"/>
+              <line x1="97" y1="65" x2="97" y2="79" stroke="#94a3b8" stroke-width="1.2"/>
+              <line x1="90" y1="72" x2="104" y2="72" stroke="#94a3b8" stroke-width="1.2"/>
+              <!-- Headlight -->
+              <rect x="108" y="48" width="10" height="6" rx="3" fill="#fef08a"/>
+              <rect x="109" y="49" width="8" height="4" rx="2" fill="#fde047"/>
+              <!-- Tail light -->
+              <rect x="12" y="48" width="8" height="6" rx="3" fill="#fca5a5"/>
+              <!-- No number plate -->
+              <!-- Shield badge -->
+              <path d="M112 20 L120 23 L120 30 C120 34 116 37 112 39 C108 37 104 34 104 30 L104 23 Z" fill="#16a34a"/>
+              <polyline points="109,30 111,32 115,27" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="ins-label">🚗 Car Insurance</div>
+        </div>
+
+              </div>
 
       <!-- Profile Mini Card -->
       <div class="profile-mini">
@@ -446,27 +739,61 @@ a{text-decoration:none;color:inherit;}
         </div>
         <div>
           <div class="profile-name">Santosh Kumar</div>
-          <div class="profile-role">IRDAI POSP Licensed Insurance Advisor</div>
+          <div class="profile-role">Certified POSP Partner | Turtlemint Insurance Broking Services Pvt. Ltd.</div>
           <div class="profile-chips">
-            <span class="pchip">✅ IRDAI Licensed</span>
+            <span class="pchip">✅ Certified POSP</span>
             <span class="pchip">🏆 10+ Years</span>
             <span class="pchip">📍 Dhanbad</span>
-            <span class="pchip">🏢 15+ Companies</span>
+            <span class="pchip">🏢 42+ Brands</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Vehicle Types Strip -->
   <div class="hero-cars-strip">
     <div class="cars-inner">
-      <div class="car-type"><span class="car-type-icon">🏍️</span> Bike Insurance</div>
-      <div class="car-type"><span class="car-type-icon">🚗</span> Car Insurance</div>
-      <div class="car-type"><span class="car-type-icon">❤️</span> Health Insurance</div>
-      <div class="car-type"><span class="car-type-icon">🧬</span> Life Insurance</div>
-      <div class="car-type"><span class="car-type-icon">🚛</span> Commercial Vehicle</div>
-      <div class="car-type"><span class="car-type-icon">🦺</span> Personal Accident</div>
+      <div class="car-type">
+        <span class="car-type-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><circle cx="9" cy="23" r="5" fill="none" stroke="white" stroke-width="2"/><circle cx="23" cy="23" r="5" fill="none" stroke="white" stroke-width="2"/><path d="M9 23 L14 14 L22 14 L23 23" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/><rect x="18" y="9" width="8" height="6" rx="2" fill="rgba(255,255,255,0.3)"/></svg>
+        </span> Bike Insurance
+      </div>
+      <div class="car-type">
+        <span class="car-type-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><rect x="3" y="14" width="26" height="10" rx="3" fill="rgba(255,255,255,0.25)"/><path d="M6 14 L10 7 L22 7 L26 14Z" fill="rgba(255,255,255,0.4)"/><rect x="11" y="8" width="4" height="5" rx="1" fill="rgba(255,255,255,0.6)"/><rect x="17" y="8" width="4" height="5" rx="1" fill="rgba(255,255,255,0.6)"/><circle cx="9" cy="24" r="3.5" fill="white" opacity="0.7"/><circle cx="23" cy="24" r="3.5" fill="white" opacity="0.7"/></svg>
+        </span> Car Insurance
+      </div>
+      <div class="car-type">
+        <span class="car-type-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 27 C10 21 3 17 3 11 C3 7 7 4 10 4 C13 4 15 6 16 8 C17 6 19 4 22 4 C25 4 29 7 29 11 C29 17 22 21 16 27Z" fill="rgba(255,255,255,0.8)"/><polyline points="9,14 11,14 13,10 15,18 17,13 19,13 22,13" fill="none" stroke="rgba(255,100,100,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span> Health Insurance
+      </div>
+      <div class="car-type">
+        <span class="car-type-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <!-- Shield -->
+            <path d="M16 2 L27 6 L27 17 C27 23 22 27 16 30 C10 27 5 23 5 17 L5 6 Z" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.2"/>
+            <!-- Father -->
+            <circle cx="12" cy="14" r="2.5" fill="white"/>
+            <path d="M9 22 Q9 18 12 18 Q15 18 15 22" fill="white"/>
+            <!-- Mother -->
+            <circle cx="20" cy="14" r="2.5" fill="white"/>
+            <path d="M17 22 Q17 18 20 18 Q23 18 23 22" fill="white"/>
+            <!-- Child -->
+            <circle cx="16" cy="17" r="1.8" fill="rgba(255,255,255,0.6)"/>
+          </svg>
+        </span> Life Insurance
+      </div>
+      <div class="car-type">
+        <span class="car-type-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><rect x="2" y="14" width="28" height="10" rx="2" fill="rgba(255,255,255,0.25)"/><rect x="6" y="10" width="20" height="8" rx="2" fill="rgba(255,255,255,0.35)"/><circle cx="7" cy="24" r="3" fill="white" opacity="0.7"/><circle cx="25" cy="24" r="3" fill="white" opacity="0.7"/><rect x="24" y="16" width="4" height="3" rx="1" fill="rgba(255,220,50,0.8)"/></svg>
+        </span> Commercial Vehicle
+      </div>
+      <div class="car-type">
+        <span class="car-type-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 3 L19 12 L29 12 L21 18 L24 27 L16 21 L8 27 L11 18 L3 12 L13 12Z" fill="rgba(255,220,50,0.9)"/></svg>
+        </span> Personal Accident
+      </div>
     </div>
   </div>
 </section>
@@ -474,22 +801,22 @@ a{text-decoration:none;color:inherit;}
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
-    <span class="tick-item">📋 Book Policy in 5 Minutes</span><span class="tick-sep">◆</span>
-    <span class="tick-item">🔄 Renew from Home</span><span class="tick-sep">◆</span>
-    <span class="tick-item">✅ Claim Support</span><span class="tick-sep">◆</span>
+    <span class="tick-item">📋 Digital Insurance Policy</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🔄 Paperless Renewal</span><span class="tick-sep">◆</span>
+    <span class="tick-item">✅ Claim Documentation Support</span><span class="tick-sep">◆</span>
     <span class="tick-item">🚗 Motor Insurance</span><span class="tick-sep">◆</span>
     <span class="tick-item">❤️ Health Insurance</span><span class="tick-sep">◆</span>
-    <span class="tick-item">🧬 Life Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">☂️ Life Insurance</span><span class="tick-sep">◆</span>
     <span class="tick-item">📞 9122445666</span><span class="tick-sep">◆</span>
-    <span class="tick-item">✅ IRDAI Authorized</span><span class="tick-sep">◆</span>
-    <span class="tick-item">📋 Book Policy in 5 Minutes</span><span class="tick-sep">◆</span>
-    <span class="tick-item">🔄 Renew from Home</span><span class="tick-sep">◆</span>
-    <span class="tick-item">✅ Claim Support</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🏢 Certified POSP | Turtlemint</span><span class="tick-sep">◆</span>
+    <span class="tick-item">📋 Digital Insurance Policy</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🔄 Paperless Renewal</span><span class="tick-sep">◆</span>
+    <span class="tick-item">✅ Claim Documentation Support</span><span class="tick-sep">◆</span>
     <span class="tick-item">🚗 Motor Insurance</span><span class="tick-sep">◆</span>
     <span class="tick-item">❤️ Health Insurance</span><span class="tick-sep">◆</span>
-    <span class="tick-item">🧬 Life Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">☂️ Life Insurance</span><span class="tick-sep">◆</span>
     <span class="tick-item">📞 9122445666</span><span class="tick-sep">◆</span>
-    <span class="tick-item">✅ IRDAI Authorized</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🏢 Certified POSP | Turtlemint</span><span class="tick-sep">◆</span>
   </div>
 </div>
 
@@ -498,8 +825,8 @@ a{text-decoration:none;color:inherit;}
   <div class="hiw-wrap">
     <div class="sec-head">
       <span class="sec-tag">How It Works</span>
-      <h2 class="sec-title">घर बैठे — सब कुछ 5 मिनट में</h2>
-      <p class="sec-sub">Book • Renew • Claim — all from your phone</p>
+      <h2 class="sec-title">डिजिटल बीमा — घर से, आसानी से</h2>
+      <p class="sec-sub">Book • Renew • Claim Support — all done digitally, from your phone*</p>
       <div class="sec-line"></div>
     </div>
     <div class="hiw-grid">
@@ -512,8 +839,8 @@ a{text-decoration:none;color:inherit;}
       <div class="hiw-card">
         <div class="hiw-num">2</div>
         <div class="hiw-icon">💬</div>
-        <div class="hiw-title">Get Best Quote</div>
-        <div class="hiw-desc">We compare 15+ companies and give you the best price — absolutely free consultation.</div>
+        <div class="hiw-title">Compare Suitable Quotes</div>
+        <div class="hiw-desc">We compare 42+ top insurance brands and give you the most suitable quote for your needs — absolutely free consultation.</div>
       </div>
       <div class="hiw-card">
         <div class="hiw-num">3</div>
@@ -530,8 +857,8 @@ a{text-decoration:none;color:inherit;}
       <div class="hiw-card">
         <div class="hiw-num">5</div>
         <div class="hiw-icon">✅</div>
-        <div class="hiw-title">Policy in 5 Min!</div>
-        <div class="hiw-desc">Your policy is issued instantly. Digital copy on WhatsApp. Done — from home! 🏠</div>
+        <div class="hiw-title">Policy Issued Digitally!</div>
+        <div class="hiw-desc">Your policy document is issued digitally and shared on WhatsApp — subject to document accuracy and insurer system availability.* 🏠</div>
       </div>
     </div>
   </div>
@@ -542,8 +869,8 @@ a{text-decoration:none;color:inherit;}
   <div class="stats-grid">
     <div class="scard"><div class="scard-icon">👨‍👩‍👧‍👦</div><span class="scard-num" id="totalClients">...</span><div class="scard-lbl">Happy Clients</div><div class="live-pill"><span class="ldot"></span>Live</div></div>
     <div class="scard"><div class="scard-icon">💰</div><span class="scard-num" id="totalCoverage">...</span><div class="scard-lbl">Total Coverage</div><div class="live-pill"><span class="ldot"></span>Live</div></div>
-    <div class="scard"><div class="scard-icon">✅</div><span class="scard-num">99%</span><div class="scard-lbl">Claim Success</div></div>
-    <div class="scard"><div class="scard-icon">⚡</div><span class="scard-num">5 Min</span><div class="scard-lbl">Policy Issuance</div></div>
+    <div class="scard"><div class="scard-icon">✅</div><span class="scard-num">99%</span><div class="scard-lbl">Claims Settled</div></div>
+    <div class="scard"><div class="scard-icon">⚡</div><span class="scard-num">Digital</span><div class="scard-lbl">Policy Issuance*</div></div>
   </div>
 </section>
 
@@ -553,34 +880,153 @@ a{text-decoration:none;color:inherit;}
     <div class="sec-head">
       <span class="sec-tag">Our Services</span>
       <h2 class="sec-title">Complete Insurance Solutions</h2>
-      <p class="sec-sub">Motor • Health • Life — all from home in 5 minutes</p>
+      <p class="sec-sub">Motor • Health • Life — digital, paperless, from home*</p>
       <div class="sec-line"></div>
     </div>
   </div>
   <div class="svc-grid">
+    <!-- MOTOR -->
     <div class="svc" onclick="openCalc('motor')">
-      <span class="svc-ico">🚗</span>
+      <span class="svc-ico">
+        <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sc1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+            <linearGradient id="sc2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fdba74"/><stop offset="100%" stop-color="#f97316"/></linearGradient>
+          </defs>
+          <ellipse cx="36" cy="66" rx="30" ry="4" fill="#f97316" opacity="0.15"/>
+          <rect x="6" y="36" width="60" height="22" rx="8" fill="url(#sc1)"/>
+          <path d="M14 36 L24 18 L50 18 L58 36Z" fill="url(#sc2)"/>
+          <path d="M8 42 Q36 38 64 42" fill="none" stroke="white" stroke-width="1.2" opacity="0.25"/>
+          <rect x="25" y="20" width="12" height="9" rx="2.5" fill="#bae6fd"/>
+          <rect x="39" y="20" width="10" height="9" rx="2.5" fill="#bae6fd"/>
+          <line x1="37" y1="36" x2="37" y2="56" stroke="#c2410c" stroke-width="1" opacity="0.4"/>
+          <rect x="42" y="46" width="6" height="2.5" rx="1.5" fill="#fed7aa"/>
+          <rect x="24" y="46" width="6" height="2.5" rx="1.5" fill="#fed7aa"/>
+          <circle cx="20" cy="58" r="8" fill="#1e293b"/>
+          <circle cx="20" cy="58" r="5" fill="#475569"/>
+          <circle cx="20" cy="58" r="2.5" fill="#94a3b8"/>
+          <circle cx="52" cy="58" r="8" fill="#1e293b"/>
+          <circle cx="52" cy="58" r="5" fill="#475569"/>
+          <circle cx="52" cy="58" r="2.5" fill="#94a3b8"/>
+          <rect x="56" y="40" width="8" height="5" rx="2.5" fill="#fef08a"/>
+          <rect x="57" y="41" width="6" height="3" rx="1.5" fill="#fde047"/>
+          <rect x="8" y="40" width="6" height="4" rx="2" fill="#fca5a5"/>
+          <!-- No number plate -->
+          <!-- Shield badge -->
+          <path d="M60 8 L67 11 L67 17 C67 21 64 23 60 25 C56 23 53 21 53 17 L53 11 Z" fill="#16a34a"/>
+          <polyline points="57,17 59,19 63,14" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
       <h3 class="svc-title">Motor Insurance</h3>
-      <p class="svc-desc">Bike, Car, Commercial vehicle. Cashless repair. Third Party + Comprehensive. Policy in 5 minutes from home.</p>
-      <div class="svc-stat" id="motorStats">10+ Companies | Best Rates</div>
-      <div class="svc-cta">Calculate Premium →</div>
+      <p class="svc-desc">Comprehensive &amp; Third-Party cover for Bike, Car, and Commercial Vehicles. Paperless issuance with documentation support.</p>
+      <div class="svc-stat" id="motorStats">42+ Insurers | Competitive Rates</div>
+      <div class="svc-cta">Compare Quotes →</div>
     </div>
+
+    <!-- HEALTH -->
     <div class="svc" onclick="openCalc('health')">
-      <span class="svc-ico">❤️</span>
+      <span class="svc-ico">
+        <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#dc2626"/></linearGradient>
+          </defs>
+          <!-- Big heart -->
+          <path d="M36 62 C22 50 6 42 6 26 C6 16 13 9 21 9 C27 9 32 13 36 18 C40 13 45 9 51 9 C59 9 66 16 66 26 C66 42 50 50 36 62Z" fill="url(#hg1)"/>
+          <!-- Shine -->
+          <path d="M16 20 Q22 15 28 17" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+          <!-- ECG -->
+          <polyline points="14,36 20,36 24,26 28,46 32,34 36,34 42,34 46,26 50,34 56,34" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Medical cross -->
+          <rect x="32" y="12" width="8" height="3" rx="1.5" fill="white" opacity="0.5"/>
+          <rect x="34.5" y="9.5" width="3" height="8" rx="1.5" fill="white" opacity="0.5"/>
+          <!-- Family dots -->
+          <circle cx="28" cy="52" r="4.5" fill="#fca5a5"/>
+          <path d="M23 65 Q23 58 28 58 Q33 58 33 65" fill="#fca5a5"/>
+          <circle cx="36" cy="54" r="3.5" fill="#fca5a5"/>
+          <path d="M32 65 Q32 59 36 59 Q40 59 40 65" fill="#fca5a5"/>
+          <circle cx="44" cy="52" r="4.5" fill="#fca5a5"/>
+          <path d="M39 65 Q39 58 44 58 Q49 58 49 65" fill="#fca5a5"/>
+        </svg>
+      </span>
       <h3 class="svc-title">Health Insurance</h3>
-      <p class="svc-desc">Individual, Family Floater, Senior Citizen. Cashless hospitals. Renew in 2 minutes from home.</p>
-      <div class="svc-stat" id="healthStats">8+ Companies | Cashless Claims</div>
-      <div class="svc-cta">Calculate Premium →</div>
+      <p class="svc-desc">Individual and Family plans with cashless hospital network options. Digital policy with documentation support.</p>
+      <div class="svc-stat" id="healthStats">42+ Insurers | Cashless Network</div>
+      <div class="svc-cta">Compare Quotes →</div>
     </div>
+
+    <!-- LIFE -->
     <div class="svc" onclick="openCalc('life')">
-      <span class="svc-ico">🧬</span>
+      <span class="svc-ico">
+        <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+            <linearGradient id="lg2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+            <radialGradient id="lg3" cx="35%" cy="30%" r="60%"><stop offset="0%" stop-color="#fed7aa" stop-opacity="0.7"/><stop offset="100%" stop-color="#ea580c" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="32" cy="68" rx="22" ry="3" fill="#f97316" opacity="0.18"/>
+          <!-- Dome -->
+          <path d="M6 40 Q6 6 32 6 Q58 6 58 40Z" fill="url(#lg1)"/>
+          <path d="M6 40 Q6 6 32 6 Q58 6 58 40Z" fill="url(#lg3)"/>
+          <!-- Ribs -->
+          <path d="M32 6 Q26 22 18 40" fill="none" stroke="#c2410c" stroke-width="1.2" opacity="0.45"/>
+          <path d="M32 6 Q32 22 32 40" fill="none" stroke="#c2410c" stroke-width="1.2" opacity="0.45"/>
+          <path d="M32 6 Q38 22 46 40" fill="none" stroke="#c2410c" stroke-width="1.2" opacity="0.45"/>
+          <!-- Underside segments -->
+          <path d="M6 40 Q13 34 18 40 Q25 34 32 40 Q39 34 46 40 Q51 34 58 40Z" fill="url(#lg2)" opacity="0.85"/>
+          <!-- Scallop edge -->
+          <path d="M6 40 Q9.5 46 13 40 Q16.5 46 20 40 Q23.5 46 27 40 Q29.5 46 32 40 Q34.5 46 38 40 Q41.5 46 45 40 Q48.5 46 52 40 Q55.5 46 58 40" stroke="#f97316" stroke-width="2" fill="none"/>
+          <path d="M6 41 Q9.5 48 13 41 Q16.5 48 20 41 Q23.5 48 27 41 Q29.5 48 32 41 Q34.5 48 38 41 Q41.5 48 45 41 Q48.5 48 52 41 Q55.5 48 58 41L58 40 Q55.5 46 52 40 Q48.5 46 45 40 Q41.5 46 38 40 Q34.5 46 32 40 Q29.5 46 27 40 Q23.5 46 20 40 Q16.5 46 13 40 Q9.5 46 6 40Z" fill="#ea580c" opacity="0.4"/>
+          <!-- Handle -->
+          <line x1="32" y1="40" x2="32" y2="60" stroke="#6d28d9" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M32 60 Q32 66 26 66 Q20 66 20 61" fill="none" stroke="#6d28d9" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Rain drops -->
+          <ellipse cx="8" cy="24" rx="1.5" ry="2.5" fill="#93c5fd" opacity="0.65" transform="rotate(-15 8 24)"/>
+          <ellipse cx="60" cy="20" rx="1.5" ry="2.5" fill="#93c5fd" opacity="0.65" transform="rotate(15 60 20)"/>
+          <ellipse cx="4" cy="50" rx="1.2" ry="2" fill="#93c5fd" opacity="0.5" transform="rotate(-10 4 50)"/>
+          <ellipse cx="64" cy="48" rx="1.2" ry="2" fill="#93c5fd" opacity="0.5" transform="rotate(10 64 48)"/>
+          <!-- Coin -->
+          <circle cx="62" cy="58" r="8" fill="#f59e0b"/>
+          <circle cx="62" cy="58" r="6" fill="#fbbf24"/>
+          <circle cx="62" cy="58" r="4" fill="#fde047"/>
+          <text x="62" y="62" text-anchor="middle" font-size="7" font-weight="900" fill="#92400e" font-family="sans-serif">₹</text>
+        </svg>
+      </span>
       <h3 class="svc-title">Life Insurance</h3>
-      <p class="svc-desc">Term Plan, Endowment, ULIP, LIC. Family financial security. Tax benefits u/s 80C.</p>
+      <p class="svc-desc">Secure your family's future with Term Life and LIC plans. Tax benefits u/s 80C. Subject to underwriting approval.</p>
       <div class="svc-stat" id="lifeStats">LIC + 6 Companies</div>
-      <div class="svc-cta">Calculate Premium →</div>
+      <div class="svc-cta">Compare Quotes →</div>
     </div>
+
+    <!-- PERSONAL ACCIDENT -->
     <div class="svc" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
-      <span class="svc-ico">🦺</span>
+      <span class="svc-ico">
+        <svg viewBox="0 0 72 72" width="72" height="72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ag1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+          </defs>
+          <!-- Body silhouette -->
+          <circle cx="36" cy="14" r="9" fill="#fcd34d"/>
+          <!-- Body -->
+          <rect x="28" y="24" width="16" height="20" rx="4" fill="#fcd34d"/>
+          <!-- Arms -->
+          <rect x="14" y="24" width="14" height="6" rx="3" fill="#fcd34d" transform="rotate(20 14 24)"/>
+          <rect x="44" y="24" width="14" height="6" rx="3" fill="#fcd34d" transform="rotate(-20 58 24)"/>
+          <!-- Legs -->
+          <rect x="28" y="42" width="7" height="18" rx="3" fill="#fcd34d"/>
+          <rect x="37" y="42" width="7" height="18" rx="3" fill="#fcd34d"/>
+          <!-- Shield overlay -->
+          <path d="M36 8 L54 15 L54 36 C54 48 46 55 36 60 C26 55 18 48 18 36 L18 15 Z" fill="#f59e0b" opacity="0.18"/>
+          <path d="M36 11 L51 17 L51 36 C51 46 44 53 36 57 C28 53 21 46 21 36 L21 17 Z" fill="url(#ag1)" opacity="0.65"/>
+          <!-- Big tick -->
+          <polyline points="27,35 33,41 47,27" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Stars around -->
+          <circle cx="12" cy="20" r="3" fill="#fde68a"/>
+          <circle cx="60" cy="20" r="3" fill="#fde68a"/>
+          <circle cx="8" cy="40" r="2" fill="#fde68a"/>
+          <circle cx="64" cy="40" r="2" fill="#fde68a"/>
+          <text x="36" y="70" text-anchor="middle" font-size="7" font-weight="800" fill="#d97706" font-family="sans-serif">₹500/yr</text>
+        </svg>
+      </span>
       <h3 class="svc-title">Personal Accident</h3>
       <p class="svc-desc">Full body protection. Disability cover. Very low premium, big coverage.</p>
       <div class="svc-stat">Starting ₹500/year</div>
@@ -614,7 +1060,7 @@ a{text-decoration:none;color:inherit;}
         <div style="background:var(--grad);color:white;padding:0.6rem 1.2rem;border-radius:8px;font-size:0.85rem;font-weight:700;display:inline-block;">Calculate Premium →</div>
       </a>
       <a href="calculator.html#life" style="background:white;border:2px solid var(--border);border-radius:20px;padding:2rem;text-align:center;transition:all 0.3s;display:block;" onmouseover="this.style.borderColor='var(--green)';this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 40px rgba(26,122,60,0.15)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='';this.style.boxShadow=''">
-        <div style="font-size:3rem;margin-bottom:1rem;">🧬</div>
+        <div style="font-size:3rem;margin-bottom:1rem;"><span style="font-size:2.8rem">☂️</span></div>
         <h3 style="font-size:1.1rem;font-weight:900;color:var(--green-dark);margin-bottom:0.5rem;font-family:'Baloo 2',sans-serif;">Life / Term Insurance</h3>
         <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Term / LIC / ULIP<br>With tax saving calculator</p>
         <div style="background:var(--grad);color:white;padding:0.6rem 1.2rem;border-radius:8px;font-size:0.85rem;font-weight:700;display:inline-block;">Calculate Premium →</div>
@@ -635,11 +1081,11 @@ a{text-decoration:none;color:inherit;}
     </div>
   </div>
   <div class="tgrid">
-    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Got my car insurance renewed in just 5 minutes from home. Santosh ji helped with the claim too. Highly recommended in Dhanbad!"</p><div class="tauthor"><div class="tavatar">R</div><div><div class="tname">Ramesh Kumar</div><div class="tcity">📍 Dhanbad</div><div class="ttype">🚗 Car Insurance</div></div></div></div>
-    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Booked family health insurance on WhatsApp. Santosh ji explained everything clearly and got us the best plan at best price!"</p><div class="tauthor"><div class="tavatar">S</div><div><div class="tname">Sunita Devi</div><div class="tcity">📍 Dhanbad</div><div class="ttype">❤️ Health Insurance</div></div></div></div>
-    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"₹1 Crore term plan in just ₹10,000/year! Santosh ji compared 6 companies and got me the best deal. All done from home!"</p><div class="tauthor"><div class="tavatar">A</div><div><div class="tname">Amit Sharma</div><div class="tcity">📍 Bokaro</div><div class="ttype">🧬 Term Plan</div></div></div></div>
-    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Bike accident claim was settled in 3 days! Santosh ji handled everything. I didn't have to go anywhere. Truly 5-minute service!"</p><div class="tauthor"><div class="tavatar">P</div><div><div class="tname">Priya Singh</div><div class="tcity">📍 Dhanbad</div><div class="ttype">🏍️ Bike Claim</div></div></div></div>
-    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Senior citizen health plan booked from home in minutes. Best guidance, best price. Very professional service!"</p><div class="tauthor"><div class="tavatar">M</div><div><div class="tname">Mohan Tiwari</div><div class="tcity">📍 Dhanbad</div><div class="ttype">❤️ Senior Health</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Got my car insurance renewed digitally from home. Santosh ji helped with the documentation and claim process too. Highly recommended in Dhanbad!"</p><div class="tauthor"><div class="tavatar">R</div><div><div class="tname">Ramesh Kumar</div><div class="tcity">📍 Dhanbad</div><div class="ttype">🚗 Car Insurance</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Booked family health insurance on WhatsApp. Santosh ji explained everything clearly and helped us choose a suitable plan at a competitive premium. Very professional!"</p><div class="tauthor"><div class="tavatar">S</div><div><div class="tname">Sunita Devi</div><div class="tcity">📍 Dhanbad</div><div class="ttype">❤️ Health Insurance</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Got a ₹1 Crore term plan at a very competitive premium! Santosh ji compared multiple companies and helped me choose the most suitable plan. All done digitally from home!"</p><div class="tauthor"><div class="tavatar">A</div><div><div class="tname">Amit Sharma</div><div class="tcity">📍 Bokaro</div><div class="ttype">☂️ Term Plan</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Bike accident claim documentation was handled smoothly by Santosh ji. I didn't have to visit any office. Very professional and supportive!"</p><div class="tauthor"><div class="tavatar">P</div><div><div class="tname">Priya Singh</div><div class="tcity">📍 Dhanbad</div><div class="ttype">🏍️ Bike Claim</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Senior citizen health plan arranged digitally from home. Santosh ji provided very clear guidance and helped choose a suitable plan. Very professional service!"</p><div class="tauthor"><div class="tavatar">M</div><div><div class="tname">Mohan Tiwari</div><div class="tcity">📍 Dhanbad</div><div class="ttype">❤️ Senior Health</div></div></div></div>
     <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Commercial vehicle fleet insured at competitive rates. Renewal reminder service is excellent. 100% recommend!"</p><div class="tauthor"><div class="tavatar">V</div><div><div class="tname">Vikram Yadav</div><div class="tcity">📍 Giridih</div><div class="ttype">🚛 Commercial Vehicle</div></div></div></div>
   </div>
 </section>
@@ -657,26 +1103,245 @@ a{text-decoration:none;color:inherit;}
   </div>
 </section>
 
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="faq-wrap">
+    <div class="sec-head">
+      <span class="sec-tag">FAQ</span>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+      <p class="sec-sub">Safe payment, documents, claims — everything answered</p>
+      <div class="sec-line"></div>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>💳 How do I pay my premium safely?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="pay-warn">
+            <span class="pay-warn-icon">⚠️</span>
+            <span><strong>Safety First:</strong> Always pay your premium <strong>directly to the Insurance Company</strong> via official secure payment links only. We do NOT accept cash or personal bank transfers. If anyone asks you to pay in cash or transfer to a personal account, please refuse and report immediately.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>📄 Which documents are needed for a quote?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          For a quick quote, just WhatsApp clear photos of your documents to <strong>9122445666</strong>:<br><br>
+          🚗 <strong>Motor:</strong> Registration Certificate (RC) &amp; Previous Policy copy.<br>
+          ❤️ <strong>Health:</strong> Aadhaar/PAN, family age details &amp; medical history.<br>
+          ☂️ <strong>Life/Term:</strong> PAN Card, Aadhaar &amp; Income Proof.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>⏱️ How long does policy issuance actually take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Issuance time is <strong>indicative</strong> and subject to document accuracy and insurer system availability. For most motor policies with complete documents, issuance is typically very fast. Health and life policies may involve additional underwriting steps depending on the insurer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>🤝 What happens if I need to make a claim?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Call us immediately at <strong>9122445666</strong>. We provide <strong>dedicated documentation and follow-up support</strong> throughout the claim process. Please note: claim settlement is at the <strong>sole discretion of the Insurance Company</strong> as per the policy terms and conditions. We act as your support partner, not the decision-maker.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>🏢 Who is Turtlemint and what is your relationship with them?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          For any grievance, you may contact Turtlemint directly at <strong>support@turtlemint.com</strong> or visit <strong>turtlemint.com</strong>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>📊 Are the premium amounts on your website accurate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          All premium figures shown on this website and the calculator are <strong>indicative estimates only</strong>. Final premiums are determined by the insurer's underwriting portal and may vary based on age, health condition, vehicle details, sum insured, add-ons, and applicable GST. Contact Santosh Kumar at <strong>9122445666</strong> for an exact quote.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENT CHECKLIST -->
+<section class="docs-sec" id="documents">
+  <div class="docs-wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Document Checklist</span>
+      <h2 class="sec-title">📋 What Do You Need?</h2>
+      <p class="sec-sub">Just WhatsApp clear photos of these to 9122445666 — we handle the rest</p>
+      <div class="sec-line"></div>
+    </div>
+    <div class="docs-grid">
+
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <span class="doc-card-ico">🚗</span>
+          <span class="doc-card-title">Motor Insurance<br><small style="font-weight:500;color:var(--muted);font-size:0.74rem;">Bike / Car / Commercial</small></span>
+        </div>
+        <ul class="doc-list">
+          <li><span class="doc-tick">✓</span> Registration Certificate (RC)</li>
+          <li><span class="doc-tick">✓</span> Previous Policy Copy (for renewal)</li>
+          <li><span class="doc-tick">✓</span> Aadhaar Card / PAN Card</li>
+          <li><span class="doc-tick">✓</span> Vehicle Inspection (if required by insurer)</li>
+        </ul>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <span class="doc-card-ico">❤️</span>
+          <span class="doc-card-title">Health Insurance<br><small style="font-weight:500;color:var(--muted);font-size:0.74rem;">Individual / Family / Senior</small></span>
+        </div>
+        <ul class="doc-list">
+          <li><span class="doc-tick">✓</span> Aadhaar Card / PAN Card</li>
+          <li><span class="doc-tick">✓</span> Age proof for all family members</li>
+          <li><span class="doc-tick">✓</span> Medical history (if any pre-existing condition)</li>
+          <li><span class="doc-tick">✓</span> Passport-size photograph</li>
+        </ul>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <span class="doc-card-ico">☂️</span>
+          <span class="doc-card-title">Life / Term Insurance<br><small style="font-weight:500;color:var(--muted);font-size:0.74rem;">Term Plan / LIC / ULIP</small></span>
+        </div>
+        <ul class="doc-list">
+          <li><span class="doc-tick">✓</span> PAN Card (mandatory)</li>
+          <li><span class="doc-tick">✓</span> Aadhaar Card</li>
+          <li><span class="doc-tick">✓</span> Income Proof (Salary Slip / ITR)</li>
+          <li><span class="doc-tick">✓</span> Medical reports (if applicable)</li>
+        </ul>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://wa.me/919122445666?text=Hi!%20I%20want%20to%20share%20my%20documents%20for%20an%20insurance%20quote." target="_blank" class="btn-green" style="display:inline-flex;">💬 WhatsApp Documents Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US + ABOUT -->
+<section class="wcu" id="about">
+  <div class="wcu-wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Why Choose Us</span>
+      <h2 class="sec-title">10+ Years. 500+ Families Protected.</h2>
+      <p class="sec-sub">Santosh Kumar — Dhanbad ka sabse trusted insurance advisor</p>
+      <div class="sec-line"></div>
+    </div>
+    <div class="wcu-grid">
+      <!-- About paragraph -->
+      <div class="wcu-left">
+        <div class="wcu-about">
+          <p>My name is <strong>Santosh Kumar</strong>, a certified <strong>POSP (Point of Sales Person)</strong> with <strong>Turtlemint Insurance Broking Services Pvt. Ltd.</strong> With over <strong>10 years of experience</strong> in Dhanbad, I help families secure their future by comparing plans from <strong>42+ leading insurance brands</strong>.</p>
+          <p>Backed by Turtlemint's technology, which has served <strong>1.6 Crore+ policies</strong> nationwide, I provide a 100% digital experience and dedicated support during the claim process.</p>
+          <p>My goal is to find you the most suitable coverage with <strong>complete transparency</strong>. All premium quotes are competitive and indicative — final premiums are determined by the insurer's portal as per underwriting norms.</p>
+        </div>
+        <div class="wcu-signature">
+          <div class="wcu-sig-photo">👨‍💼</div>
+          <div>
+            <div class="wcu-sig-name">Santosh Kumar</div>
+            <div class="wcu-sig-sub">Certified POSP Partner | Turtlemint Insurance Broking Services Pvt. Ltd. | Dhanbad</div>
+            <div style="display:flex;gap:0.4rem;margin-top:0.35rem;flex-wrap:wrap;">
+              <span class="pchip">✅ Certified POSP</span>
+              <span class="pchip">🏢 Turtlemint</span>
+              <span class="pchip">📞 9122445666</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Why Choose Cards -->
+      <div class="wcu-right">
+        <div class="wcu-card">
+          <div class="wcu-card-ico">🏠</div>
+          <div>
+            <div class="wcu-card-title">Digital. Paperless. From Home.</div>
+            <div class="wcu-card-desc">Book, renew, or get claim support — all done digitally. No office visits needed. Just WhatsApp or call us.</div>
+          </div>
+        </div>
+        <div class="wcu-card">
+          <div class="wcu-card-ico">🔍</div>
+          <div>
+            <div class="wcu-card-title">42+ Insurance Brands — Competitive Quotes</div>
+            <div class="wcu-card-desc">We compare 42+ top insurance brands and present the most suitable options for you. Free consultation, transparent process.</div>
+          </div>
+        </div>
+        <div class="wcu-card">
+          <div class="wcu-card-ico">🤝</div>
+          <div>
+            <div class="wcu-card-title">Dedicated Claim Support</div>
+            <div class="wcu-card-desc">We assist with documentation and follow-up during the claim process. Claim settlement is at the insurer's discretion.</div>
+          </div>
+        </div>
+        <div class="wcu-card">
+          <div class="wcu-card-ico">🔔</div>
+          <div>
+            <div class="wcu-card-title">Free Renewal Reminder</div>
+            <div class="wcu-card-desc">We remind you before your policy expires. Never let your coverage lapse — your vehicle, health, and family stay protected.</div>
+          </div>
+        </div>
+        <div class="wcu-card">
+          <div class="wcu-card-ico">📲</div>
+          <div>
+            <div class="wcu-card-title">Digital Policy on WhatsApp</div>
+            <div class="wcu-card-desc">Receive your policy document digitally on WhatsApp. No physical paperwork needed — everything is secure and accessible.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAIM POLICY SUPPORT BANNER -->
+<div class="claim-sec">
+  <div class="claim-inner">
+    <div class="claim-title">🤝 Need Claim Support? We're Here to Help.</div>
+    <p class="claim-desc">Accident? Hospitalisation? Vehicle damage? — Don't worry. We assist our clients with claim documentation and follow-up with the insurer. Claim settlement is at the insurer's discretion, but we guide you every step of the way.</p>
+    <a href="tel:+919122445666" class="claim-btn">📞 Call Now for Claim Support: 9122445666</a>
+  </div>
+</div>
+
 <!-- LEAD FORM -->
 <section class="lead-sec" id="quote">
   <div class="lead-inner">
     <div class="lead-left">
       <span class="sec-tag">Free Consultation</span>
       <h2 class="sec-title">Get Free Quote Now</h2>
-      <p class="sec-sub">Santosh Kumar will call you within 1 hour with exact premium — absolutely free!</p>
+      <p class="sec-sub">Santosh Kumar will contact you at the earliest with a suitable quote — absolutely free consultation*</p>
       <div class="perks">
-        <div class="perk"><div class="pmark">✓</div> Policy booked in 5 minutes from home</div>
-        <div class="perk"><div class="pmark">✓</div> Best rates from 15+ companies</div>
-        <div class="perk"><div class="pmark">✓</div> Renew policy — 2 minutes, no office visit</div>
-        <div class="perk"><div class="pmark">✓</div> Claim support — we handle everything</div>
+        <div class="perk"><div class="pmark">✓</div> Digital policy — paperless issuance from home</div>
+        <div class="perk"><div class="pmark">✓</div> Competitive quotes from 42+ top insurance brands</div>
+        <div class="perk"><div class="pmark">✓</div> Renewal — quick digital process, no office visit</div>
+        <div class="perk"><div class="pmark">✓</div> Dedicated claim documentation support</div>
         <div class="perk"><div class="pmark">✓</div> Free renewal reminder service</div>
-        <div class="perk"><div class="pmark">✓</div> Digital policy on WhatsApp instantly</div>
+        <div class="perk"><div class="pmark">✓</div> Policy document on WhatsApp after issuance</div>
       </div>
     </div>
     <div>
       <div class="lform">
         <h3 class="lf-title">📋 Quick Quote Request</h3>
-        <p class="lf-sub">Fill the form — we'll call you within 1 hour</p>
+        <p class="lf-sub">Fill the form — we will contact you at the earliest*</p>
         <form id="quoteForm">
           <div class="fgrid2">
             <div class="fg"><label>Full Name *</label><input type="text" id="fName" class="fi" placeholder="Your name" required></div>
@@ -690,17 +1355,23 @@ a{text-decoration:none;color:inherit;}
                 <option value="Bike Insurance">🏍️ Bike Insurance</option>
                 <option value="Car Insurance">🚗 Car Insurance</option>
                 <option value="Health Insurance">❤️ Health Insurance</option>
-                <option value="Life Insurance">🧬 Life Insurance</option>
+                <option value="Life Insurance">☂️ Life Insurance</option>
                 <option value="Personal Accident">🦺 Personal Accident</option>
               </select></div>
             <div class="fg"><label>City</label><input type="text" id="fCity" class="fi" placeholder="Dhanbad"></div>
           </div>
-          <button type="submit" class="fsub" id="submitBtn">🚀 Get Free Quote — In 5 Minutes!</button>
+          <div class="fg" style="margin-bottom:0.8rem;">
+            <label style="display:flex;align-items:flex-start;gap:0.6rem;cursor:pointer;font-size:0.74rem;font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0;">
+              <input type="checkbox" id="fConsent" required style="margin-top:3px;accent-color:var(--green);flex-shrink:0;">
+              <span>I agree to the Terms &amp; Conditions and authorize Santosh Kumar (POSP) &amp; <strong>Turtlemint Insurance Broking Services Pvt. Ltd.</strong> to contact me via Call/WhatsApp for insurance quotes, overriding my DND registration status. *</span>
+            </label>
+          </div>
+          <button type="submit" class="fsub" id="submitBtn">🚀 Request Free Quote Now</button>
         </form>
         <div class="sbox" id="successMsg">
           <div style="font-size:2.3rem;margin-bottom:0.4rem;">✅</div>
           <h3>Request Received!</h3>
-          <p>Santosh Kumar will call you shortly.</p>
+          <p>Santosh Kumar will contact you at the earliest.</p>
           <a href="https://wa.me/919122445666" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#25d366;color:white;padding:0.75rem 1.6rem;border-radius:8px;font-weight:700;text-decoration:none;">💬 WhatsApp Now</a>
         </div>
       </div>
@@ -715,27 +1386,70 @@ a{text-decoration:none;color:inherit;}
       <div>
         <div class="flogo">
           <div class="flogo-icon">
-            <svg viewBox="0 0 32 32"><path d="M16 2 L28 7 L28 17 C28 23 22 28 16 30 C10 28 4 23 4 17 L4 7 Z" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5"/><polyline points="10,16 14,20 22,12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 44 44" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="fshieldG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0d5c2a"/>
+                  <stop offset="100%" stop-color="#22a052"/>
+                </linearGradient>
+              </defs>
+              <path d="M22 3 L38 9 L38 24 C38 33 31 38 22 41 C13 38 6 33 6 24 L6 9 Z" fill="url(#fshieldG)"/>
+              <path d="M22 6 L35 11 L35 24 C35 31 29 36 22 39 C15 36 9 31 9 24 L9 11 Z" fill="white" opacity="0.08"/>
+              <text x="22" y="28" text-anchor="middle" font-size="17" font-weight="900" fill="white" font-family="'Baloo 2',Georgia,sans-serif">P</text>
+              <circle cx="32" cy="34" r="7" fill="#2ecc71"/>
+              <polyline points="29,34 31,36.5 35.5,31" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
           <div>
             <div class="flogo-name">Perfect <span>Insurance</span> Services</div>
-            <div class="flogo-sub">Santosh Kumar — IRDAI POSP Licensed</div>
+            <div class="flogo-sub">Santosh Kumar | Authorized POSP of Turtlemint</div>
           </div>
         </div>
         <div class="fslogan">"Perfect Insurance. Perfect Price. Perfect Time."</div>
-        <p class="fdesc">Your trusted insurance advisor in Dhanbad, Jharkhand. Book, renew and claim — all from home in 5 minutes.</p>
+        <p class="fdesc">Certified POSP Partner with Turtlemint Insurance Broking Services Pvt. Ltd. Serving Dhanbad, Jharkhand with transparent, digital insurance solutions.</p>
         <div class="fcontacts">
           <a href="tel:+919122445666">📞 +91 9122445666</a>
           <a href="https://wa.me/919122445666" target="_blank">💬 WhatsApp Chat</a>
-          <a href="mailto:life.motor.health@gmail.com">✉️ life.motor.health@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#a6d5c7c8d2c9d5ce88cdd3cbc7d4e6d2d3d4d2cac3cbcfc8d288c5c9cb">✉️ <span class="__cf_email__" data-cfemail="770416190318041f591c021a160537030205031b121a1e19035914181a">[email&#160;protected]</span></a>
+        </div>
+        <!-- Social Media Links -->
+        <div class="social-links">
+          <!-- WhatsApp — Active -->
+          <a href="https://wa.me/919122445666" target="_blank" class="social-btn s-wa" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <!-- FACEBOOK — Replace # with your page URL when ready -->
+          <!-- <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="social-btn s-fb" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a> -->
+          <!-- INSTAGRAM — Replace # with your profile URL when ready -->
+          <!-- <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="social-btn s-ig" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a> -->
+          <!-- YOUTUBE — Replace # with your channel URL when ready -->
+          <!-- <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" class="social-btn s-yt" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a> -->
+          <!-- LINKEDIN — Replace # with your profile URL when ready -->
+          <!-- <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" class="social-btn s-li" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a> -->
+          <!-- X / TWITTER — Replace # with your profile URL when ready -->
+          <!-- <a href="https://x.com/YOUR_HANDLE" target="_blank" class="social-btn s-x" title="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a> -->
         </div>
       </div>
       <div class="fcol">
         <h4>Services</h4>
         <a href="#calculator">🚗 Motor Insurance</a>
         <a href="#calculator">❤️ Health Insurance</a>
-        <a href="#calculator">🧬 Life Insurance</a>
+        <a href="#calculator">☂️ Life Insurance</a>
         <a href="#quote">🦺 Personal Accident</a>
+        <h4 style="margin-top:1.2rem;">Quick Links</h4>
+        <a href="#faq">❓ FAQ</a>
+        <a href="#documents">📋 Document Checklist</a>
+        <a href="#about">👤 About Santosh Kumar</a>
       </div>
       <div class="fcol">
         <h4>Working Hours</h4>
@@ -743,17 +1457,36 @@ a{text-decoration:none;color:inherit;}
         <p>9:00 AM — 7:00 PM</p>
         <p>📍 Dhanbad, Jharkhand</p>
         <p style="color:rgba(46,204,113,0.7);margin-top:0.4rem;">Sunday: By Appointment</p>
+        <h4 style="margin-top:1.2rem;">Grievance</h4>
+        <p>📞 +91 9122445666 (Santosh Kumar)</p>
+        <p>✉️ santosh773@gmail.com</p>
+        <a href="https://www.turtlemint.com" target="_blank" style="color:rgba(46,204,113,0.7);font-size:0.75rem;display:block;margin-top:0.3rem;">Escalate: turtlemint.com →</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Perfect Insurance Services | Santosh Kumar | All Rights Reserved</p>
-      <span class="firdai">✅ IRDAI POSP Licensed</span>
+      <p>© 2026 Perfect Insurance Services | Santosh Kumar | Certified POSP — Turtlemint Insurance Broking Services Pvt. Ltd. | IRDAI Composite Broker License No. 487 | CIN: U66000MH2013PTC249565 | Valid upto 02/04/2026 (Renewable)</p>
+      <span class="firdai">✅ Certified POSP | Turtlemint</span>
     </div>
   </div>
 </footer>
 
+<!-- LEGAL DISCLAIMER -->
+<div class="legal-disc">
+  <div class="legal-inner">
+    <div class="legal-title">⚠️ Statutory Warning &amp; Legal Disclaimer</div>
+    <p class="legal-text">
+      <strong style="color:rgba(46,204,113,0.6);">Statutory Warning:</strong> Insurance is the subject matter of solicitation. For more details on risk factors, terms and conditions, please read the sales brochure carefully before concluding a sale.<br><br>
+      <strong style="color:rgba(46,204,113,0.6);">Payment Safety Notice:</strong> IMPORTANT: All insurance premiums must be paid directly to the Insurance Company via official payment links. We do not accept cash or bank transfers to personal accounts.<br><br>
+      <strong style="color:rgba(46,204,113,0.6);">Claims Disclaimer:</strong> Claim settlement is at the sole discretion of the Insurance Company as per policy terms and conditions. We provide documentation and follow-up support only.<br><br>
+      <strong style="color:rgba(46,204,113,0.6);">Broker Disclosure:</strong> Perfect Insurance Services is represented by Santosh Kumar, an authorized POSP (Code: [POSP Code]) of <strong>Turtlemint Insurance Broking Services Pvt. Ltd.</strong> — IRDAI Composite Broker License No. 487 (Valid till 02/04/2026). For grievances, please contact Turtlemint directly via their official website: <strong>turtlemint.com</strong><br><br>
+      <strong style="color:rgba(46,204,113,0.6);">Premium &amp; Issuance:</strong> Premium amounts shown are indicative estimates only. Final premiums are determined by the Insurer's portal as per underwriting norms. Policy issuance timelines are indicative and subject to document accuracy and insurer system availability.<br><br>
+      <strong style="color:rgba(46,204,113,0.6);">Policy Contract:</strong> The insurance policy is a contract solely between the Insurer (Insurance Company) and the Insured (Customer). Perfect Insurance Services / Santosh Kumar acts only as a POSP intermediary.
+    </p>
+  </div>
+</div>
+
 <!-- JS -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwTNdL9-8sfPUdAwDg4QHtq-_lozzUHPP2gclOvnZa5lCnm2rhjz0uhxKZBtJr2Uzie2Q/exec';
 
 /* LIVE STATS */
@@ -910,18 +1643,26 @@ document.getElementById('quoteForm').addEventListener('submit',async function(e)
   btn.disabled=true;btn.textContent='⏳ Sending...';
   const d={name:document.getElementById('fName').value.trim(),mobile:document.getElementById('fMobile').value.trim(),email:document.getElementById('fEmail').value.trim(),service:document.getElementById('fService').value,city:document.getElementById('fCity').value.trim()||'Dhanbad',message:''};
   try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'saveLead',data:d})});}catch(e){}
-  const msg=encodeURIComponent(`Free Quote Request!\n\nName: ${d.name}\nMobile: ${d.mobile}\nInsurance: ${d.service}\nCity: ${d.city}\n\n— Perfect Insurance Services`);
+  const msg=encodeURIComponent(`Hello! I am Santosh Kumar, your certified Insurance Advisor (Turtlemint POSP).\n\nAs a partner of Turtlemint Insurance Broking Services Pvt. Ltd., I help you compare 42+ companies to get the best policy digitally.\n\nYour Details:\nName: ${d.name}\nMobile: ${d.mobile}\nInsurance: ${d.service}\nCity: ${d.city}\n\n⚠️ Safe Payment Tip: Always pay premiums directly to the Insurance Company via official links only.\n\nPlease share your RC or Previous Policy to start.\n— Santosh Kumar | POSP | Turtlemint`);
   setTimeout(()=>window.open(`https://wa.me/919122445666?text=${msg}`,'_blank'),600);
   document.getElementById('quoteForm').style.display='none';
   document.getElementById('successMsg').style.display='block';
   setTimeout(fetchStats,3000);
 });
 
+/* FAQ TOGGLE */
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+
 /* SMOOTH SCROLL */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
     e.preventDefault();
-    const t=document.querySelector(this.getAttribute('href'));
+    var t=document.querySelector(this.getAttribute('href'));
     if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
