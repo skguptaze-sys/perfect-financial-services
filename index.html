@@ -3,310 +3,562 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0066cc">
-<meta name="description" content="Perfect Financial Services - Santosh Kumar | Life, Health, Motor Insurance | IRDAI POSP | Dhanbad">
-<title>🛡️ Perfect Financial Services | Santosh Kumar | Insurance Dhanbad</title>
+<meta name="theme-color" content="#006400">
+<meta name="description" content="संतोष कुमार - IRDAI लाइसेंसधारी बीमा सलाहकार | धनबाद, झारखंड">
+<title>संतोष कुमार | बीमा सलाहकार | धनबाद</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#0066cc;--secondary:#ff6b00;--success:#25d366;--dark:#1a1a2e;--light:#f8f9fa;--gradient:linear-gradient(135deg,#0066cc,#1e3a8a);}
-*{-webkit-tap-highlight-color:transparent;touch-action:manipulation;box-sizing:border-box;margin:0;padding:0;}
-html{font-size:clamp(16px,4.5vw,20px);scroll-behavior:smooth;}
-body{font-family:system-ui,-apple-system,sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
-h1,h2,h3{font-weight:800;line-height:1.1;}
-.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
-
-/* HEADER */
-.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,102,204,0.1);box-shadow:0 2px 20px rgba(0,0,0,0.06);}
-.header-content{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 0;}
-.logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--dark);}
-.logo-icon{font-size:2rem;}
-.logo-text h3{font-size:1.1rem;margin:0;font-weight:900;color:var(--primary);}
-.logo-text p{margin:0;font-size:0.75rem;color:#666;}
-.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--success);color:white;padding:0.7rem 1.4rem;border-radius:50px;font-weight:700;text-decoration:none;font-size:0.9rem;box-shadow:0 4px 12px rgba(37,211,102,0.4);transition:all 0.3s;}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.6);}
-
-/* HERO */
-.hero{background:var(--gradient);color:white;padding:4rem 0 6rem;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,107,0,0.15),transparent 50%),radial-gradient(circle at 70% 80%,rgba(255,255,255,0.08),transparent 50%);}
-.hero-content{max-width:750px;margin:0 auto;text-align:center;position:relative;}
-.hero-badge{background:rgba(255,255,255,0.18);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);color:white;padding:0.6rem 1.4rem;border-radius:50px;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:700;margin-bottom:1.5rem;}
-.hero h1{font-size:clamp(2.2rem,7vw,4rem);margin-bottom:1rem;background:linear-gradient(135deg,white,#ffb347);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{font-size:1.1rem;margin-bottom:0.75rem;opacity:0.95;}
-.live-status{font-size:0.85rem;margin-bottom:2rem;opacity:0.85;min-height:1.2em;}
-.hero-search{display:flex;max-width:480px;margin:0 auto;background:white;border-radius:14px;box-shadow:0 15px 40px rgba(0,0,0,0.2);overflow:hidden;}
-.search-input{flex:1;padding:1.1rem 1.4rem;border:none;font-size:1rem;outline:none;color:var(--dark);}
-.search-btn{background:linear-gradient(135deg,var(--secondary),#ff8c00);color:white;border:none;padding:1.1rem 1.8rem;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;}
-
-/* STATS */
-.stats{background:white;margin:-3rem 1.5rem 3rem;border-radius:20px;padding:1.8rem 1.5rem;box-shadow:0 20px 50px rgba(0,0,0,0.12);display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;position:relative;z-index:10;}
-.stat-item{}
-.stat-number{font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--primary),#1e3a8a);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1.2;}
-.stat-label{font-size:0.72rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-top:0.2rem;}
-.live-dot{display:inline-block;width:7px;height:7px;background:#25d366;border-radius:50%;margin-right:3px;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
-
-/* SERVICES */
-.services{padding:4rem 0;}
-.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;}
-.section-title{font-size:1.8rem;color:var(--dark);}
-.section-cta{color:var(--primary);font-weight:700;text-decoration:none;font-size:0.95rem;}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
-.service-card{background:white;border-radius:20px;padding:2rem 1.75rem;box-shadow:0 8px 30px rgba(0,0,0,0.07);transition:all 0.3s;cursor:pointer;position:relative;overflow:hidden;border:1px solid #f0f0f0;}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));}
-.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.13);}
-.service-icon{font-size:3rem;margin-bottom:1.2rem;display:block;}
-.service-title{font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:0.6rem;}
-.service-desc{font-size:0.9rem;color:#666;line-height:1.7;}
-.service-badge{background:linear-gradient(135deg,#f0f8ff,#e3f2fd);color:var(--primary);padding:0.4rem 0.9rem;border-radius:20px;font-size:0.75rem;font-weight:700;display:inline-block;margin-top:0.9rem;}
-.live-badge{background:var(--success);color:white;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.7rem;font-weight:700;display:none;align-items:center;gap:0.2rem;margin-left:0.4rem;vertical-align:middle;}
-
-/* FEATURES */
-.features{padding:4rem 0;background:#f8fafc;}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
-.feature-card{display:flex;align-items:flex-start;gap:1.2rem;padding:2rem;background:white;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,0.05);}
-.feature-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;}
-.feature-title{font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:0.5rem;}
-.feature-desc{color:#666;line-height:1.6;font-size:0.9rem;}
-
-/* PARTNERS */
-.partners{padding:3rem 0;background:white;}
-.partners-title{text-align:center;font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:1.5rem;}
-.partners-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
-.partner-logo{background:#f8f9fa;border:1px solid #e8e8e8;border-radius:14px;padding:1.2rem 1.8rem;font-size:0.9rem;font-weight:600;display:flex;align-items:center;justify-content:center;min-width:120px;height:64px;transition:all 0.3s;color:#444;}
-.partner-logo:hover{transform:translateY(-3px);border-color:var(--primary);background:#f0f8ff;color:var(--primary);}
-
-/* QUOTE FORM */
-.quote-section{padding:4rem 0;background:var(--gradient);color:white;}
-.quote-container{max-width:580px;margin:0 auto;text-align:center;}
-.quote-title{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:0.75rem;}
-.quote-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:0.9;}
-.form-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:2.5rem;box-shadow:0 20px 50px rgba(0,0,0,0.2);}
-.form-group{margin-bottom:1.4rem;text-align:left;}
-.form-label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.9rem;}
-.form-input{width:100%;padding:1.1rem 1.2rem;border:2px solid rgba(255,255,255,0.25);border-radius:14px;font-size:1rem;background:rgba(255,255,255,0.92);color:var(--dark);transition:all 0.3s;}
-.form-input:focus{outline:none;border-color:white;box-shadow:0 0 0 3px rgba(255,255,255,0.25);}
-.form-select{appearance:none;background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");background-position:right 1rem center;background-repeat:no-repeat;background-size:1.4em;padding-right:3rem;}
-.btn-submit{width:100%;background:linear-gradient(135deg,var(--secondary),#ff8c00);color:white;border:none;padding:1.3rem;border-radius:14px;font-size:1.1rem;font-weight:900;cursor:pointer;transition:all 0.3s;box-shadow:0 8px 20px rgba(255,107,0,0.4);}
-.btn-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,107,0,0.55);}
-.btn-submit:disabled{opacity:0.65;cursor:not-allowed;}
-.success-msg{display:none;background:rgba(37,211,102,0.15);border:2px solid rgba(37,211,102,0.5);border-radius:16px;padding:2rem;text-align:center;margin-top:1rem;}
-.success-msg .s-icon{font-size:3rem;margin-bottom:0.5rem;}
-.success-msg h3{font-size:1.4rem;margin-bottom:0.4rem;}
-
-/* FOOTER */
-.footer{background:var(--dark);color:white;padding:3rem 0 1.5rem;}
-.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem;}
-.footer-section h4{font-size:1rem;margin-bottom:0.9rem;color:#fff;font-weight:700;}
-.footer-section a,.footer-section p{color:#aaa;text-decoration:none;display:block;margin-bottom:0.45rem;font-size:0.9rem;transition:color 0.3s;}
-.footer-section a:hover{color:var(--primary);}
-.footer-bottom{text-align:center;padding-top:1.5rem;border-top:1px solid #2a2a3e;font-size:0.82rem;color:#666;}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .stats{grid-template-columns:repeat(2,1fr);margin:-2rem 1rem 2.5rem;}
-  .hero{padding:3rem 0 5rem;}
-  .form-card{padding:1.8rem 1.4rem;}
-  .hero-search{flex-direction:column;border-radius:14px;}
-  .search-btn{border-radius:0 0 14px 14px;}
+:root{
+  --green:#1a7a3c;
+  --green2:#22a052;
+  --green3:#2ecc71;
+  --green-light:#e8f7ee;
+  --green-dark:#0d5c2a;
+  --white:#ffffff;
+  --cream:#f8fff9;
+  --text:#1a2e1f;
+  --muted:#5a7a62;
+  --border:#c8e6d0;
+  --gold:#e6a817;
+  --grad:linear-gradient(135deg,#0d5c2a,#1a7a3c,#22a052);
+  --grad2:linear-gradient(135deg,#22a052,#2ecc71);
+  --shadow:0 8px 30px rgba(26,122,60,0.18);
+  --wa:#25d366;
 }
-@media(max-width:480px){
-  .stats{grid-template-columns:repeat(2,1fr);gap:0.8rem;padding:1.4rem 1rem;}
-  .stat-number{font-size:1.6rem;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{font-family:'Baloo 2','Noto Sans Devanagari',system-ui,sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* ============ TIRANGA TOP STRIP ============ */
+.tiranga{height:5px;background:linear-gradient(90deg,#ff9933 33.3%,#ffffff 33.3%,#ffffff 66.6%,#138808 66.6%);}
+
+/* ============ WHATSAPP ============ */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:9999;width:62px;height:62px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);animation:waPulse 2.5s infinite;transition:transform 0.3s;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:32px;height:32px;fill:white;}
+@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.5);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+/* ============ HEADER ============ */
+.header{background:var(--white);position:sticky;top:0;z-index:1000;border-bottom:2px solid var(--border);box-shadow:0 2px 15px rgba(26,122,60,0.1);}
+.header-strip{background:var(--grad);padding:0.35rem 0;text-align:center;font-size:0.76rem;color:rgba(255,255,255,0.9);letter-spacing:0.3px;}
+.header-main{max-width:1200px;margin:0 auto;padding:0.75rem 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.logo{display:flex;align-items:center;gap:0.85rem;}
+.logo-mark{width:50px;height:50px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;color:white;font-family:'Baloo 2',sans-serif;box-shadow:var(--shadow);}
+.logo-name{font-size:1.05rem;font-weight:900;color:var(--green-dark);line-height:1.2;}
+.logo-sub{font-size:0.7rem;color:var(--muted);font-weight:600;}
+.nav-links{display:flex;align-items:center;gap:1.5rem;}
+.nav-link{font-size:0.88rem;font-weight:700;color:var(--muted);transition:color 0.3s;}
+.nav-link:hover{color:var(--green);}
+.nav-cta{background:var(--grad);color:white;padding:0.6rem 1.4rem;border-radius:8px;font-weight:800;font-size:0.88rem;box-shadow:var(--shadow);transition:all 0.3s;white-space:nowrap;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,122,60,0.35);}
+
+/* ============ HERO ============ */
+.hero{background:var(--white);padding:5rem 0 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(46,204,113,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(26,122,60,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center;position:relative;z-index:1;}
+
+/* Hero Left */
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green-light);border:1px solid var(--border);color:var(--green);padding:0.4rem 1.1rem;border-radius:6px;font-size:0.76rem;font-weight:800;margin-bottom:1.2rem;text-transform:uppercase;letter-spacing:0.8px;}
+.hero-tag-dot{width:7px;height:7px;background:var(--green3);border-radius:50%;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.hero-slogan{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;line-height:1.15;margin-bottom:0.5rem;font-family:'Baloo 2',sans-serif;}
+.hero-slogan .hs1{color:var(--green-dark);display:block;}
+.hero-slogan .hs2{color:var(--green2);display:block;}
+.hero-slogan .hs3{color:var(--green-dark);display:block;}
+.hero-eng{font-size:0.9rem;color:var(--muted);font-style:italic;margin-bottom:1.4rem;letter-spacing:0.3px;}
+.hero-desc{font-size:0.97rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;padding-left:1rem;border-left:3px solid var(--green3);max-width:500px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-green{display:inline-flex;align-items:center;gap:0.5rem;background:var(--grad);color:white;padding:0.9rem 2rem;border-radius:8px;font-weight:800;font-size:0.97rem;box-shadow:var(--shadow);transition:all 0.3s;border:none;cursor:pointer;font-family:'Baloo 2',sans-serif;}
+.btn-green:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,122,60,0.35);}
+.btn-outline{display:inline-flex;align-items:center;gap:0.5rem;background:white;color:var(--green);padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:0.97rem;border:2px solid var(--green2);transition:all 0.3s;}
+.btn-outline:hover{background:var(--green-light);}
+/* Mini stats row */
+.hero-stats{display:flex;gap:0;background:var(--green-light);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;}
+.hstat{flex:1;padding:1rem 0.5rem;text-align:center;border-right:1px solid var(--border);}
+.hstat:last-child{border-right:none;}
+.hstat-num{font-size:1.6rem;font-weight:900;color:var(--green);line-height:1;font-family:'Baloo 2',sans-serif;}
+.hstat-lbl{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.4px;margin-top:0.2rem;font-weight:600;}
+
+/* Hero Right — Profile Card */
+.pcard{background:white;border-radius:20px;padding:2rem;border:2px solid var(--border);box-shadow:0 20px 50px rgba(26,122,60,0.12);}
+.pcard-top{display:flex;align-items:center;gap:1rem;padding-bottom:1.2rem;border-bottom:2px dashed var(--border);margin-bottom:1.2rem;}
+.pphoto{width:85px;height:85px;border-radius:50%;background:var(--grad);border:3px solid var(--green3);display:flex;align-items:center;justify-content:center;font-size:2.2rem;flex-shrink:0;overflow:hidden;box-shadow:var(--shadow);}
+.pphoto img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.pname{font-size:1.2rem;font-weight:900;color:var(--green-dark);font-family:'Baloo 2',sans-serif;}
+.prole{font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;}
+.pchips{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.pchip{background:var(--green-light);color:var(--green);padding:0.2rem 0.65rem;border-radius:20px;font-size:0.68rem;font-weight:700;border:1px solid var(--border);}
+/* Why list */
+.pwhy{margin-bottom:1.2rem;}
+.pwy{display:flex;align-items:center;gap:0.7rem;padding:0.55rem 0;border-bottom:1px solid var(--green-light);font-size:0.86rem;}
+.pwy:last-child{border:none;}
+.pwy-icon{width:30px;height:30px;border-radius:8px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;}
+.pwy-t{font-weight:700;color:var(--text);}
+.pwy-s{font-size:0.72rem;color:var(--muted);}
+/* Contact */
+.pbtns{display:flex;flex-direction:column;gap:0.55rem;}
+.pbtn{display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.75rem;border-radius:8px;font-weight:700;font-size:0.88rem;transition:all 0.3s;font-family:'Baloo 2',sans-serif;}
+.pbtn-g{background:var(--grad);color:white;box-shadow:var(--shadow);}
+.pbtn-g:hover{transform:translateY(-2px);}
+.pbtn-w{background:#25d366;color:white;box-shadow:0 4px 15px rgba(37,211,102,0.3);}
+.pbtn-w:hover{transform:translateY(-2px);}
+
+/* ============ TICKER ============ */
+.ticker{background:var(--grad);padding:0.65rem 0;overflow:hidden;}
+.ticker-inner{display:flex;gap:3rem;white-space:nowrap;animation:ticker 28s linear infinite;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.tick-item{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.9);font-weight:700;font-size:0.82rem;}
+.tick-sep{color:rgba(255,255,255,0.4);}
+
+/* ============ STATS BAR ============ */
+.stats-bar{background:white;padding:3rem 0;border-bottom:1px solid var(--border);}
+.stats-grid{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.scard{text-align:center;padding:1.8rem 1rem;border-radius:16px;background:var(--cream);border:2px solid var(--border);transition:all 0.3s;}
+.scard:hover{border-color:var(--green2);transform:translateY(-4px);box-shadow:var(--shadow);}
+.scard-icon{font-size:2rem;margin-bottom:0.6rem;}
+.scard-num{font-size:2.3rem;font-weight:900;color:var(--green);display:block;line-height:1.1;font-family:'Baloo 2',sans-serif;}
+.scard-lbl{font-size:0.74rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-top:0.2rem;}
+.live-pill{display:inline-flex;align-items:center;gap:0.3rem;background:rgba(46,204,113,0.1);color:#16a34a;padding:0.2rem 0.6rem;border-radius:10px;font-size:0.66rem;font-weight:700;margin-top:0.3rem;}
+.ldot{width:6px;height:6px;background:#16a34a;border-radius:50%;animation:blink 1.5s infinite;}
+
+/* ============ SECTION HEADER ============ */
+.sec-head{text-align:center;margin-bottom:2.5rem;}
+.sec-tag{display:inline-block;background:var(--green-light);color:var(--green);padding:0.35rem 1rem;border-radius:6px;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.6rem;border:1px solid var(--border);}
+.sec-title{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--text);font-family:'Baloo 2',sans-serif;margin-bottom:0.4rem;}
+.sec-sub{color:var(--muted);font-size:0.93rem;}
+.sec-line{width:50px;height:3px;background:var(--grad2);margin:0.75rem auto 0;border-radius:2px;}
+
+/* ============ SERVICES ============ */
+.services{padding:5rem 0;background:var(--cream);}
+.svc-grid{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.4rem;}
+.svc{background:white;border-radius:16px;padding:2rem;border:2px solid var(--border);transition:all 0.35s;cursor:pointer;position:relative;overflow:hidden;}
+.svc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transition:transform 0.35s;transform-origin:left;}
+.svc:hover{border-color:var(--green2);transform:translateY(-6px);box-shadow:var(--shadow);}
+.svc:hover::after{transform:scaleX(1);}
+.svc-ico{font-size:2.8rem;margin-bottom:1rem;display:block;}
+.svc-title{font-size:1.15rem;font-weight:900;color:var(--green-dark);margin-bottom:0.5rem;font-family:'Baloo 2',sans-serif;}
+.svc-desc{font-size:0.86rem;color:var(--muted);line-height:1.8;margin-bottom:0.7rem;}
+.svc-stat{font-size:0.78rem;font-weight:700;color:var(--green2);margin-bottom:0.7rem;}
+.svc-cta{display:inline-flex;align-items:center;gap:0.3rem;color:var(--green);font-size:0.83rem;font-weight:700;transition:gap 0.3s;}
+.svc:hover .svc-cta{gap:0.6rem;}
+
+/* ============ CALCULATOR ============ */
+.calc-sec{padding:5rem 0;background:white;}
+.calc-wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+.ctabs{display:flex;justify-content:center;gap:0.7rem;margin-bottom:2rem;flex-wrap:wrap;}
+.ctab{background:var(--cream);border:2px solid var(--border);color:var(--muted);padding:0.6rem 1.5rem;border-radius:8px;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Baloo 2',sans-serif;}
+.ctab.active{background:var(--green);border-color:var(--green);color:white;box-shadow:var(--shadow);}
+.ctab:hover:not(.active){border-color:var(--green);color:var(--green);}
+.cpanel{display:none;}
+.cpanel.active{display:block;}
+.ccard{background:var(--cream);border-radius:16px;padding:2.2rem;border:2px solid var(--border);max-width:740px;margin:0 auto;}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1.1rem;margin-bottom:1.4rem;}
+.cg label{display:block;font-size:0.75rem;font-weight:800;color:var(--text);margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.3px;}
+.ci{width:100%;padding:0.82rem 1rem;border:2px solid var(--border);border-radius:10px;font-size:0.92rem;color:var(--text);background:white;transition:all 0.3s;font-family:'Baloo 2',sans-serif;}
+.ci:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(26,122,60,0.1);}
+.cbtn{width:100%;background:var(--grad);color:white;border:none;padding:0.95rem;border-radius:10px;font-size:0.97rem;font-weight:800;cursor:pointer;transition:all 0.3s;margin-bottom:1.4rem;box-shadow:var(--shadow);font-family:'Baloo 2',sans-serif;}
+.cbtn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(26,122,60,0.35);}
+.cresult{display:none;background:white;border:2px solid var(--border);border-radius:12px;padding:1.6rem;text-align:center;}
+.cresult.show{display:block;animation:fadeUp 0.4s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.cr-lbl{font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.3rem;}
+.cr-amt{font-size:2rem;font-weight:900;color:var(--green);margin-bottom:0.3rem;font-family:'Baloo 2',sans-serif;}
+.cr-note{font-size:0.72rem;color:var(--muted);margin-bottom:1rem;}
+.cr-btns{display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;}
+.cr-wa{display:inline-flex;align-items:center;gap:0.4rem;background:#25d366;color:white;padding:0.65rem 1.3rem;border-radius:8px;font-weight:700;font-size:0.86rem;transition:all 0.3s;}
+.cr-wa:hover{transform:translateY(-2px);}
+.cr-call{display:inline-flex;align-items:center;gap:0.4rem;background:var(--grad);color:white;padding:0.65rem 1.3rem;border-radius:8px;font-weight:700;font-size:0.86rem;transition:all 0.3s;cursor:pointer;border:none;font-family:'Baloo 2',sans-serif;}
+.cr-call:hover{transform:translateY(-2px);}
+.bdown{margin-top:1rem;text-align:left;border-top:1px dashed var(--border);padding-top:0.9rem;}
+.bd-hd{font-size:0.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;}
+.bd-row{display:flex;justify-content:space-between;font-size:0.83rem;padding:0.28rem 0;border-bottom:1px solid var(--cream);color:var(--muted);}
+.bd-row:last-child{border:none;font-weight:800;color:var(--green);font-size:0.93rem;}
+.calc-note{text-align:center;margin-top:1.2rem;font-size:0.76rem;color:var(--muted);background:var(--green-light);padding:0.75rem;border-radius:8px;border:1px solid var(--border);}
+
+/* ============ TESTIMONIALS ============ */
+.testi{padding:5rem 0;background:var(--cream);}
+.tgrid{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
+.tcard{background:white;border-radius:16px;padding:1.8rem;border:2px solid var(--border);transition:all 0.3s;position:relative;}
+.tcard::before{content:'"';position:absolute;top:0.8rem;right:1.2rem;font-size:4.5rem;color:rgba(26,122,60,0.06);font-family:Georgia,serif;line-height:1;}
+.tcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--green2);}
+.tstars{color:var(--gold);font-size:0.95rem;letter-spacing:2px;margin-bottom:0.6rem;}
+.ttext{font-size:0.88rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;font-style:italic;}
+.tauthor{display:flex;align-items:center;gap:0.7rem;}
+.tavatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1rem;flex-shrink:0;font-family:'Baloo 2',sans-serif;}
+.tname{font-weight:800;font-size:0.9rem;color:var(--text);}
+.tcity{font-size:0.74rem;color:var(--muted);}
+.ttype{font-size:0.68rem;font-weight:700;background:var(--green-light);color:var(--green);padding:0.18rem 0.55rem;border-radius:6px;display:inline-block;margin-top:0.2rem;border:1px solid var(--border);}
+
+/* ============ PARTNERS ============ */
+.partners{padding:2.5rem 0;background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.partners-wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.phd{text-align:center;font-size:0.75rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.3rem;}
+.pgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;}
+.ptag{background:var(--cream);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 1.3rem;font-size:0.83rem;font-weight:700;color:var(--muted);transition:all 0.3s;}
+.ptag:hover{border-color:var(--green2);color:var(--green);background:var(--green-light);transform:translateY(-2px);}
+
+/* ============ LEAD FORM ============ */
+.lead-sec{padding:5rem 0;background:var(--grad);position:relative;overflow:hidden;}
+.lead-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:60px solid rgba(255,255,255,0.04);}
+.lead-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;}
+.lead-left .sec-tag{background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.2);}
+.lead-left .sec-title{color:white;}
+.lead-left .sec-sub{color:rgba(255,255,255,0.7);}
+.perks{margin-top:1.4rem;display:flex;flex-direction:column;gap:0.7rem;}
+.perk{display:flex;align-items:center;gap:0.7rem;color:rgba(255,255,255,0.88);font-size:0.9rem;}
+.pmark{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;color:white;font-weight:700;}
+.lform{background:white;border-radius:20px;padding:2.3rem;box-shadow:0 25px 60px rgba(0,0,0,0.2);}
+.lf-title{font-size:1.2rem;font-weight:900;color:var(--green-dark);margin-bottom:0.3rem;font-family:'Baloo 2',sans-serif;}
+.lf-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.4rem;}
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:0.75rem;font-weight:800;color:var(--text);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.3px;}
+.fi{width:100%;padding:0.82rem 1rem;border:2px solid var(--border);border-radius:10px;font-size:0.92rem;color:var(--text);background:var(--cream);transition:all 0.3s;font-family:'Baloo 2',sans-serif;}
+.fi:focus{outline:none;border-color:var(--green);background:white;box-shadow:0 0 0 3px rgba(26,122,60,0.08);}
+.fgrid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fsub{width:100%;background:var(--grad);color:white;border:none;padding:1rem;border-radius:10px;font-size:0.97rem;font-weight:900;cursor:pointer;transition:all 0.3s;box-shadow:var(--shadow);margin-top:0.4rem;font-family:'Baloo 2',sans-serif;}
+.fsub:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 25px rgba(26,122,60,0.4);}
+.fsub:disabled{opacity:0.6;cursor:not-allowed;}
+.sbox{display:none;text-align:center;padding:1.8rem;background:rgba(22,163,74,0.06);border:2px solid rgba(22,163,74,0.25);border-radius:12px;margin-top:1rem;}
+.sbox h3{font-size:1.2rem;color:var(--text);margin-bottom:0.3rem;font-family:'Baloo 2',sans-serif;}
+.sbox p{color:var(--muted);font-size:0.88rem;margin-bottom:0.9rem;}
+
+/* ============ FOOTER ============ */
+.footer{background:#0a2e14;color:white;padding:3.5rem 0 1.5rem;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.flogo{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.9rem;}
+.flogo-mark{width:44px;height:44px;border-radius:10px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;color:white;font-family:'Baloo 2',sans-serif;}
+.flogo-name{font-size:0.97rem;font-weight:800;color:white;}
+.flogo-sub{font-size:0.68rem;color:rgba(255,255,255,0.4);}
+.fslogan{font-size:0.85rem;color:var(--green3);font-weight:700;font-style:italic;margin-bottom:1rem;}
+.fdesc{color:rgba(255,255,255,0.45);font-size:0.85rem;line-height:1.9;margin-bottom:1.1rem;}
+.fcontacts a{display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:0.45rem;transition:color 0.3s;}
+.fcontacts a:hover{color:var(--green3);}
+.fcol h4{font-size:0.78rem;font-weight:800;color:var(--green3);margin-bottom:0.8rem;text-transform:uppercase;letter-spacing:0.5px;}
+.fcol a,.fcol p{display:block;color:rgba(255,255,255,0.45);font-size:0.85rem;margin-bottom:0.45rem;transition:color 0.3s;}
+.fcol a:hover{color:var(--green3);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;}
+.footer-bottom p{color:rgba(255,255,255,0.25);font-size:0.76rem;}
+.firdai{background:rgba(46,204,113,0.12);color:var(--green3);padding:0.28rem 0.8rem;border-radius:6px;font-size:0.7rem;font-weight:700;border:1px solid rgba(46,204,113,0.2);}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;}
+  .hero-desc{margin:0 auto 2rem;border-left:none;border-top:3px solid var(--green3);padding:1rem 0 0;}
+  .hero-btns{justify-content:center;}
+  .hero-stats{max-width:380px;margin:0 auto;}
+  .pcard{max-width:440px;margin:0 auto;}
+  .lead-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .lead-left{text-align:center;}
+  .perks{align-items:flex-start;max-width:340px;margin:1.2rem auto 0;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+  .nav-links .nav-link{display:none;}
+}
+@media(max-width:600px){
+  .hero-slogan{font-size:1.85rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .footer-grid{grid-template-columns:1fr;}
+  .fgrid2{grid-template-columns:1fr;}
+  .lform{padding:1.7rem 1.3rem;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .header-strip{font-size:0.68rem;}
 }
 </style>
 </head>
 <body>
 
+<!-- Tiranga strip -->
+<div class="tiranga"></div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/919122445666" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
 <!-- HEADER -->
-<header class="header">
-  <div class="container">
-    <div class="header-content">
-      <a href="#home" class="logo">
-        <span class="logo-icon">🛡️</span>
-        <div class="logo-text">
-          <h3>Perfect Financial Services</h3>
-          <p>Santosh Kumar — IRDAI POSP Licensed</p>
-        </div>
-      </a>
-      <a href="https://wa.me/919122445666" class="cta-btn" target="_blank" rel="noopener">💬 तुरंत बात करें</a>
+<header class="header" id="home">
+  <div class="header-strip">📞 9122445666 &nbsp;|&nbsp; ✉️ life.motor.health@gmail.com &nbsp;|&nbsp; 📍 धनबाद, झारखंड &nbsp;|&nbsp; ⏰ सोम–शनि 9AM–7PM</div>
+  <div class="header-main">
+    <div class="logo">
+      <div class="logo-mark">सं</div>
+      <div>
+        <div class="logo-name">परफेक्ट फाइनेंशियल सर्विसेज</div>
+        <div class="logo-sub">संतोष कुमार — IRDAI POSP लाइसेंसधारी</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#services" class="nav-link">सेवाएं</a>
+      <a href="#calculator" class="nav-link">Calculator</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#quote" class="nav-cta">🚀 Free Quote</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">✅ IRDAI Authorized | TurtleMint PRO Partner</div>
-      <h1>बीमा को सरल बनाएं</h1>
-      <p class="hero-sub">लाइफ • हेल्थ • मोटर इंश्योरेंस — धनबाद</p>
-      <p class="live-status" id="liveStatus"><span class="live-dot"></span>Live data लोड हो रहा है...</p>
-      <form class="hero-search" id="heroSearch">
-        <input type="text" class="search-input" placeholder="बीमा खोजें... बाइक, कार, हेल्थ">
-        <button type="submit" class="search-btn">कोटेशन पाएं →</button>
-      </form>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="hero-tag-dot"></span>✅ IRDAI अधिकृत | धनबाद, झारखंड</div>
+      <h1 class="hero-slogan">
+        <span class="hs1">सही बीमा।</span>
+        <span class="hs2">सही दाम।</span>
+        <span class="hs3">सही समय।</span>
+      </h1>
+      <p class="hero-eng">Perfect Insurance. Perfect Price. Perfect Time.</p>
+      <p class="hero-desc">आपके परिवार की सुरक्षा हमारी जिम्मेदारी है। 10+ साल का अनुभव, 15+ बीमा कंपनियों से तुलना, और हर claim में आपका साथ।</p>
+      <div class="hero-btns">
+        <a href="#quote" class="btn-green">🚀 मुफ्त Quote पाएं</a>
+        <a href="#calculator" class="btn-outline">💰 Premium Calculate करें</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num" id="h-clients">500+</div><div class="hstat-lbl">खुश परिवार</div></div>
+        <div class="hstat"><div class="hstat-num">10+</div><div class="hstat-lbl">साल अनुभव</div></div>
+        <div class="hstat"><div class="hstat-num">99%</div><div class="hstat-lbl">Claim Success</div></div>
+        <div class="hstat"><div class="hstat-num">15+</div><div class="hstat-lbl">Companies</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pphoto">
+            <img src="" alt="Santosh Kumar" onerror="this.style.display='none';this.parentElement.innerHTML='👨‍💼';">
+          </div>
+          <div>
+            <div class="pname">संतोष कुमार</div>
+            <div class="prole">IRDAI POSP Licensed Insurance Advisor</div>
+            <div class="pchips">
+              <span class="pchip">✅ IRDAI POSP</span>
+              <span class="pchip">🏆 10+ Years</span>
+              <span class="pchip">📍 धनबाद</span>
+            </div>
+          </div>
+        </div>
+        <div class="pwhy">
+          <div class="pwy"><div class="pwy-icon">💰</div><div><div class="pwy-t">सबसे कम premium</div><div class="pwy-s">15+ companies compare</div></div></div>
+          <div class="pwy"><div class="pwy-icon">⚡</div><div><div class="pwy-t">Same Day Policy</div><div class="pwy-s">तुरंत digital policy</div></div></div>
+          <div class="pwy"><div class="pwy-icon">🤝</div><div><div class="pwy-t">Claim Support</div><div class="pwy-s">हर step पर साथ</div></div></div>
+          <div class="pwy"><div class="pwy-icon">🔔</div><div><div class="pwy-t">Renewal Reminder</div><div class="pwy-s">Expiry से पहले याद</div></div></div>
+        </div>
+        <div class="pbtns">
+          <a href="tel:+919122445666" class="pbtn pbtn-g">📞 9122445666 पर Call करें</a>
+          <a href="https://wa.me/919122445666" target="_blank" class="pbtn pbtn-w">💬 WhatsApp पर बात करें</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="tick-item">🛡️ IRDAI अधिकृत सलाहकार</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🚗 Motor Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">❤️ Health Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🧬 Life Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">⚡ Same Day Policy</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🤝 Claim Support</span><span class="tick-sep">◆</span>
+    <span class="tick-item">📞 9122445666</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🛡️ IRDAI अधिकृत सलाहकार</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🚗 Motor Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">❤️ Health Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🧬 Life Insurance</span><span class="tick-sep">◆</span>
+    <span class="tick-item">⚡ Same Day Policy</span><span class="tick-sep">◆</span>
+    <span class="tick-item">🤝 Claim Support</span><span class="tick-sep">◆</span>
+    <span class="tick-item">📞 9122445666</span><span class="tick-sep">◆</span>
+  </div>
+</div>
+
 <!-- STATS -->
-<section class="stats">
-  <div class="stat-item">
-    <span class="stat-number" id="totalClients">...</span>
-    <div class="stat-label">संतुष्ट ग्राहक</div>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number" id="totalCoverage">...</span>
-    <div class="stat-label">कुल कवरेज</div>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number">99%</span>
-    <div class="stat-label">क्लेम सफल</div>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number">10+</span>
-    <div class="stat-label">वर्ष अनुभव</div>
+<section class="stats-bar">
+  <div class="stats-grid">
+    <div class="scard"><div class="scard-icon">👨‍👩‍👧‍👦</div><span class="scard-num" id="totalClients">...</span><div class="scard-lbl">खुश परिवार</div><div class="live-pill"><span class="ldot"></span>Live</div></div>
+    <div class="scard"><div class="scard-icon">💰</div><span class="scard-num" id="totalCoverage">...</span><div class="scard-lbl">कुल कवरेज</div><div class="live-pill"><span class="ldot"></span>Live</div></div>
+    <div class="scard"><div class="scard-icon">✅</div><span class="scard-num">99%</span><div class="scard-lbl">Claim Success</div></div>
+    <div class="scard"><div class="scard-icon">🏢</div><span class="scard-num">15+</span><div class="scard-lbl">Partner Companies</div></div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">हमारी सेवाएं</h2>
-      <a href="#quote" class="section-cta">कोटेशन पाएं →</a>
+<section class="services" id="services">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <div class="sec-head">
+      <span class="sec-tag">हमारी सेवाएं</span>
+      <h2 class="sec-title">हर परिवार के लिए सही बीमा</h2>
+      <p class="sec-sub">Motor • Health • Life — सभी जरूरतों के लिए एक ही जगह</p>
+      <div class="sec-line"></div>
     </div>
-    <div class="services-grid">
-      <div class="service-card" onclick="scrollToQuote()">
-        <span class="service-icon">🚗</span>
-        <h3 class="service-title">मोटर इंश्योरेंस</h3>
-        <p class="service-desc" id="motorStats">बाइक, कार, कमर्शियल वाहन के लिए तुरंत बीमा। कैशलेस रिपेयर नेटवर्क।</p>
-        <span class="service-badge" id="motorBadge">प्लान देखें</span>
-        <span class="live-badge" id="motorLive">🔥 Live</span>
-      </div>
-      <div class="service-card" onclick="scrollToQuote()">
-        <span class="service-icon">❤️</span>
-        <h3 class="service-title">हेल्थ इंश्योरेंस</h3>
-        <p class="service-desc" id="healthStats">व्यक्तिगत, फैमिली फ्लोटर, क्रिटिकल इलनेस कवर।</p>
-        <span class="service-badge" id="healthBadge">कोटेशन पाएं</span>
-        <span class="live-badge" id="healthLive">🔥 Live</span>
-      </div>
-      <div class="service-card" onclick="scrollToQuote()">
-        <span class="service-icon">🧬</span>
-        <h3 class="service-title">लाइफ इंश्योरेंस</h3>
-        <p class="service-desc" id="lifeStats">टर्म, एंडोमेंट, ULIP, LIC पॉलिसी। परिवार की सुरक्षा।</p>
-        <span class="service-badge" id="lifeBadge">प्लान देखें</span>
-        <span class="live-badge" id="lifeLive">🔥 Live</span>
-      </div>
-      <div class="service-card" onclick="scrollToQuote()">
-        <span class="service-icon">🦺</span>
-        <h3 class="service-title">पर्सनल एक्सीडेंट</h3>
-        <p class="service-desc">पूर्ण शरीर सुरक्षा। दुर्घटना में तुरंत वित्तीय सहायता।</p>
-        <span class="service-badge">कोटेशन पाएं</span>
-      </div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc" onclick="openCalc('motor')">
+      <span class="svc-ico">🚗</span>
+      <h3 class="svc-title">मोटर बीमा</h3>
+      <p class="svc-desc">Bike, Car, Commercial vehicle। Cashless repair। Third Party + Comprehensive।</p>
+      <div class="svc-stat" id="motorStats">10+ Companies | Best Rates</div>
+      <div class="svc-cta">Premium जानें →</div>
+    </div>
+    <div class="svc" onclick="openCalc('health')">
+      <span class="svc-ico">❤️</span>
+      <h3 class="svc-title">स्वास्थ्य बीमा</h3>
+      <p class="svc-desc">Individual, Family Floater, Senior Citizen। Cashless hospital network।</p>
+      <div class="svc-stat" id="healthStats">8+ Companies | Cashless Claims</div>
+      <div class="svc-cta">Premium जानें →</div>
+    </div>
+    <div class="svc" onclick="openCalc('life')">
+      <span class="svc-ico">🧬</span>
+      <h3 class="svc-title">जीवन बीमा</h3>
+      <p class="svc-desc">Term Plan, Endowment, ULIP, LIC। परिवार की financial security।</p>
+      <div class="svc-stat" id="lifeStats">LIC + 6 Companies</div>
+      <div class="svc-cta">Premium जानें →</div>
+    </div>
+    <div class="svc" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+      <span class="svc-ico">🦺</span>
+      <h3 class="svc-title">व्यक्तिगत दुर्घटना</h3>
+      <p class="svc-desc">दुर्घटना में पूरी सुरक्षा। Disability cover। बहुत कम premium।</p>
+      <div class="svc-stat">Starting ₹500/year</div>
+      <div class="svc-cta">Quote पाएं →</div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="container">
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon" style="background:linear-gradient(135deg,#4ade80,#22c55e);">✅</div>
-        <div>
-          <h3 class="feature-title">IRDAI अधिकृत POSP</h3>
-          <p class="feature-desc">सभी प्रमुख बीमा कंपनियों से लाइसेंस प्राप्त। आपकी सुरक्षा हमारी जिम्मेदारी।</p>
+<!-- CALCULATOR -->
+<section class="calc-sec" id="calculator">
+  <div class="calc-wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Premium Calculator</span>
+      <h2 class="sec-title">💰 अपना Premium जानें</h2>
+      <p class="sec-sub">30 seconds में approximate premium estimate पाएं</p>
+      <div class="sec-line"></div>
+    </div>
+    <div class="ctabs">
+      <button class="ctab active" onclick="switchTab(event,'motor')">🚗 Motor</button>
+      <button class="ctab" onclick="switchTab(event,'health')">❤️ Health</button>
+      <button class="ctab" onclick="switchTab(event,'life')">🧬 Life / Term</button>
+    </div>
+    <!-- Motor -->
+    <div class="cpanel active" id="panel-motor">
+      <div class="ccard">
+        <div class="cgrid">
+          <div class="cg"><label>वाहन प्रकार</label><select class="ci" id="m-type"><option value="bike">🏍️ Bike</option><option value="car">🚗 Car</option><option value="commercial">🚛 Commercial</option></select></div>
+          <div class="cg"><label>Engine / Value</label><select class="ci" id="m-cc"><option value="small">Bike ≤150cc / Car ≤₹5L</option><option value="medium">Bike 150-350cc / Car ₹5-10L</option><option value="large">Bike 350cc+ / Car ₹10L+</option></select></div>
+          <div class="cg"><label>Policy Type</label><select class="ci" id="m-policy"><option value="tp">Third Party (TP)</option><option value="comp">Comprehensive</option><option value="od">Own Damage Only</option></select></div>
+          <div class="cg"><label>वाहन की उम्र</label><select class="ci" id="m-age"><option value="new">नया (0-1 साल)</option><option value="mid">1-5 साल</option><option value="old">5+ साल</option></select></div>
         </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">⚡</div>
-        <div>
-          <h3 class="feature-title">तुरंत पॉलिसी</h3>
-          <p class="feature-desc">मिनटों में पूरी तरह डिजिटल पॉलिसी। कोई कागजी काम नहीं।</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">🏆</div>
-        <div>
-          <h3 class="feature-title">TurtleMint PRO</h3>
-          <p class="feature-desc" id="turtleStats">प्रमाणित और विश्वसनीय प्लेटफॉर्म पार्टनर।</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:linear-gradient(135deg,#ec4899,#be185d);">🤝</div>
-        <div>
-          <h3 class="feature-title">क्लेम सपोर्ट</h3>
-          <p class="feature-desc">क्लेम प्रक्रिया में हमारा पूरा सहयोग। 99% सफलता दर।</p>
-        </div>
+        <button class="cbtn" onclick="calcMotor()">🔢 Premium Calculate करें</button>
+        <div class="cresult" id="result-motor"></div>
       </div>
     </div>
+    <!-- Health -->
+    <div class="cpanel" id="panel-health">
+      <div class="ccard">
+        <div class="cgrid">
+          <div class="cg"><label>Plan Type</label><select class="ci" id="h-type"><option value="individual">Individual</option><option value="family2">Family 2 सदस्य</option><option value="family4">Family Floater 4 सदस्य</option><option value="senior">Senior Citizen 60+</option></select></div>
+          <div class="cg"><label>उम्र</label><select class="ci" id="h-age"><option value="young">18–35 साल</option><option value="mid">36–45 साल</option><option value="mature">46–55 साल</option><option value="senior">56–65 साल</option></select></div>
+          <div class="cg"><label>Sum Insured</label><select class="ci" id="h-sum"><option value="3">₹3 लाख</option><option value="5">₹5 लाख</option><option value="10">₹10 लाख</option><option value="15">₹15 लाख</option><option value="25">₹25 लाख+</option></select></div>
+          <div class="cg"><label>कोई बीमारी?</label><select class="ci" id="h-condition"><option value="no">नहीं — स्वस्थ</option><option value="yes">हाँ — BP/Diabetes</option></select></div>
+        </div>
+        <button class="cbtn" onclick="calcHealth()">🔢 Premium Calculate करें</button>
+        <div class="cresult" id="result-health"></div>
+      </div>
+    </div>
+    <!-- Life -->
+    <div class="cpanel" id="panel-life">
+      <div class="ccard">
+        <div class="cgrid">
+          <div class="cg"><label>Plan Type</label><select class="ci" id="l-type"><option value="term">Term Plan</option><option value="endowment">Endowment / Money Back</option><option value="ulip">ULIP</option><option value="lic">LIC Traditional</option></select></div>
+          <div class="cg"><label>उम्र</label><select class="ci" id="l-age"><option value="young">18–25 साल</option><option value="mid1">26–35 साल</option><option value="mid2">36–45 साल</option><option value="mature">46–55 साल</option></select></div>
+          <div class="cg"><label>Sum Assured</label><select class="ci" id="l-sum"><option value="25">₹25 लाख</option><option value="50">₹50 लाख</option><option value="100">₹1 करोड़</option><option value="200">₹2 करोड़+</option></select></div>
+          <div class="cg"><label>Policy Term</label><select class="ci" id="l-term"><option value="10">10 साल</option><option value="20">20 साल</option><option value="30">30 साल</option><option value="40">40 साल</option></select></div>
+        </div>
+        <button class="cbtn" onclick="calcLife()">🔢 Premium Calculate करें</button>
+        <div class="cresult" id="result-life"></div>
+      </div>
+    </div>
+    <p class="calc-note">⚠️ यह केवल approximate estimate है। Exact premium के लिए संतोष कुमार से बात करें: <strong>9122445666</strong></p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="reviews">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <div class="sec-head">
+      <span class="sec-tag">ग्राहकों की राय</span>
+      <h2 class="sec-title">हमारे खुश ग्राहक</h2>
+      <p class="sec-sub">Real customers की असली कहानियां</p>
+      <div class="sec-line"></div>
+    </div>
+  </div>
+  <div class="tgrid">
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"संतोष जी ने मेरी car insurance में बहुत मदद की। Claim में भी हाथ थामा। 100% recommend!"</p><div class="tauthor"><div class="tavatar">र</div><div><div class="tname">रमेश कुमार</div><div class="tcity">📍 धनबाद</div><div class="ttype">🚗 Car Insurance</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Family health plan के लिए संतोष जी ने एक call में सब समझाया। बहुत genuine और helpful हैं!"</p><div class="tauthor"><div class="tavatar">स</div><div><div class="tname">सुनीता देवी</div><div class="tcity">📍 धनबाद</div><div class="ttype">❤️ Health Insurance</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"₹1Cr term plan सिर्फ ₹10,000/year में! संतोष जी ने clearly explain किया और best plan दिलाया।"</p><div class="tauthor"><div class="tavatar">अ</div><div><div class="tname">अमित शर्मा</div><div class="tcity">📍 बोकारो</div><div class="ttype">🧬 Term Plan</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Bike accident में संतोष जी ने खुद hospital आकर claim process करवाया। पूरा पैसा मिला!"</p><div class="tauthor"><div class="tavatar">प</div><div><div class="tname">प्रिया सिंह</div><div class="tcity">📍 धनबाद</div><div class="ttype">🏍️ Bike Claim</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Senior citizen health plan के लिए best guidance मिली। Reasonable premium में best coverage!"</p><div class="tauthor"><div class="tavatar">म</div><div><div class="tname">मोहन तिवारी</div><div class="tcity">📍 धनबाद</div><div class="ttype">❤️ Senior Health</div></div></div></div>
+    <div class="tcard"><div class="tstars">★★★★★</div><p class="ttext">"Commercial vehicle insurance competitive rate में मिला। Renewal reminder भी देते हैं। Professional!"</p><div class="tauthor"><div class="tavatar">वि</div><div><div class="tname">विक्रम यादव</div><div class="tcity">📍 गिरिडीह</div><div class="ttype">🚛 Commercial</div></div></div></div>
   </div>
 </section>
 
 <!-- PARTNERS -->
 <section class="partners">
-  <div class="container">
-    <h3 class="partners-title">हमारे पार्टनर इंश्योरेंस कंपनियां</h3>
-    <div class="partners-grid">
-      <div class="partner-logo">🏢 LIC</div>
-      <div class="partner-logo">🏢 HDFC Life</div>
-      <div class="partner-logo">🏢 SBI Life</div>
-      <div class="partner-logo">🏢 ICICI Pru</div>
-      <div class="partner-logo">🏢 Bajaj Allianz</div>
-      <div class="partner-logo">🏢 Star Health</div>
-      <div class="partner-logo">🏢 New India</div>
-      <div class="partner-logo">🏢 Tata AIA</div>
-      <div class="partner-logo">🏢 Max Life</div>
-      <div class="partner-logo">🏢 Niva Bupa</div>
+  <div class="partners-wrap">
+    <div class="phd">हमारी Partner Insurance Companies</div>
+    <div class="pgrid">
+      <div class="ptag">🏢 LIC</div><div class="ptag">🏢 HDFC Life</div><div class="ptag">🏢 SBI Life</div>
+      <div class="ptag">🏢 ICICI Prudential</div><div class="ptag">🏢 Bajaj Allianz</div><div class="ptag">🏢 Star Health</div>
+      <div class="ptag">🏢 New India Assurance</div><div class="ptag">🏢 Tata AIA</div>
+      <div class="ptag">🏢 Max Life</div><div class="ptag">🏢 Niva Bupa</div>
     </div>
   </div>
 </section>
 
-<!-- QUOTE FORM -->
-<section id="quote" class="quote-section">
-  <div class="container">
-    <div class="quote-container">
-      <h2 class="quote-title">मुफ्त कोटेशन पाएं</h2>
-      <p class="quote-subtitle">संतोष कुमार 1 घंटे में कॉल करेंगे 📞</p>
-      <div class="form-card">
+<!-- LEAD FORM -->
+<section class="lead-sec" id="quote">
+  <div class="lead-inner">
+    <div class="lead-left">
+      <span class="sec-tag">Free Consultation</span>
+      <h2 class="sec-title">मुफ्त Quote पाएं</h2>
+      <p class="sec-sub">संतोष कुमार 1 घंटे में exact premium बताएंगे — बिल्कुल मुफ्त!</p>
+      <div class="perks">
+        <div class="perk"><div class="pmark">✓</div>15+ companies से सबसे कम rate</div>
+        <div class="perk"><div class="pmark">✓</div>Same day policy issuance</div>
+        <div class="perk"><div class="pmark">✓</div>हर claim में आपका साथ</div>
+        <div class="perk"><div class="pmark">✓</div>1 घंटे में callback guarantee</div>
+        <div class="perk"><div class="pmark">✓</div>Renewal reminder — मुफ्त</div>
+        <div class="perk"><div class="pmark">✓</div>आपकी details 100% secure</div>
+      </div>
+    </div>
+    <div>
+      <div class="lform">
+        <h3 class="lf-title">📋 Quote Request Form</h3>
+        <p class="lf-sub">Form भरें — हम जल्द contact करेंगे</p>
         <form id="quoteForm">
-          <div class="form-group">
-            <label class="form-label">पूरा नाम *</label>
-            <input type="text" id="fName" class="form-input" placeholder="आपका पूरा नाम" required>
+          <div class="fgrid2">
+            <div class="fg"><label>पूरा नाम *</label><input type="text" id="fName" class="fi" placeholder="आपका नाम" required></div>
+            <div class="fg"><label>Mobile *</label><input type="tel" id="fMobile" class="fi" placeholder="9XXXXXXXXX" maxlength="10" required></div>
           </div>
-          <div class="form-group">
-            <label class="form-label">मोबाइल नंबर *</label>
-            <input type="tel" id="fMobile" class="form-input" placeholder="10 अंक का नंबर" maxlength="10" required>
+          <div class="fg"><label>Email (optional)</label><input type="email" id="fEmail" class="fi" placeholder="email@gmail.com"></div>
+          <div class="fgrid2">
+            <div class="fg"><label>बीमा प्रकार *</label>
+              <select id="fService" class="fi" required>
+                <option value="">-- चुनें --</option>
+                <option value="Bike Insurance">🏍️ Bike Insurance</option>
+                <option value="Car Insurance">🚗 Car Insurance</option>
+                <option value="Health Insurance">❤️ Health Insurance</option>
+                <option value="Life Insurance">🧬 Life Insurance</option>
+                <option value="Personal Accident">🦺 Personal Accident</option>
+              </select></div>
+            <div class="fg"><label>शहर</label><input type="text" id="fCity" class="fi" placeholder="धनबाद"></div>
           </div>
-          <div class="form-group">
-            <label class="form-label">ईमेल (optional)</label>
-            <input type="email" id="fEmail" class="form-input" placeholder="youremail@gmail.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">बीमा प्रकार *</label>
-            <select id="fService" class="form-input form-select" required>
-              <option value="">-- बीमा चुनें --</option>
-              <option value="Bike Insurance">🏍️ बाइक इंश्योरेंस</option>
-              <option value="Car Insurance">🚗 कार इंश्योरेंस</option>
-              <option value="Health Insurance">❤️ हेल्थ इंश्योरेंस</option>
-              <option value="Life Insurance">🧬 लाइफ इंश्योरेंस</option>
-              <option value="Personal Accident">🦺 पर्सनल एक्सीडेंट</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">शहर</label>
-            <input type="text" id="fCity" class="form-input" placeholder="धनबाद">
-          </div>
-          <button type="submit" class="btn-submit" id="submitBtn">🚀 मुफ्त कोटेशन पाएं</button>
+          <button type="submit" class="fsub" id="submitBtn">🚀 मुफ्त Quote पाएं — अभी</button>
         </form>
-        <div class="success-msg" id="successMsg">
-          <div class="s-icon">✅</div>
-          <h3>Request भेज दी गई!</h3>
-          <p style="opacity:0.9;margin-bottom:1rem;">Santosh Kumar जल्द ही call करेंगे।</p>
-          <a href="https://wa.me/919122445666" target="_blank"
-             style="display:inline-block;background:#25d366;color:white;padding:0.8rem 2rem;border-radius:30px;font-weight:700;text-decoration:none;font-size:1rem;">
-            💬 अभी WhatsApp करें
-          </a>
+        <div class="sbox" id="successMsg">
+          <div style="font-size:2.3rem;margin-bottom:0.4rem;">✅</div>
+          <h3>Request मिल गई!</h3>
+          <p>संतोष कुमार जल्द ही call करेंगे।</p>
+          <a href="https://wa.me/919122445666" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:#25d366;color:white;padding:0.75rem 1.6rem;border-radius:8px;font-weight:700;text-decoration:none;">💬 अभी WhatsApp करें</a>
         </div>
       </div>
     </div>
@@ -315,166 +567,109 @@ h1,h2,h3{font-weight:800;line-height:1.1;}
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>📍 संपर्क करें</h4>
-        <a href="tel:+919122445666">📞 9122445666</a>
-        <a href="https://wa.me/919122445666" target="_blank">💬 WhatsApp</a>
-        <a href="mailto:life.motor.health@gmail.com">✉️ life.motor.health@gmail.com</a>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="flogo">
+          <div class="flogo-mark">सं</div>
+          <div><div class="flogo-name">परफेक्ट फाइनेंशियल सर्विसेज</div><div class="flogo-sub">Santosh Kumar — Insurance Advisor</div></div>
+        </div>
+        <div class="fslogan">"सही बीमा। सही दाम। सही समय।"</div>
+        <p class="fdesc">धनबाद, झारखंड के भरोसेमंद बीमा सलाहकार। आपके परिवार की सुरक्षा हमारी जिम्मेदारी।</p>
+        <div class="fcontacts">
+          <a href="tel:+919122445666">📞 +91 9122445666</a>
+          <a href="https://wa.me/919122445666" target="_blank">💬 WhatsApp Chat</a>
+          <a href="mailto:life.motor.health@gmail.com">✉️ life.motor.health@gmail.com</a>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>🛡️ सेवाएं</h4>
-        <a href="#quote">मोटर इंश्योरेंस</a>
-        <a href="#quote">हेल्थ इंश्योरेंस</a>
-        <a href="#quote">लाइफ इंश्योरेंस</a>
-        <a href="#quote">पर्सनल एक्सीडेंट</a>
+      <div class="fcol">
+        <h4>सेवाएं</h4>
+        <a href="#calculator">🚗 Motor Insurance</a>
+        <a href="#calculator">❤️ Health Insurance</a>
+        <a href="#calculator">🧬 Life Insurance</a>
+        <a href="#quote">🦺 Personal Accident</a>
       </div>
-      <div class="footer-section">
-        <h4>🕐 काम के घंटे</h4>
+      <div class="fcol">
+        <h4>काम के घंटे</h4>
         <p>सोमवार — शनिवार</p>
         <p>सुबह 9:00 — शाम 7:00</p>
         <p>📍 धनबाद, झारखंड</p>
+        <p style="color:rgba(46,204,113,0.7);margin-top:0.4rem;">रविवार: Appointment पर</p>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Perfect Financial Services | IRDAI POSP Licensed | Santosh Kumar | सभी अधिकार सुरक्षित
+      <p>© 2026 Perfect Financial Services | संतोष कुमार | सभी अधिकार सुरक्षित</p>
+      <span class="firdai">✅ IRDAI POSP Licensed</span>
     </div>
   </div>
 </footer>
 
+<!-- JS -->
 <script>
-// ✅ APPS SCRIPT URL — CONNECTED
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTNdL9-8sfPUdAwDg4QHtq-_lozzUHPP2gclOvnZa5lCnm2rhjz0uhxKZBtJr2Uzie2Q/exec';
-
-// ============================================================
-// LIVE STATS — Google Sheet se fetch
-// ============================================================
-async function fetchStats() {
-  try {
-    const res  = await fetch(SCRIPT_URL, { method: 'GET', mode: 'cors' });
-    const data = await res.json();
-
-    if (data.status !== 'success') return;
-
-    const fmt = n => {
-      if (n >= 10000000) return '₹' + (n/10000000).toFixed(1) + 'Cr+';
-      if (n >= 100000)   return '₹' + (n/100000).toFixed(1) + 'L+';
-      if (n > 0)         return '₹' + n.toLocaleString('en-IN') + '+';
-      return '—';
-    };
-
-    // Stats bar
-    document.getElementById('totalClients').textContent  = data.total > 0 ? data.total + '+' : '500+';
-    document.getElementById('totalCoverage').textContent = data.totalAmount > 0 ? fmt(data.totalAmount) : '₹25Cr+';
-
-    // Motor card
-    if (data.motor > 0) {
-      document.getElementById('motorStats').innerHTML    = `${data.motor}+ ग्राहक | ${fmt(data.motorAmt)} कवरेज`;
-      document.getElementById('motorBadge').textContent  = `${data.motor}+ Policies`;
-      document.getElementById('motorLive').style.display = 'inline-flex';
-    }
-    // Health card
-    if (data.health > 0) {
-      document.getElementById('healthStats').innerHTML    = `${data.health}+ ग्राहक | ${fmt(data.healthAmt)} कवरेज`;
-      document.getElementById('healthBadge').textContent  = `${data.health}+ Policies`;
-      document.getElementById('healthLive').style.display = 'inline-flex';
-    }
-    // Life card
-    if (data.life > 0) {
-      document.getElementById('lifeStats').innerHTML    = `${data.life}+ ग्राहक | ${fmt(data.lifeAmt)} कवरेज`;
-      document.getElementById('lifeBadge').textContent  = `${data.life}+ Policies`;
-      document.getElementById('lifeLive').style.display = 'inline-flex';
-    }
-
-    // Hero live status
-    const time = new Date().toLocaleTimeString('hi-IN', {hour:'2-digit', minute:'2-digit'});
-    document.getElementById('liveStatus').innerHTML =
-      `<span class="live-dot"></span> Live: ${data.total}+ ग्राहक | अपडेट: ${time}`;
-
-    // TurtleMint stat
-    document.getElementById('turtleStats').textContent =
-      `प्रमाणित और विश्वसनीय प्लेटफॉर्म पार्टनर। ${data.total}+ खुश ग्राहक।`;
-
-  } catch(err) {
-    console.warn('Stats fetch error:', err.message);
-    // Fallback values
-    document.getElementById('totalClients').textContent  = '500+';
-    document.getElementById('totalCoverage').textContent = '₹25Cr+';
-    document.getElementById('liveStatus').innerHTML =
-      '<span class="live-dot"></span> 15+ कंपनियों के सबसे अच्छे प्लान';
-  }
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwTNdL9-8sfPUdAwDg4QHtq-_lozzUHPP2gclOvnZa5lCnm2rhjz0uhxKZBtJr2Uzie2Q/exec';
+async function fetchStats(){
+  try{
+    const res=await fetch(SCRIPT_URL,{method:'GET',mode:'cors'});
+    const d=await res.json();
+    if(d.status!=='success')return;
+    const fmt=n=>n>=10000000?'₹'+(n/10000000).toFixed(1)+'Cr+':n>=100000?'₹'+(n/100000).toFixed(1)+'L+':n>0?'₹'+n.toLocaleString('en-IN')+'+':'—';
+    document.getElementById('totalClients').textContent=d.total>0?d.total+'+':'500+';
+    document.getElementById('totalCoverage').textContent=d.totalAmount>0?fmt(d.totalAmount):'₹25Cr+';
+    document.getElementById('h-clients').textContent=d.total>0?d.total+'+':'500+';
+    if(d.motor>0)document.getElementById('motorStats').textContent=`${d.motor}+ Clients | ${fmt(d.motorAmt)} Coverage`;
+    if(d.health>0)document.getElementById('healthStats').textContent=`${d.health}+ Clients | ${fmt(d.healthAmt)} Coverage`;
+    if(d.life>0)document.getElementById('lifeStats').textContent=`${d.life}+ Clients | ${fmt(d.lifeAmt)} Coverage`;
+  }catch(e){document.getElementById('totalClients').textContent='500+';document.getElementById('totalCoverage').textContent='₹25Cr+';}
 }
+fetchStats();setInterval(fetchStats,30000);
 
-// Fetch on load + every 30 sec
-fetchStats();
-setInterval(fetchStats, 30000);
+function switchTab(e,t){document.querySelectorAll('.ctab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.cpanel').forEach(x=>x.classList.remove('active'));e.target.classList.add('active');document.getElementById('panel-'+t).classList.add('active');}
+function openCalc(t){document.getElementById('calculator').scrollIntoView({behavior:'smooth'});setTimeout(()=>{const tabs=['motor','health','life'];document.querySelectorAll('.ctab').forEach((x,i)=>x.classList.toggle('active',tabs[i]===t));document.querySelectorAll('.cpanel').forEach(x=>x.classList.remove('active'));document.getElementById('panel-'+t).classList.add('active');},600);}
 
-// ============================================================
-// QUOTE FORM — Sheet mein save + WhatsApp
-// ============================================================
-document.getElementById('quoteForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const btn  = document.getElementById('submitBtn');
-  btn.disabled    = true;
-  btn.textContent = '⏳ भेज रहे हैं...';
-
-  const payload = {
-    action: 'saveLead',
-    data: {
-      name:    document.getElementById('fName').value.trim(),
-      mobile:  document.getElementById('fMobile').value.trim(),
-      email:   document.getElementById('fEmail').value.trim(),
-      service: document.getElementById('fService').value,
-      city:    document.getElementById('fCity').value.trim() || 'धनबाद',
-      message: ''
-    }
-  };
-
-  // Save to Sheet
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode:   'no-cors',          // Apps Script requires no-cors for POST
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-  } catch(err) {
-    console.warn('Lead save error:', err.message);
-  }
-
-  // WhatsApp message
-  const msg = encodeURIComponent(
-    `नया कोटेशन रिक्वेस्ट!\n\nनाम: ${payload.data.name}\nमोबाइल: ${payload.data.mobile}\nबीमा: ${payload.data.service}\nशहर: ${payload.data.city}\n\n— Perfect Financial Services`
-  );
-  setTimeout(() => window.open(`https://wa.me/919122445666?text=${msg}`, '_blank'), 600);
-
-  // Show success
-  document.getElementById('quoteForm').style.display  = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-
-  // Refresh stats
-  setTimeout(fetchStats, 3000);
-});
-
-// ============================================================
-// HELPERS
-// ============================================================
-function scrollToQuote() {
-  document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+function showResult(id,min,max,rows,type,details){
+  const el=document.getElementById('result-'+id);
+  const f=n=>'₹'+n.toLocaleString('en-IN');
+  const wa=encodeURIComponent(`Exact ${type} quote chahiye!\n\n${details}\n\nCall: 9122445666`);
+  el.innerHTML=`<div class="cr-lbl">Approximate Annual Premium</div><div class="cr-amt">${f(min)} — ${f(max)}</div><div class="cr-note">⚠️ Estimate only — exact premium के लिए call करें</div><div class="cr-btns"><a href="https://wa.me/919122445666?text=${wa}" target="_blank" class="cr-wa">💬 WhatsApp Exact Quote</a><button class="cr-call" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">📞 Call Request</button></div><div class="bdown"><div class="bd-hd">Breakdown</div>${rows.map(r=>`<div class="bd-row"><span>${r.l}</span><span>${r.v}</span></div>`).join('')}</div>`;
+  el.classList.add('show');el.style.display='block';
 }
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    const t = document.querySelector(this.getAttribute('href'));
-    if (t) t.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-document.getElementById('heroSearch').addEventListener('submit', function(e) {
+function calcMotor(){
+  const type=document.getElementById('m-type').value,cc=document.getElementById('m-cc').value,policy=document.getElementById('m-policy').value,age=document.getElementById('m-age').value;
+  let tp=type==='bike'?(cc==='small'?538:cc==='medium'?714:1366):type==='car'?(cc==='small'?2094:cc==='medium'?3416:7897):4000;
+  let idv=type==='bike'?(cc==='small'?60000:cc==='medium'?120000:250000):type==='car'?(cc==='small'?400000:cc==='medium'?750000:1500000):600000;
+  let odr=type==='bike'?0.025:0.03;if(age==='mid')odr*=0.85;if(age==='old')odr*=0.70;
+  const od=Math.round(idv*odr),base=policy==='tp'?tp:policy==='od'?od:tp+od,gst=Math.round(base*0.18);
+  const rows=policy==='comp'?[{l:'Third Party',v:'₹'+tp.toLocaleString('en-IN')},{l:'Own Damage',v:'₹'+od.toLocaleString('en-IN')},{l:'GST 18%',v:'₹'+gst.toLocaleString('en-IN')},{l:'Total',v:'₹'+(base+gst).toLocaleString('en-IN')}]:[{l:'Base Premium',v:'₹'+base.toLocaleString('en-IN')},{l:'GST 18%',v:'₹'+gst.toLocaleString('en-IN')},{l:'Total',v:'₹'+(base+gst).toLocaleString('en-IN')}];
+  showResult('motor',Math.round((base+gst)*0.9),Math.round((base+gst)*1.1),rows,'Motor',`Type:${type} Policy:${policy}`);
+}
+function calcHealth(){
+  const type=document.getElementById('h-type').value,age=document.getElementById('h-age').value,sum=parseInt(document.getElementById('h-sum').value),cond=document.getElementById('h-condition').value;
+  let rate=age==='young'?500:age==='mid'?750:age==='mature'?1200:2000;let mult=type==='family2'?1.6:type==='family4'?2.2:1;if(type==='senior')rate=2200;
+  const base=Math.round(rate*sum*mult*(cond==='yes'?1.25:1)),gst=Math.round(base*0.18);
+  showResult('health',Math.round(base*0.85),Math.round((base+gst)*1.1),[{l:'Plan',v:{individual:'Individual',family2:'Family 2',family4:'Family 4',senior:'Senior Citizen'}[type]},{l:'Sum Insured',v:'₹'+(sum*100000).toLocaleString('en-IN')},{l:'Base Premium',v:'₹'+base.toLocaleString('en-IN')},{l:'GST 18%',v:'₹'+gst.toLocaleString('en-IN')},{l:'Total',v:'₹'+(base+gst).toLocaleString('en-IN')}],'Health',`Plan:${type} Age:${age} Sum:₹${sum}L`);
+}
+function calcLife(){
+  const type=document.getElementById('l-type').value,age=document.getElementById('l-age').value,sum=parseInt(document.getElementById('l-sum').value),term=parseInt(document.getElementById('l-term').value);
+  let base=0;
+  if(type==='term'){let r=age==='young'?8000:age==='mid1'?10000:age==='mid2'?16000:28000;if(term>=30)r*=1.15;base=Math.round(r*(sum/100));}
+  else if(type==='endowment'){base=Math.round((age==='young'?55:age==='mid1'?60:age==='mid2'?70:85)*sum);}
+  else if(type==='ulip'){base=Math.max(Math.round(sum*800),25000);}
+  else{base=Math.round((age==='young'?65:age==='mid1'?72:age==='mid2'?85:105)*sum);}
+  const gst=Math.round(base*(type==='term'?0.18:0.045));
+  showResult('life',Math.round(base*0.88),Math.round((base+gst)*1.12),[{l:'Plan',v:{term:'Term Plan',endowment:'Endowment',ulip:'ULIP',lic:'LIC Traditional'}[type]},{l:'Sum Assured',v:'₹'+(sum*100000).toLocaleString('en-IN')},{l:'Annual Premium',v:'₹'+base.toLocaleString('en-IN')},{l:'GST',v:'₹'+gst.toLocaleString('en-IN')},{l:'Monthly ~',v:'₹'+Math.round((base+gst)/12).toLocaleString('en-IN')+'/mo'}],'Life',`Plan:${type} Sum:₹${sum}L Term:${term}yr`);
+}
+document.getElementById('quoteForm').addEventListener('submit',async function(e){
   e.preventDefault();
-  scrollToQuote();
+  const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='⏳ भेज रहे हैं...';
+  const d={name:document.getElementById('fName').value.trim(),mobile:document.getElementById('fMobile').value.trim(),email:document.getElementById('fEmail').value.trim(),service:document.getElementById('fService').value,city:document.getElementById('fCity').value.trim()||'धनबाद',message:''};
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'saveLead',data:d})});}catch(e){}
+  const msg=encodeURIComponent(`Free Quote!\n\nनाम: ${d.name}\nMobile: ${d.mobile}\nBima: ${d.service}\nCity: ${d.city}`);
+  setTimeout(()=>window.open(`https://wa.me/919122445666?text=${msg}`,'_blank'),600);
+  document.getElementById('quoteForm').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+  setTimeout(fetchStats,3000);
 });
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
 </script>
 </body>
 </html>
