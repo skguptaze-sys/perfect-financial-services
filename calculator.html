@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insurance Calculator | Perfect Insurance Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a7a3c;--green2:#22a052;--green3:#2ecc71;
+  --green-light:#e8f7ee;--green-dark:#0d5c2a;
+  --blue:#2563eb;--blue-light:#eff6ff;
+  --orange:#f97316;--orange-light:#fff7ed;
+  --red:#dc2626;--red-light:#fef2f2;
+  --cream:#f8fff9;--white:#fff;
+  --text:#111827;--muted:#6b7280;--border:#e5e7eb;
+  --grad:linear-gradient(135deg,#0d5c2a,#1a7a3c,#22a052);
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:0 20px 50px rgba(0,0,0,0.12);
+  --wa:#25d366;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:#f3f4f6;color:var(--text);}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--grad);padding:0.8rem 0;}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.tb-logo{display:flex;align-items:center;gap:0.7rem;}
+.tb-logo-icon{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;}
+.tb-logo-icon svg{width:22px;height:22px;fill:white;}
+.tb-logo-name{font-size:1rem;font-weight:800;color:white;font-family:'Baloo 2',sans-serif;}
+.tb-logo-name span{color:#a7f3d0;}
+.tb-back{display:inline-flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.85);font-size:0.85rem;font-weight:600;transition:color 0.2s;}
+.tb-back:hover{color:white;}
+.tb-phone{color:rgba(255,255,255,0.9);font-size:0.85rem;font-weight:600;}
+
+/* ── HERO BAND ── */
+.hero-band{background:white;border-bottom:1px solid var(--border);padding:1.5rem 0;}
+.hero-band-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;text-align:center;}
+.hero-band h1{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:var(--text);font-family:'Baloo 2',sans-serif;margin-bottom:0.3rem;}
+.hero-band p{color:var(--muted);font-size:0.9rem;}
+
+/* ── MAIN TAB BAR ── */
+.main-tabs{background:white;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.main-tabs-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0;}
+.mtab{
+  flex:1;padding:1rem 0.5rem;text-align:center;
+  border-bottom:3px solid transparent;
+  font-size:0.9rem;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all 0.25s;
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+}
+.mtab:hover{color:var(--green);background:#f9fafb;}
+.mtab.active{color:var(--green);border-bottom-color:var(--green);font-weight:700;}
+.mtab-icon{font-size:1.3rem;}
+
+/* ── CONTENT ── */
+.content{max-width:1100px;margin:2rem auto;padding:0 1.5rem;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ── CALC CARD ── */
+.calc-card{
+  background:white;border-radius:20px;
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+}
+.calc-header{
+  background:var(--grad);
+  padding:1.5rem 2rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.calc-header-icon{font-size:2.5rem;}
+.calc-header-text h2{font-size:1.3rem;font-weight:900;color:white;font-family:'Baloo 2',sans-serif;}
+.calc-header-text p{color:rgba(255,255,255,0.75);font-size:0.85rem;}
+.calc-body{padding:2rem;}
+
+/* ── FIELD GROUPS ── */
+.field-section{margin-bottom:2rem;}
+.field-section-title{
+  font-size:0.72rem;font-weight:800;
+  color:var(--muted);text-transform:uppercase;
+  letter-spacing:1px;margin-bottom:1rem;
+  padding-bottom:0.5rem;border-bottom:1px solid var(--border);
+}
+.field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;}
+.field-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+
+/* ── FIELD ── */
+.field{}
+.field label{
+  display:block;font-size:0.78rem;font-weight:700;
+  color:var(--text);margin-bottom:0.5rem;
+}
+.field label span{color:var(--red);margin-left:2px;}
+.finput,.fselect{
+  width:100%;padding:0.85rem 1rem;
+  border:2px solid var(--border);border-radius:10px;
+  font-size:0.93rem;color:var(--text);background:white;
+  transition:all 0.25s;font-family:'Inter',sans-serif;
+  appearance:none;
+}
+.finput:focus,.fselect:focus{
+  outline:none;border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(26,122,60,0.1);
+}
+.fselect-wrap{position:relative;}
+.fselect-wrap::after{
+  content:'▾';position:absolute;right:1rem;top:50%;
+  transform:translateY(-50%);color:var(--muted);
+  pointer-events:none;font-size:0.85rem;
+}
+
+/* ── OPTION CARDS (big clickable choices) ── */
+.option-cards{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.opt-card{
+  flex:1;min-width:100px;
+  border:2px solid var(--border);border-radius:12px;
+  padding:0.9rem 1rem;text-align:center;cursor:pointer;
+  transition:all 0.25s;background:white;
+  display:flex;flex-direction:column;align-items:center;gap:0.3rem;
+}
+.opt-card:hover{border-color:var(--green);background:var(--green-light);}
+.opt-card.selected{border-color:var(--green);background:var(--green-light);box-shadow:0 0 0 3px rgba(26,122,60,0.1);}
+.opt-card-icon{font-size:1.6rem;}
+.opt-card-label{font-size:0.78rem;font-weight:700;color:var(--text);}
+.opt-card-sub{font-size:0.65rem;color:var(--muted);}
+
+/* ── RANGE SLIDER ── */
+.range-wrap{padding:0.5rem 0;}
+.range-labels{display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);margin-top:0.4rem;}
+.range-val{
+  font-size:1.1rem;font-weight:800;color:var(--green);
+  margin-bottom:0.4rem;font-family:'Baloo 2',sans-serif;
+}
+input[type=range]{
+  width:100%;height:6px;border-radius:3px;
+  background:linear-gradient(to right,var(--green) 0%,var(--green) 50%,var(--border) 50%,var(--border) 100%);
+  outline:none;cursor:pointer;border:none;padding:0;
+}
+input[type=range]::-webkit-slider-thumb{
+  appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--green);border:3px solid white;
+  box-shadow:0 2px 8px rgba(26,122,60,0.4);cursor:pointer;
+}
+
+/* ── TOGGLE ── */
+.toggle-wrap{display:flex;gap:0.5rem;}
+.tog{
+  flex:1;padding:0.7rem;border:2px solid var(--border);
+  border-radius:8px;text-align:center;cursor:pointer;
+  font-size:0.82rem;font-weight:600;color:var(--muted);
+  transition:all 0.25s;
+}
+.tog.on{border-color:var(--green);background:var(--green-light);color:var(--green);font-weight:700;}
+
+/* ── CALC BUTTON ── */
+.calc-btn{
+  width:100%;padding:1.1rem;
+  background:var(--grad);color:white;
+  border:none;border-radius:12px;
+  font-size:1rem;font-weight:800;cursor:pointer;
+  transition:all 0.3s;box-shadow:0 6px 20px rgba(26,122,60,0.3);
+  font-family:'Baloo 2',sans-serif;margin-top:0.5rem;
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,122,60,0.4);}
+
+/* ── RESULT PANEL ── */
+.result-panel{
+  display:none;
+  background:white;border-radius:20px;
+  box-shadow:var(--shadow-lg);
+  margin-top:1.5rem;overflow:hidden;
+}
+.result-panel.show{display:block;animation:slideUp 0.4s ease;}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+.result-top{
+  background:linear-gradient(135deg,#f0fdf4,#dcfce7);
+  border-bottom:1px solid #bbf7d0;
+  padding:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.result-amt-wrap{}
+.result-label{font-size:0.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+.result-amt{font-size:2.4rem;font-weight:900;color:var(--green);font-family:'Baloo 2',sans-serif;line-height:1.1;}
+.result-period{font-size:0.82rem;color:var(--muted);margin-top:0.2rem;}
+.result-note{
+  background:#fef3c7;border:1px solid #fde68a;
+  border-radius:8px;padding:0.6rem 1rem;
+  font-size:0.75rem;color:#92400e;font-weight:600;
+  max-width:280px;
+}
+
+.result-body{padding:2rem;}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+
+/* Breakdown table */
+.breakdown{}
+.breakdown-title{font-size:0.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.75rem;}
+.bd-row{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px solid #f3f4f6;font-size:0.88rem;}
+.bd-row:last-child{border:none;font-weight:800;color:var(--green);font-size:0.97rem;padding-top:0.75rem;}
+.bd-label{color:var(--muted);}
+.bd-val{font-weight:600;color:var(--text);}
+
+/* CTA box */
+.result-cta{}
+.result-cta-title{font-size:1rem;font-weight:800;color:var(--text);margin-bottom:0.5rem;font-family:'Baloo 2',sans-serif;}
+.result-cta-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.6;}
+.cta-btns{display:flex;flex-direction:column;gap:0.6rem;}
+.cta-wa{
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:#25d366;color:white;padding:0.9rem;border-radius:10px;
+  font-weight:700;font-size:0.92rem;transition:all 0.3s;
+}
+.cta-wa:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(37,211,102,0.4);}
+.cta-call{
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:var(--grad);color:white;padding:0.9rem;border-radius:10px;
+  font-weight:700;font-size:0.92rem;transition:all 0.3s;
+  border:none;cursor:pointer;font-family:'Inter',sans-serif;
+}
+.cta-call:hover{transform:translateY(-2px);}
+.cta-form{
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:var(--green-light);color:var(--green);padding:0.9rem;
+  border-radius:10px;font-weight:700;font-size:0.92rem;
+  border:2px solid var(--border);transition:all 0.3s;
+}
+.cta-form:hover{border-color:var(--green);}
+
+/* Savings badge */
+.savings-badge{
+  background:linear-gradient(135deg,#fef3c7,#fde68a);
+  border:1px solid #fcd34d;border-radius:10px;
+  padding:1rem;margin-top:1rem;text-align:center;
+}
+.savings-badge .sb-title{font-size:0.72rem;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:0.5px;}
+.savings-badge .sb-amt{font-size:1.5rem;font-weight:900;color:#b45309;font-family:'Baloo 2',sans-serif;}
+.savings-badge .sb-sub{font-size:0.72rem;color:#92400e;}
+
+/* ── INFO CARDS (why choose) ── */
+.info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;}
+.info-card{background:white;border-radius:14px;padding:1.4rem;border:1px solid var(--border);text-align:center;box-shadow:var(--shadow);}
+.info-icon{font-size:1.8rem;margin-bottom:0.6rem;}
+.info-title{font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:0.3rem;}
+.info-desc{font-size:0.76rem;color:var(--muted);line-height:1.6;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .field-grid-3{grid-template-columns:1fr 1fr;}
+  .result-grid{grid-template-columns:1fr;}
+  .result-top{flex-direction:column;}
+  .result-note{max-width:100%;}
+  .calc-body{padding:1.4rem;}
+  .option-cards{gap:0.5rem;}
+  .opt-card{min-width:80px;}
+}
+@media(max-width:480px){
+  .field-grid-3{grid-template-columns:1fr;}
+  .mtab{font-size:0.78rem;padding:0.8rem 0.3rem;}
+  .mtab-icon{font-size:1.1rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="tb-logo">
+      <div class="tb-logo-icon">
+        <svg viewBox="0 0 32 32"><path d="M16 2L28 7L28 17C28 23 22 28 16 30C10 28 4 23 4 17L4 7Z" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5"/><polyline points="10,16 14,20 22,12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tb-logo-name">Perfect <span>Insurance</span> Services</div>
+    </div>
+    <div class="tb-phone">📞 9122445666</div>
+    <a href="index.html" class="tb-back">← Back to Home</a>
+  </div>
+</div>
+
+<!-- HERO BAND -->
+<div class="hero-band">
+  <div class="hero-band-inner">
+    <h1>💰 Insurance Premium Calculator</h1>
+    <p>Get accurate premium estimates for Motor, Health & Life Insurance — in seconds</p>
+  </div>
+</div>
+
+<!-- MAIN TABS -->
+<div class="main-tabs">
+  <div class="main-tabs-inner">
+    <div class="mtab active" onclick="switchMainTab('motor',this)">
+      <span class="mtab-icon">🚗</span> Motor Insurance
+    </div>
+    <div class="mtab" onclick="switchMainTab('health',this)">
+      <span class="mtab-icon">❤️</span> Health Insurance
+    </div>
+    <div class="mtab" onclick="switchMainTab('life',this)">
+      <span class="mtab-icon">🧬</span> Life / Term
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- ═══════════════════════════════════
+       MOTOR TAB
+       ═══════════════════════════════════ -->
+  <div class="tab-panel active" id="panel-motor">
+    <div class="calc-card">
+      <div class="calc-header">
+        <div class="calc-header-icon">🚗</div>
+        <div class="calc-header-text">
+          <h2>Motor Insurance Calculator</h2>
+          <p>Bike, Car, Commercial Vehicle — Get instant premium estimate</p>
+        </div>
+      </div>
+      <div class="calc-body">
+
+        <!-- Vehicle Type -->
+        <div class="field-section">
+          <div class="field-section-title">Step 1 — Select Vehicle Type</div>
+          <div class="option-cards" id="vehicleTypeCards">
+            <div class="opt-card selected" onclick="selectVehicle('bike',this)">
+              <div class="opt-card-icon">🏍️</div>
+              <div class="opt-card-label">Bike</div>
+              <div class="opt-card-sub">Two Wheeler</div>
+            </div>
+            <div class="opt-card" onclick="selectVehicle('car',this)">
+              <div class="opt-card-icon">🚗</div>
+              <div class="opt-card-label">Car</div>
+              <div class="opt-card-sub">Four Wheeler</div>
+            </div>
+            <div class="opt-card" onclick="selectVehicle('commercial',this)">
+              <div class="opt-card-icon">🚛</div>
+              <div class="opt-card-label">Commercial</div>
+              <div class="opt-card-sub">Goods/Passenger</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engine CC -->
+        <div class="field-section">
+          <div class="field-section-title" id="cc-section-title">Step 2 — Select Engine CC (Bike)</div>
+          <div class="option-cards" id="ccCards">
+            <div class="opt-card selected" onclick="selectCC('b_75',this)">
+              <div class="opt-card-icon">🛵</div>
+              <div class="opt-card-label">≤ 75cc</div>
+              <div class="opt-card-sub">Scooter / Moped</div>
+            </div>
+            <div class="opt-card" onclick="selectCC('b_150',this)">
+              <div class="opt-card-icon">🏍️</div>
+              <div class="opt-card-label">75–150cc</div>
+              <div class="opt-card-sub">Standard Bike</div>
+            </div>
+            <div class="opt-card" onclick="selectCC('b_350',this)">
+              <div class="opt-card-icon">🏍️</div>
+              <div class="opt-card-label">150–350cc</div>
+              <div class="opt-card-sub">Sports / Cruiser</div>
+            </div>
+            <div class="opt-card" onclick="selectCC('b_350p',this)">
+              <div class="opt-card-icon">🏍️</div>
+              <div class="opt-card-label">350cc+</div>
+              <div class="opt-card-sub">Premium Bike</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Policy Type + Age -->
+        <div class="field-section">
+          <div class="field-section-title">Step 3 — Policy Details</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>Policy Type <span>*</span></label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-tp" onclick="selectPolicy('tp')">Third Party</div>
+                <div class="tog" id="tog-comp" onclick="selectPolicy('comp')">Comprehensive</div>
+                <div class="tog" id="tog-od" onclick="selectPolicy('od')">Own Damage</div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Vehicle Age <span>*</span></label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-new" onclick="selectAge('new')">New (0-1yr)</div>
+                <div class="tog" id="tog-mid" onclick="selectAge('mid')">1–5 yrs</div>
+                <div class="tog" id="tog-old" onclick="selectAge('old')">5+ yrs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NCB -->
+        <div class="field-section">
+          <div class="field-section-title">Step 4 — No Claim Bonus (NCB)</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>Previous Year Claim?</label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-ncb-no" onclick="selectNCB('no')">No Claim ✅</div>
+                <div class="tog" id="tog-ncb-yes" onclick="selectNCB('yes')">Had Claim ❌</div>
+              </div>
+            </div>
+            <div class="field" id="ncb-years-wrap">
+              <label>Years Without Claim</label>
+              <div class="fselect-wrap">
+                <select class="fselect" id="ncb-years">
+                  <option value="0">First Year (0%)</option>
+                  <option value="1">1 Year (20% NCB)</option>
+                  <option value="2">2 Years (25% NCB)</option>
+                  <option value="3">3 Years (35% NCB)</option>
+                  <option value="4">4 Years (45% NCB)</option>
+                  <option value="5">5+ Years (50% NCB)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calcMotor()">
+          🔢 Calculate My Premium Now
+        </button>
+      </div>
+    </div>
+
+    <!-- Motor Result -->
+    <div class="result-panel" id="result-motor">
+      <div class="result-top">
+        <div class="result-amt-wrap">
+          <div class="result-label">Estimated Annual Premium</div>
+          <div class="result-amt" id="motor-amt">—</div>
+          <div class="result-period">Per year (incl. GST)</div>
+        </div>
+        <div class="result-note">⚠️ This is an estimate. Exact premium depends on vehicle make/model. Contact Santosh Kumar for exact quote.</div>
+      </div>
+      <div class="result-body">
+        <div class="result-grid">
+          <div class="breakdown">
+            <div class="breakdown-title">Premium Breakdown</div>
+            <div id="motor-breakdown"></div>
+          </div>
+          <div class="result-cta">
+            <div class="result-cta-title">Get Exact Premium</div>
+            <div class="result-cta-sub">Santosh Kumar will compare 10+ companies and give you the best deal. Policy issued in 5 minutes!</div>
+            <div class="cta-btns">
+              <a id="motor-wa" href="#" target="_blank" class="cta-wa">💬 WhatsApp for Exact Quote</a>
+              <a href="tel:+919122445666" class="cta-call">📞 Call: 9122445666</a>
+              <a href="index.html#quote" class="cta-form">📋 Fill Quote Form</a>
+            </div>
+            <div class="savings-badge" id="motor-ncb-badge" style="display:none;">
+              <div class="sb-title">Your NCB Savings</div>
+              <div class="sb-amt" id="motor-ncb-amt">₹0</div>
+              <div class="sb-sub">No Claim Bonus discount applied!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info cards -->
+    <div class="info-cards">
+      <div class="info-card"><div class="info-icon">⚡</div><div class="info-title">Policy in 5 Minutes</div><div class="info-desc">Digital policy on WhatsApp instantly after payment</div></div>
+      <div class="info-card"><div class="info-icon">🏥</div><div class="info-title">Cashless Repairs</div><div class="info-desc">4000+ cashless garages across India</div></div>
+      <div class="info-card"><div class="info-icon">🤝</div><div class="info-title">Claim Support</div><div class="info-desc">We handle your claim from start to finish</div></div>
+      <div class="info-card"><div class="info-icon">💰</div><div class="info-title">Best Price</div><div class="info-desc">Compare 10+ companies, lowest premium guaranteed</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       HEALTH TAB
+       ═══════════════════════════════════ -->
+  <div class="tab-panel" id="panel-health">
+    <div class="calc-card">
+      <div class="calc-header">
+        <div class="calc-header-icon">❤️</div>
+        <div class="calc-header-text">
+          <h2>Health Insurance Calculator</h2>
+          <p>Individual, Family, Senior Citizen — Best health plans</p>
+        </div>
+      </div>
+      <div class="calc-body">
+
+        <!-- Plan Type -->
+        <div class="field-section">
+          <div class="field-section-title">Step 1 — Who Needs Cover?</div>
+          <div class="option-cards">
+            <div class="opt-card selected" onclick="selectOpt(this,'h-plantype','individual')">
+              <div class="opt-card-icon">👤</div>
+              <div class="opt-card-label">Only Me</div>
+              <div class="opt-card-sub">Individual</div>
+            </div>
+            <div class="opt-card" onclick="selectOpt(this,'h-plantype','spouse')">
+              <div class="opt-card-icon">👫</div>
+              <div class="opt-card-label">Me + Spouse</div>
+              <div class="opt-card-sub">2 Members</div>
+            </div>
+            <div class="opt-card" onclick="selectOpt(this,'h-plantype','family')">
+              <div class="opt-card-icon">👨‍👩‍👧‍👦</div>
+              <div class="opt-card-label">Family</div>
+              <div class="opt-card-sub">3–5 Members</div>
+            </div>
+            <div class="opt-card" onclick="selectOpt(this,'h-plantype','parents')">
+              <div class="opt-card-icon">👴👵</div>
+              <div class="opt-card-label">Parents</div>
+              <div class="opt-card-sub">Senior Citizen</div>
+            </div>
+          </div>
+          <input type="hidden" id="h-plantype" value="individual">
+        </div>
+
+        <!-- Age + Sum -->
+        <div class="field-section">
+          <div class="field-section-title">Step 2 — Age & Coverage</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>Oldest Member's Age <span>*</span></label>
+              <div class="fselect-wrap">
+                <select class="fselect" id="h-age">
+                  <option value="18">18–25 years</option>
+                  <option value="26" selected>26–35 years</option>
+                  <option value="36">36–45 years</option>
+                  <option value="46">46–55 years</option>
+                  <option value="56">56–65 years</option>
+                  <option value="66">66+ years</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>Sum Insured Needed</label>
+              <div class="range-val" id="h-sum-display">₹5 Lakh</div>
+              <input type="range" id="h-sum" min="3" max="25" step="1" value="5"
+                oninput="updateSumDisplay('h-sum','h-sum-display','L')">
+              <div class="range-labels"><span>₹3L</span><span>₹25L+</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- City + Pre-existing -->
+        <div class="field-section">
+          <div class="field-section-title">Step 3 — Health Details</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>City Type</label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-city-t1" onclick="selectCity('metro')">Metro City</div>
+                <div class="tog" id="tog-city-t2" onclick="selectCity('tier2')">Tier 2 City</div>
+                <div class="tog" id="tog-city-t3" onclick="selectCity('small')">Small Town</div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Pre-existing Disease?</label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-ped-no" onclick="selectPED('no')">No ✅</div>
+                <div class="tog" id="tog-ped-yes" onclick="selectPED('yes')">Yes (BP/Diabetes)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="field-section">
+          <div class="field-section-title">Step 4 — Add-ons (Optional)</div>
+          <div class="field-grid-3">
+            <div class="field">
+              <label>Critical Illness Cover?</label>
+              <div class="toggle-wrap">
+                <div class="tog" id="tog-ci-yes" onclick="selectAddon('ci','yes')">Yes</div>
+                <div class="tog on" id="tog-ci-no" onclick="selectAddon('ci','no')">No</div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Room Rent Waiver?</label>
+              <div class="toggle-wrap">
+                <div class="tog" id="tog-rr-yes" onclick="selectAddon('rr','yes')">Yes</div>
+                <div class="tog on" id="tog-rr-no" onclick="selectAddon('rr','no')">No</div>
+              </div>
+            </div>
+            <div class="field">
+              <label>OPD Cover?</label>
+              <div class="toggle-wrap">
+                <div class="tog" id="tog-opd-yes" onclick="selectAddon('opd','yes')">Yes</div>
+                <div class="tog on" id="tog-opd-no" onclick="selectAddon('opd','no')">No</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calcHealth()">
+          🔢 Calculate My Health Premium
+        </button>
+      </div>
+    </div>
+
+    <!-- Health Result -->
+    <div class="result-panel" id="result-health">
+      <div class="result-top">
+        <div class="result-amt-wrap">
+          <div class="result-label">Estimated Annual Premium</div>
+          <div class="result-amt" id="health-amt">—</div>
+          <div class="result-period">Per year (incl. 18% GST)</div>
+        </div>
+        <div class="result-note">⚠️ Actual premium varies by insurer & health history. Call for exact quote.</div>
+      </div>
+      <div class="result-body">
+        <div class="result-grid">
+          <div class="breakdown">
+            <div class="breakdown-title">Premium Breakdown</div>
+            <div id="health-breakdown"></div>
+          </div>
+          <div class="result-cta">
+            <div class="result-cta-title">Compare Health Plans</div>
+            <div class="result-cta-sub">We compare Star Health, Niva Bupa, HDFC Ergo & more. Get cashless network hospitals in Dhanbad!</div>
+            <div class="cta-btns">
+              <a id="health-wa" href="#" target="_blank" class="cta-wa">💬 WhatsApp for Best Plan</a>
+              <a href="tel:+919122445666" class="cta-call">📞 Call: 9122445666</a>
+              <a href="index.html#quote" class="cta-form">📋 Fill Quote Form</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-cards">
+      <div class="info-card"><div class="info-icon">🏥</div><div class="info-title">Cashless Hospitals</div><div class="info-desc">10,000+ cashless hospitals across India</div></div>
+      <div class="info-card"><div class="info-icon">📋</div><div class="info-title">Paperless Claims</div><div class="info-desc">Digital claim process — no running around</div></div>
+      <div class="info-card"><div class="info-icon">👨‍👩‍👧‍👦</div><div class="info-title">Family Floater</div><div class="info-desc">One plan covers entire family at best price</div></div>
+      <div class="info-card"><div class="info-icon">🔄</div><div class="info-title">Lifetime Renewal</div><div class="info-desc">Continue coverage for life — no age limit</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       LIFE TAB
+       ═══════════════════════════════════ -->
+  <div class="tab-panel" id="panel-life">
+    <div class="calc-card">
+      <div class="calc-header">
+        <div class="calc-header-icon">🧬</div>
+        <div class="calc-header-text">
+          <h2>Life / Term Insurance Calculator</h2>
+          <p>Term Plan, LIC, ULIP, Endowment — Protect your family</p>
+        </div>
+      </div>
+      <div class="calc-body">
+
+        <!-- Plan Type -->
+        <div class="field-section">
+          <div class="field-section-title">Step 1 — Select Plan Type</div>
+          <div class="option-cards">
+            <div class="opt-card selected" onclick="selectOpt(this,'l-plantype','term')">
+              <div class="opt-card-icon">🛡️</div>
+              <div class="opt-card-label">Term Plan</div>
+              <div class="opt-card-sub">Pure Protection</div>
+            </div>
+            <div class="opt-card" onclick="selectOpt(this,'l-plantype','lic')">
+              <div class="opt-card-icon">🏛️</div>
+              <div class="opt-card-label">LIC Policy</div>
+              <div class="opt-card-sub">Traditional</div>
+            </div>
+            <div class="opt-card" onclick="selectOpt(this,'l-plantype','endowment')">
+              <div class="opt-card-icon">💰</div>
+              <div class="opt-card-label">Endowment</div>
+              <div class="opt-card-sub">Savings + Cover</div>
+            </div>
+            <div class="opt-card" onclick="selectOpt(this,'l-plantype','ulip')">
+              <div class="opt-card-icon">📈</div>
+              <div class="opt-card-label">ULIP</div>
+              <div class="opt-card-sub">Investment + Cover</div>
+            </div>
+          </div>
+          <input type="hidden" id="l-plantype" value="term">
+        </div>
+
+        <!-- Age + Gender -->
+        <div class="field-section">
+          <div class="field-section-title">Step 2 — Personal Details</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>Your Age <span>*</span></label>
+              <div class="fselect-wrap">
+                <select class="fselect" id="l-age">
+                  <option value="20">18–25 years</option>
+                  <option value="30" selected>26–35 years</option>
+                  <option value="40">36–45 years</option>
+                  <option value="50">46–55 years</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>Gender</label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-male" onclick="selectGender('male')">👨 Male</div>
+                <div class="tog" id="tog-female" onclick="selectGender('female')">👩 Female</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sum Assured + Term -->
+        <div class="field-section">
+          <div class="field-section-title">Step 3 — Coverage Amount</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>Sum Assured</label>
+              <div class="range-val" id="l-sum-display">₹50 Lakh</div>
+              <input type="range" id="l-sum" min="25" max="200" step="25" value="50"
+                oninput="updateSumDisplay('l-sum','l-sum-display','L')">
+              <div class="range-labels"><span>₹25L</span><span>₹2Cr+</span></div>
+            </div>
+            <div class="field">
+              <label>Policy Term</label>
+              <div class="range-val" id="l-term-display">20 Years</div>
+              <input type="range" id="l-term" min="10" max="40" step="10" value="20"
+                oninput="updateTermDisplay()">
+              <div class="range-labels"><span>10 yrs</span><span>40 yrs</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smoker -->
+        <div class="field-section">
+          <div class="field-section-title">Step 4 — Lifestyle</div>
+          <div class="field-grid">
+            <div class="field">
+              <label>Do you Smoke / Tobacco?</label>
+              <div class="toggle-wrap">
+                <div class="tog on" id="tog-smoke-no" onclick="selectSmoker('no')">Non-Smoker ✅</div>
+                <div class="tog" id="tog-smoke-yes" onclick="selectSmoker('yes')">Smoker</div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Annual Income Range</label>
+              <div class="fselect-wrap">
+                <select class="fselect" id="l-income">
+                  <option value="5">Up to ₹5 Lakh</option>
+                  <option value="10" selected>₹5–10 Lakh</option>
+                  <option value="25">₹10–25 Lakh</option>
+                  <option value="50">₹25 Lakh+</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calcLife()">
+          🔢 Calculate My Life Premium
+        </button>
+      </div>
+    </div>
+
+    <!-- Life Result -->
+    <div class="result-panel" id="result-life">
+      <div class="result-top">
+        <div class="result-amt-wrap">
+          <div class="result-label">Estimated Annual Premium</div>
+          <div class="result-amt" id="life-amt">—</div>
+          <div class="result-period">Per year (incl. GST)</div>
+        </div>
+        <div class="result-note">⚠️ Actual premium depends on medical history. Call for exact quote from LIC & top companies.</div>
+      </div>
+      <div class="result-body">
+        <div class="result-grid">
+          <div class="breakdown">
+            <div class="breakdown-title">Premium Breakdown</div>
+            <div id="life-breakdown"></div>
+          </div>
+          <div class="result-cta">
+            <div class="result-cta-title">Protect Your Family Today</div>
+            <div class="result-cta-sub">Compare LIC, HDFC Life, SBI Life & 5 more companies. Get best cover at lowest premium!</div>
+            <div class="cta-btns">
+              <a id="life-wa" href="#" target="_blank" class="cta-wa">💬 WhatsApp for Best Plan</a>
+              <a href="tel:+919122445666" class="cta-call">📞 Call: 9122445666</a>
+              <a href="index.html#quote" class="cta-form">📋 Fill Quote Form</a>
+            </div>
+            <div class="savings-badge">
+              <div class="sb-title">Tax Saving u/s 80C</div>
+              <div class="sb-amt" id="life-tax-save">₹0</div>
+              <div class="sb-sub">Save tax on your premium amount!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-cards">
+      <div class="info-card"><div class="info-icon">🛡️</div><div class="info-title">₹1Cr Cover</div><div class="info-desc">Get ₹1 Crore term cover from just ₹10,000/year</div></div>
+      <div class="info-card"><div class="info-icon">🏛️</div><div class="info-title">LIC Authorized</div><div class="info-desc">IRDAI licensed to sell LIC & all top companies</div></div>
+      <div class="info-card"><div class="info-icon">💰</div><div class="info-title">Tax Benefits</div><div class="info-desc">Save tax u/s 80C & 80D on your premium</div></div>
+      <div class="info-card"><div class="info-icon">📞</div><div class="info-title">Free Advice</div><div class="info-desc">Expert guidance on which plan suits you best</div></div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+/* ── STATE ── */
+const S = {
+  motor: { vehicle:'bike', cc:'b_75', policy:'tp', age:'new', ncb:'no', ncbYears:0 },
+  health: { plan:'individual', age:'26', sum:5, city:'metro', ped:'no', ci:'no', rr:'no', opd:'no' },
+  life: { plan:'term', age:'30', sum:50, term:20, gender:'male', smoker:'no' }
+};
+
+/* ── MAIN TAB SWITCH ── */
+function switchMainTab(t, el){
+  document.querySelectorAll('.mtab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-'+t).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── OPTION CARD SELECT ── */
+function selectOpt(el, field, val){
+  el.closest('.option-cards').querySelectorAll('.opt-card').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById(field).value = val;
+}
+
+/* ── VEHICLE SELECT ── */
+function selectVehicle(v, el){
+  S.motor.vehicle = v;
+  el.closest('.option-cards').querySelectorAll('.opt-card').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected');
+  // Update CC options
+  const ccCards = document.getElementById('ccCards');
+  const ccTitle = document.getElementById('cc-section-title');
+  if(v==='bike'){
+    ccTitle.textContent='Step 2 — Select Engine CC (Bike)';
+    ccCards.innerHTML=`
+      <div class="opt-card selected" onclick="selectCC('b_75',this)"><div class="opt-card-icon">🛵</div><div class="opt-card-label">≤ 75cc</div><div class="opt-card-sub">Scooter/Moped</div></div>
+      <div class="opt-card" onclick="selectCC('b_150',this)"><div class="opt-card-icon">🏍️</div><div class="opt-card-label">75–150cc</div><div class="opt-card-sub">Standard Bike</div></div>
+      <div class="opt-card" onclick="selectCC('b_350',this)"><div class="opt-card-icon">🏍️</div><div class="opt-card-label">150–350cc</div><div class="opt-card-sub">Sports Bike</div></div>
+      <div class="opt-card" onclick="selectCC('b_350p',this)"><div class="opt-card-icon">🏍️</div><div class="opt-card-label">350cc+</div><div class="opt-card-sub">Premium Bike</div></div>`;
+    S.motor.cc='b_75';
+  } else if(v==='car'){
+    ccTitle.textContent='Step 2 — Select Engine CC (Car)';
+    ccCards.innerHTML=`
+      <div class="opt-card selected" onclick="selectCC('c_1000',this)"><div class="opt-card-icon">🚗</div><div class="opt-card-label">≤ 1000cc</div><div class="opt-card-sub">Small Car</div></div>
+      <div class="opt-card" onclick="selectCC('c_1500',this)"><div class="opt-card-icon">🚗</div><div class="opt-card-label">1000–1500cc</div><div class="opt-card-sub">Mid Size Car</div></div>
+      <div class="opt-card" onclick="selectCC('c_1500p',this)"><div class="opt-card-icon">🚙</div><div class="opt-card-label">1500cc+</div><div class="opt-card-sub">Big Car / SUV</div></div>`;
+    S.motor.cc='c_1000';
+  } else {
+    ccTitle.textContent='Step 2 — Select Vehicle Category';
+    ccCards.innerHTML=`
+      <div class="opt-card selected" onclick="selectCC('com_3t',this)"><div class="opt-card-icon">🛺</div><div class="opt-card-label">3 Wheeler</div><div class="opt-card-sub">Auto / Tempo</div></div>
+      <div class="opt-card" onclick="selectCC('com_lgv',this)"><div class="opt-card-icon">🚐</div><div class="opt-card-label">Light Goods</div><div class="opt-card-sub">LGV / Pickup</div></div>
+      <div class="opt-card" onclick="selectCC('com_hgv',this)"><div class="opt-card-icon">🚛</div><div class="opt-card-label">Heavy Goods</div><div class="opt-card-sub">Truck / HGV</div></div>`;
+    S.motor.cc='com_3t';
+  }
+  // Reset result
+  document.getElementById('result-motor').classList.remove('show');
+  document.getElementById('result-motor').style.display='none';
+}
+
+function selectCC(v,el){
+  S.motor.cc=v;
+  el.closest('.option-cards').querySelectorAll('.opt-card').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectPolicy(v){
+  S.motor.policy=v;
+  ['tp','comp','od'].forEach(x=>document.getElementById('tog-'+x).classList.remove('on'));
+  document.getElementById('tog-'+v).classList.add('on');
+}
+function selectAge(v){
+  S.motor.age=v;
+  ['new','mid','old'].forEach(x=>document.getElementById('tog-'+x).classList.remove('on'));
+  document.getElementById('tog-'+v).classList.add('on');
+}
+function selectNCB(v){
+  S.motor.ncb=v;
+  ['no','yes'].forEach(x=>document.getElementById('tog-ncb-'+x).classList.remove('on'));
+  document.getElementById('tog-ncb-'+v).classList.add('on');
+}
+function selectCity(v){
+  S.health.city=v;
+  ['metro','tier2','small'].forEach(x=>document.getElementById('tog-city-t'+({'metro':1,'tier2':2,'small':3}[x])).classList.remove('on'));
+  document.getElementById('tog-city-t'+({'metro':1,'tier2':2,'small':3}[v])).classList.add('on');
+}
+function selectPED(v){
+  S.health.ped=v;
+  ['no','yes'].forEach(x=>document.getElementById('tog-ped-'+x).classList.remove('on'));
+  document.getElementById('tog-ped-'+v).classList.add('on');
+}
+function selectAddon(addon,v){
+  S.health[addon]=v;
+  ['yes','no'].forEach(x=>document.getElementById('tog-'+addon+'-'+x).classList.remove('on'));
+  document.getElementById('tog-'+addon+'-'+v).classList.add('on');
+}
+function selectGender(v){
+  S.life.gender=v;
+  ['male','female'].forEach(x=>document.getElementById('tog-'+x).classList.remove('on'));
+  document.getElementById('tog-'+v).classList.add('on');
+}
+function selectSmoker(v){
+  S.life.smoker=v;
+  ['no','yes'].forEach(x=>document.getElementById('tog-smoke-'+x).classList.remove('on'));
+  document.getElementById('tog-smoke-'+v).classList.add('on');
+}
+
+/* ── RANGE DISPLAY ── */
+function updateSumDisplay(inputId, displayId, suffix){
+  const val = document.getElementById(inputId).value;
+  const el  = document.getElementById(displayId);
+  if(suffix==='L'){
+    el.textContent = val >= 100 ? `₹${val/100} Crore` : `₹${val} Lakh`;
+  }
+  // Update gradient
+  const inp = document.getElementById(inputId);
+  const pct = ((inp.value - inp.min)/(inp.max - inp.min))*100;
+  inp.style.background=`linear-gradient(to right,var(--green) ${pct}%,var(--border) ${pct}%)`;
+}
+function updateTermDisplay(){
+  const val = document.getElementById('l-term').value;
+  document.getElementById('l-term-display').textContent = val+' Years';
+  const inp = document.getElementById('l-term');
+  const pct = ((inp.value - inp.min)/(inp.max - inp.min))*100;
+  inp.style.background=`linear-gradient(to right,var(--green) ${pct}%,var(--border) ${pct}%)`;
+}
+
+/* ── FORMAT ── */
+const f = n => '₹'+Math.round(n).toLocaleString('en-IN');
+
+/* ── RENDER BREAKDOWN ── */
+function renderBreakdown(containerId, rows){
+  document.getElementById(containerId).innerHTML =
+    rows.map(r=>`<div class="bd-row"><span class="bd-label">${r.l}</span><span class="bd-val">${r.v}</span></div>`).join('');
+}
+
+/* ════════════════════════════════════
+   MOTOR CALCULATOR
+   ════════════════════════════════════ */
+function calcMotor(){
+  const {vehicle,cc,policy,age,ncb} = S.motor;
+  const ncbYears = parseInt(document.getElementById('ncb-years').value)||0;
+
+  let tp=0, idv=0, odRate=0, label='';
+  if(vehicle==='bike'){
+    if(cc==='b_75'){tp=538;idv=45000;label='Bike ≤75cc';}
+    else if(cc==='b_150'){tp=714;idv=80000;label='Bike 75-150cc';}
+    else if(cc==='b_350'){tp=1366;idv=140000;label='Bike 150-350cc';}
+    else{tp=2804;idv=280000;label='Bike 350cc+';}
+    odRate=0.02;
+  } else if(vehicle==='car'){
+    if(cc==='c_1000'){tp=2094;idv=500000;label='Car ≤1000cc';}
+    else if(cc==='c_1500'){tp=3416;idv=900000;label='Car 1000-1500cc';}
+    else{tp=7897;idv=1800000;label='Car 1500cc+ / SUV';}
+    odRate=0.025;
+  } else {
+    if(cc==='com_3t'){tp=2804;idv=150000;label='3 Wheeler/Auto';}
+    else if(cc==='com_lgv'){tp=5437;idv=500000;label='Light Goods Vehicle';}
+    else{tp=7897;idv=900000;label='Heavy Goods Vehicle';}
+    odRate=0.03;
+  }
+
+  // Age depreciation
+  if(age==='mid')idv=Math.round(idv*0.80);
+  if(age==='old')idv=Math.round(idv*0.60);
+
+  // OD premium
+  const od = Math.round(idv * odRate);
+
+  // NCB discount on OD
+  const ncbPct = [0,20,25,35,45,50][Math.min(ncbYears,5)]/100;
+  const ncbSave = ncb==='no' ? Math.round(od * ncbPct) : 0;
+  const odAfterNCB = od - ncbSave;
+
+  // Base
+  const base = policy==='tp' ? tp : policy==='od' ? odAfterNCB : tp + odAfterNCB;
+  const gst  = Math.round(base * 0.18);
+  const total = base + gst;
+
+  // Breakdown
+  let rows = [];
+  if(policy==='comp'){
+    rows=[
+      {l:'Vehicle',v:label},
+      {l:'IDV (Insured Value)',v:f(idv)},
+      {l:'Third Party (TP)',v:f(tp)},
+      {l:'Own Damage (OD)',v:f(od)},
+    ];
+    if(ncbSave>0) rows.push({l:`NCB Discount (${ncbPct*100}%)`,v:`-${f(ncbSave)}`});
+    rows.push({l:'GST 18%',v:f(gst)},{l:'Total Premium',v:f(total)});
+  } else if(policy==='tp'){
+    rows=[{l:'Vehicle',v:label},{l:'Third Party (TP)',v:f(tp)},{l:'GST 18%',v:f(gst)},{l:'Total Premium',v:f(total)}];
+  } else {
+    rows=[{l:'Vehicle',v:label},{l:'IDV',v:f(idv)},{l:'Own Damage',v:f(od)}];
+    if(ncbSave>0) rows.push({l:`NCB Discount (${ncbPct*100}%)`,v:`-${f(ncbSave)}`});
+    rows.push({l:'GST 18%',v:f(gst)},{l:'Total Premium',v:f(total)});
+  }
+
+  // Update UI
+  document.getElementById('motor-amt').textContent = `${f(Math.round(total*0.92))} – ${f(Math.round(total*1.08))}`;
+  renderBreakdown('motor-breakdown', rows);
+
+  const wa = encodeURIComponent(`Hi! Need exact Motor Insurance quote.\n\nVehicle: ${label}\nPolicy: ${policy.toUpperCase()}\n\nPlease call me — Perfect Insurance Services: 9122445666`);
+  document.getElementById('motor-wa').href = `https://wa.me/919122445666?text=${wa}`;
+
+  if(ncbSave>0){
+    document.getElementById('motor-ncb-badge').style.display='block';
+    document.getElementById('motor-ncb-amt').textContent=f(ncbSave);
+  } else {
+    document.getElementById('motor-ncb-badge').style.display='none';
+  }
+
+  const panel = document.getElementById('result-motor');
+  panel.style.display='block';
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ════════════════════════════════════
+   HEALTH CALCULATOR
+   ════════════════════════════════════ */
+function calcHealth(){
+  const plan = document.getElementById('h-plantype').value;
+  const age  = parseInt(document.getElementById('h-age').value);
+  const sum  = parseInt(document.getElementById('h-sum').value);
+  const city = S.health.city;
+  const ped  = S.health.ped;
+  const ci   = S.health.ci;
+  const rr   = S.health.rr;
+  const opd  = S.health.opd;
+
+  // Base rate per lakh per year
+  let baseRate = age<=25?450:age<=35?600:age<=45?900:age<=55?1400:2200;
+
+  // Family multiplier
+  const mult = {individual:1,spouse:1.7,family:2.3,parents:2.0}[plan]||1;
+
+  // City loading
+  const cityMult = city==='metro'?1.15:city==='tier2'?1.0:0.9;
+
+  // PED loading
+  const pedLoad = ped==='yes'?1.3:1;
+
+  let base = Math.round(baseRate * sum * mult * cityMult * pedLoad);
+
+  // Add-ons
+  let addons = [];
+  if(ci==='yes'){ const ciAmt=Math.round(sum*200); base+=ciAmt; addons.push({l:'Critical Illness Add-on',v:f(ciAmt)}); }
+  if(rr==='yes'){ const rrAmt=Math.round(base*0.05); base+=rrAmt; addons.push({l:'Room Rent Waiver',v:f(rrAmt)}); }
+  if(opd==='yes'){ const opdAmt=Math.round(base*0.08); base+=opdAmt; addons.push({l:'OPD Cover',v:f(opdAmt)}); }
+
+  const gst = Math.round(base*0.18);
+  const total = base + gst;
+  const monthly = Math.round(total/12);
+
+  const planLabels = {individual:'Individual',spouse:'Me + Spouse',family:'Family Floater',parents:'Senior Citizen (Parents)'};
+
+  let rows = [
+    {l:'Plan Type', v:planLabels[plan]||plan},
+    {l:'Sum Insured', v:`₹${sum} Lakh`},
+    {l:'Base Premium', v:f(base)},
+    ...addons,
+    {l:'GST 18%', v:f(gst)},
+    {l:'Monthly Premium ~', v:f(monthly)+'/mo'},
+    {l:'Total Annual Premium', v:f(total)},
+  ];
+
+  document.getElementById('health-amt').textContent = `${f(Math.round(total*0.88))} – ${f(Math.round(total*1.12))}`;
+  renderBreakdown('health-breakdown', rows);
+
+  const wa = encodeURIComponent(`Hi! Need Health Insurance quote.\n\nPlan: ${planLabels[plan]}\nSum Insured: ₹${sum}L\nAge: ${age} yrs\n\nPlease call — Perfect Insurance Services: 9122445666`);
+  document.getElementById('health-wa').href = `https://wa.me/919122445666?text=${wa}`;
+
+  const panel = document.getElementById('result-health');
+  panel.style.display='block';
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ════════════════════════════════════
+   LIFE CALCULATOR
+   ════════════════════════════════════ */
+function calcLife(){
+  const plan   = document.getElementById('l-plantype').value;
+  const age    = parseInt(document.getElementById('l-age').value);
+  const sum    = parseInt(document.getElementById('l-sum').value); // in lakhs
+  const term   = parseInt(document.getElementById('l-term').value);
+  const gender = S.life.gender;
+  const smoker = S.life.smoker;
+
+  let base = 0;
+
+  if(plan==='term'){
+    // IRDAI approx term rates per Cr per year
+    let ratePerCr = age<=25?7000:age<=35?9500:age<=45?15000:27000;
+    if(term>=30) ratePerCr = Math.round(ratePerCr*1.12);
+    if(gender==='female') ratePerCr = Math.round(ratePerCr*0.92); // females pay less
+    if(smoker==='yes') ratePerCr = Math.round(ratePerCr*1.25);
+    base = Math.round(ratePerCr * (sum/100));
+  } else if(plan==='lic'){
+    let r = age<=25?65:age<=35?72:age<=45?88:110;
+    base = Math.round(r*sum);
+  } else if(plan==='endowment'){
+    let r = age<=25?55:age<=35?62:age<=45?75:92;
+    if(term>=20) r = Math.round(r*1.1);
+    base = Math.round(r*sum);
+  } else { // ULIP
+    base = Math.max(Math.round(sum*750),25000);
+  }
+
+  const gstRate = plan==='term'?0.18:0.045;
+  const gst  = Math.round(base*gstRate);
+  const total = base + gst;
+  const monthly = Math.round(total/12);
+  const taxSave = Math.min(base, 150000); // 80C limit
+
+  const planLabels = {term:'Term Plan',lic:'LIC Traditional',endowment:'Endowment',ulip:'ULIP'};
+
+  let rows = [
+    {l:'Plan Type', v:planLabels[plan]},
+    {l:'Sum Assured', v:sum>=100?`₹${sum/100} Crore`:`₹${sum} Lakh`},
+    {l:'Policy Term', v:`${term} Years`},
+    {l:'Annual Premium', v:f(base)},
+    {l:`GST (${Math.round(gstRate*100)}%)`, v:f(gst)},
+    {l:'Monthly Premium ~', v:f(monthly)+'/mo'},
+    {l:'Total Annual', v:f(total)},
+  ];
+
+  document.getElementById('life-amt').textContent = `${f(Math.round(total*0.9))} – ${f(Math.round(total*1.1))}`;
+  renderBreakdown('life-breakdown', rows);
+  document.getElementById('life-tax-save').textContent = f(taxSave);
+
+  const wa = encodeURIComponent(`Hi! Need Life Insurance quote.\n\nPlan: ${planLabels[plan]}\nSum Assured: ${sum>=100?`₹${sum/100}Cr`:`₹${sum}L`}\nAge: ${age} | Term: ${term}yr\n\nPlease call — Perfect Insurance Services: 9122445666`);
+  document.getElementById('life-wa').href = `https://wa.me/919122445666?text=${wa}`;
+
+  const panel = document.getElementById('result-life');
+  panel.style.display='block';
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
